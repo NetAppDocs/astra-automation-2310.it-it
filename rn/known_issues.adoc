@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: rn/known_issues.html 
+keywords: known issues, issues, bugs, fixes 
+summary: Dovresti esaminare tutti i problemi noti della release corrente di Astra Control e le API REST associate. I problemi noti identificano i problemi che potrebbero impedire il corretto utilizzo del prodotto. 
+---
+= Problemi noti
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Dovresti esaminare tutti i problemi noti della release corrente di Astra Control e le API REST associate. I problemi noti identificano i problemi che potrebbero impedire il corretto utilizzo del prodotto. Consultare una delle seguenti pagine in base al modello di distribuzione utilizzato:
+
+* https://docs.netapp.com/us-en/astra-control-service/release-notes/known-issues.html["Problemi noti per Astra Control Service"^]
+* https://docs.netapp.com/us-en/astra-control-center-2310/release-notes/known-issues.html["Problemi noti di Astra Control Center 23,10"^]
+
