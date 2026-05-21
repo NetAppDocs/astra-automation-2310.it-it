@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/execution_hook_override_endpoints.html 
+summary: 'Endpoint di override dell"hook di esecuzione dell"API Astra (ACC)' 
+---
+= Endpoint di override dell'hook di esecuzione dell'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Execution Hook Override consente a un utente di disabilitare gli hook di esecuzione "netapp" precaricati per una specifica applicazione. (*NOTA SULLE DEPRECATIONS DELLE API SOTTOSTANTI*)

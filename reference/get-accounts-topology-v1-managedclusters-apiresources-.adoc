@@ -1,0 +1,372 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-managedclusters-apiresources-.html 
+summary: Recuperare una risorsa API di Kubernetes 
+---
+= Recuperare una risorsa API di Kubernetes
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/apiResources/{apiResource_id}`#
+
+Restituisce la risorsa API specifica nel corpo della risposta JSON.
+
+
+
+== Parametri
+
+[cols="5*"]
+|===
+| Nome | Tipo | In | Obbligatorio | Descrizione 
+
+
+| ID account | stringa | percorso | Vero  a| 
+ID della risorsa account contenitore
+
+* esempio: {{.Account}}
+
+
+
+
+| ID cluster gestito | stringa | percorso | Vero  a| 
+ID della risorsa managedCluster contenitore
+
+
+
+| apiResource_id | stringa | percorso | Vero  a| 
+ID della collezione apiResource da elencare
+
+|===
+
+
+== Risposta
+
+[source]
+----
+Status: 200, Returns the specific API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+Tipo di media della risorsa. I valori definiti sono:
+
+* "applicazione/astra-apiResource"
+
+
+
+
+| versione | stringa | Vero  a| 
+Versione della risorsa. I valori definiti sono:
+
+* "1,0"
+
+
+
+
+| id | stringa | Vero  a| 
+Identificatore univoco globale della risorsa. I valori definiti sono:
+
+* Conforme allo schema UUIDv4
+
+
+
+
+| apiVersion | stringa | Vero  a| 
+Stringa JSON che rappresenta la versione API della risorsa, come impostata in Kubernetes o da Kubernetes. APIVersion definisce lo schema versionato per questa rappresentazione dell'oggetto. I server dovrebbero convertire gli schemi riconosciuti al valore interno più recente e potrebbero rifiutare i valori non riconosciuti. Ulteriori informazioni: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources[]
+
+
+
+| Tipo | stringa | Vero  a| 
+Stringa JSON che rappresenta il tipo di risorsa, come impostato in Kubernetes o da Kubernetes. Il campo kind utilizza la notazione camel case e contiene un valore stringa che rappresenta la risorsa REST che questo oggetto rappresenta. I server potrebbero dedurlo dall'endpoint a cui il client invia le richieste. Non può essere aggiornato. Ulteriori informazioni: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds[]
+
+
+
+| metadati | link:#type_astra_metadata["type_astra_metadati"] | Vero  a| 
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema di metadati Astra
+
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-apiResource",
+  "version": "1.0",
+  "id": "e280ff62-be35-4f31-a31b-a210a1ad1b33",
+  "kind": "ClusterRole",
+  "apiVersion": "rbac.authorization.k8s.io/v1",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+
+
+| invalidParams | vettore[link:#invalidParams["invalidParams"]] | Falso  a| 
+Elenco dei parametri di query non validi
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Errore
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Esempio di risposta di errore
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definizioni
+
+.Vedi definizioni
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+etichetta tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+
+
+
+| valore | stringa | Vero  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadati
+
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema di metadati Astra
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Vero  a| 
+
+
+
+| CreationTimestamp | stringa | Vero  a| 
+
+
+
+| ModificationTimestamp | stringa | Vero  a| 
+
+
+
+| CreatedBy | stringa | Vero  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+Nome del parametro di query non valido
+
+
+
+| motivo | stringa | Vero  a| 
+Motivo per cui il parametro di query non è valido
+
+|===
+====

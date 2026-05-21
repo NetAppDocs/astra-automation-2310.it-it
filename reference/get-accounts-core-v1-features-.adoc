@@ -1,0 +1,422 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-features-.html 
+summary: Recupera una funzionalità 
+---
+= Recupera una funzionalità
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/features/{feature_id}`#
+
+Restituisce la risorsa Feature API memorizzata nel corpo della risposta JSON.
+
+
+
+== Parametri
+
+[cols="5*"]
+|===
+| Nome | Tipo | In | Obbligatorio | Descrizione 
+
+
+| ID account | stringa | percorso | Vero  a| 
+ID della risorsa account contenitore
+
+* esempio: {{.Account}}
+
+
+
+
+| feature_id | stringa | percorso | Vero  a| 
+ID della raccolta di funzionalità da elencare
+
+|===
+
+
+== Risposta
+
+[source]
+----
+Status: 200, Returns the stored Feature API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+Tipo di media della risorsa. I valori definiti sono:
+
+* "application/astra-feature"
+
+
+
+
+| versione | stringa | Vero  a| 
+Versione della risorsa. I valori definiti sono:
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | stringa | Vero  a| 
+Identificatore univoco globale della risorsa. I valori definiti sono:
+
+* Conforme allo schema UUIDv4
+
+
+
+
+| nome | stringa | Vero  a| 
+Stringa JSON contenente il nome della funzionalità, in notazione gerarchica a punti. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 63
+* Questa stringa viene convalidata internamente per prevenire attacchi XSS, Unicode, directory traversal e SQL-injection.
+
+
+
+
+| isEnabled | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica se il flag della funzionalità è attivo o disattivo. I valori definiti sono:
+
+* "true" - Il flag della funzionalità è abilitato.
+* "false" - Il flag della funzionalità è disabilitato.
+
+
+
+
+| metadati | link:#type_astra_metadata["type_astra_metadati"] | Vero  a| 
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema di metadati Astra
+
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-feature",
+  "version": "1.1",
+  "id": "2d960b50-10be-5a19-a3ef-80bd08c12a89",
+  "name": "astra.account.rbac",
+  "isEnabled": "true",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+
+
+| invalidParams | vettore[link:#invalidParams["invalidParams"]] | Falso  a| 
+Elenco dei parametri di query non validi
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 503, Service unavailable
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/41",
+  "title": "Service not ready",
+  "detail": "Currently, the service can't respond to this request.",
+  "status": "503"
+}
+----
+====
+
+
+== Errore
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Esempio di risposta di errore
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definizioni
+
+.Vedi definizioni
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+etichetta tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+
+
+
+| valore | stringa | Vero  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadati
+
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema di metadati Astra
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Vero  a| 
+
+
+
+| CreationTimestamp | stringa | Vero  a| 
+
+
+
+| ModificationTimestamp | stringa | Vero  a| 
+
+
+
+| CreatedBy | stringa | Vero  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+Nome del parametro di query non valido
+
+
+
+| motivo | stringa | Vero  a| 
+Motivo per cui il parametro di query non è valido
+
+|===
+====

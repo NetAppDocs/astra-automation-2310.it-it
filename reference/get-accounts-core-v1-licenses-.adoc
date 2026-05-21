@@ -1,0 +1,537 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-licenses-.html 
+summary: Recuperare una licenza 
+---
+= Recuperare una licenza
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/licenses/{license_id}`#
+
+Restituisce la risorsa API di licenza memorizzata nel corpo della risposta JSON.
+
+
+
+== Parametri
+
+[cols="5*"]
+|===
+| Nome | Tipo | In | Obbligatorio | Descrizione 
+
+
+| ID account | stringa | percorso | Vero  a| 
+ID della risorsa account contenitore
+
+* esempio: {{.Account}}
+
+
+
+
+| ID licenza | stringa | percorso | Vero  a| 
+ID della raccolta di licenze da elencare
+
+|===
+
+
+== Risposta
+
+[source]
+----
+Status: 200, Returns the stored License API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+Tipo di media della risorsa. I valori definiti sono:
+
+* "application/astra-license"
+
+
+
+
+| versione | stringa | Vero  a| 
+Versione della risorsa. I valori definiti sono:
+
+* "1,0"
+
+
+
+
+| id | stringa | Vero  a| 
+Identificatore univoco globale della risorsa. I valori definiti sono:
+
+* Conforme allo schema UUIDv4
+
+
+
+
+| allocazione | stringa | Falso  a| 
+Stringa JSON contenente un ID che indica a cosa è assegnata la licenza. Presente solo quando la licenza è assegnata. Per le licenze di Astra Control Center, questo campo deve essere compilato con l'ID dell'account e deve corrispondere all'ID dell'account specificato nell'URI POST. I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| ID host | stringa | Falso  a| 
+Stringa JSON contenente un identificatore host a cui è associata una licenza. Presente solo se la licenza è vincolata a un host. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 63
+
+
+
+
+| ID credenziali del dispositivo | stringa | Falso  a| 
+Stringa JSON contenente l'identificativo del deviceCredential associato all'API delle credenziali. Presente solo per le licenze Astra Data Store. I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| isEvaluation | stringa | Vero  a| 
+Stringa JSON che indica se la licenza è una licenza di valutazione. I valori definiti sono:
+
+* "true"
+* "false"
+
+
+
+
+| licenseProtocol | stringa | Vero  a| 
+Stringa JSON contenente il protocollo di licenza estratto dalla licenza. I valori definiti sono:
+
+* Il contenuto della stringa non è convalidato dallo schema
+
+
+
+
+| licenseText | stringa | Vero  a| 
+Stringa JSON contenente una rappresentazione codificata in base64 della licenza JSON ottenuta dal sistema di licenze NetApp. Questa deve essere fornita nell'ordine originale a livello di byte per consentire la verifica della firma. I valori definiti sono:
+
+* Conforme allo schema di dati codificati in base64
+
+
+
+
+| validFromTimestamp | stringa | Vero  a| 
+Stringa JSON contenente un timestamp che indica quando la licenza diventa valida. I valori definiti sono:
+
+* Conforme allo schema di data e ora ISO-8601
+
+
+
+
+| validUntilTimestamp | stringa | Vero  a| 
+Stringa JSON contenente un timestamp che indica quando la licenza non è più valida. I valori definiti sono:
+
+* Conforme allo schema di data e ora ISO-8601
+
+
+
+
+| prodotto | stringa | Vero  a| 
+Stringa JSON contenente la stringa del prodotto estratta dalla licenza. I valori definiti sono:
+
+* Il contenuto della stringa non è convalidato dallo schema
+
+
+
+
+| productVersion | stringa | Vero  a| 
+Stringa JSON contenente la stringa della versione estratta dalla licenza. I valori definiti sono:
+
+* Il contenuto della stringa non è convalidato dallo schema
+
+
+
+
+| productSN | stringa | Vero  a| 
+Stringa JSON contenente il numero di serie estratto dalla licenza. I valori definiti sono:
+
+* Il contenuto della stringa non è convalidato dallo schema
+
+
+
+
+| caratteristiche | stringa | Vero  a| 
+Stringa JSON contenente il valore del pacchetto estratto dalla licenza. I valori definiti sono:
+
+* Il contenuto della stringa non è convalidato dallo schema
+
+
+
+
+| capacità | stringa | Vero  a| 
+Stringa JSON contenente la capacità estratta dalla licenza.
+
+
+
+| capacity2 | stringa | Vero  a| 
+Stringa JSON contenente la capacità secondaria estratta dalla licenza.
+
+
+
+| componenti aggiuntivi | vettore[link:#addons["componenti aggiuntivi"]] | Falso  a| 
+Array JSON di oggetti JSON contenente l'elenco dei componenti aggiuntivi della licenza. Un componente aggiuntivo è una modifica alla licenza che potrebbe verificarsi in una data futura.
+
+
+
+| metadati | link:#type_astra_metadata_update["aggiornamento dei metadati di tipo Astra"] | Vero  a| 
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema dei metadati di Astra. Se non specificato in fase di creazione, verrà creato un oggetto metadati senza etichette. Se non specificato in fase di aggiornamento, le etichette dell'oggetto metadati, creationTimestamp e createdBy, verranno conservate senza modifiche.
+
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-license",
+  "version": "1.0",
+  "id": "6db53b32-8417-5d3c-8ef0-552fc602c78f",
+  "allocation": "4185d09b-6687-4801-a832-c005a9d94f41",
+  "hostID": "99132549-e0c2-4203-9d1e-598628b4ff9b",
+  "isEvaluation": "false",
+  "licenseProtocol": "ASTRASDS-ENT-SUBS",
+  "licenseText": "ewogICAic3RhdHVzUmVzcCI6ewogMTYwNzAwIgp9",
+  "validFromTimestamp": "2020-08-06T00:00:00.000000Z",
+  "validUntilTimestamp": "2021-08-06T00:00:00.000000Z",
+  "product": "Astra Control Center",
+  "productVersion": "1.0",
+  "productSN": "320000046",
+  "features": "ASTRA-ENT-STD",
+  "capacity": "4000",
+  "capacity2": "0",
+  "addons": [
+    {
+      "startDate": "2020-08-06T00:00:00.000000Z",
+      "endDate": "2021-08-06T00:00:00.000000Z",
+      "capacity": "4000",
+      "licenseProtocol": "ASTRA-ENT-STD",
+      "features": "p-nfs,dm-storage-policy-based-pvs-for-k8s,dm-spbm-based-vvols-for-vms,dm-storage-efficiency,dm-data-at-rest-encryption"
+    }
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+
+
+| invalidParams | vettore[link:#invalidParams["invalidParams"]] | Falso  a| 
+Elenco dei parametri di query non validi
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Errore
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Esempio di risposta di errore
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definizioni
+
+.Vedi definizioni
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+componenti aggiuntivi
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| startDate | stringa | Falso  a| 
+Stringa JSON contenente un timestamp che indica quando questo componente aggiuntivo diventa valido. I valori definiti sono:
+
+* Conforme allo schema di data e ora ISO-8601
+
+
+
+
+| endDate | stringa | Falso  a| 
+Stringa JSON contenente un timestamp che indica quando questo componente aggiuntivo non è più valido. I valori definiti sono:
+
+* Conforme allo schema di data e ora ISO-8601
+
+
+
+
+| caratteristiche | stringa | Falso  a| 
+Stringa JSON contenente l'elenco delle funzionalità associate a questo componente aggiuntivo. I valori definiti sono:
+
+* Il contenuto della stringa non è convalidato dallo schema.
+
+
+
+
+| capacità | stringa | Falso  a| 
+Stringa JSON contenente la capacità estratta dal componente aggiuntivo. I valori definiti sono:
+
+* Il contenuto della stringa non è convalidato dallo schema
+
+
+
+
+| licenseProtocol | stringa | Falso  a| 
+Stringa JSON contenente il protocollo di licenza associato a questo componente aggiuntivo. I valori definiti sono:
+
+* Il contenuto della stringa non è convalidato dallo schema
+
+
+|===
+[role="api-collapsible-fifth-title"]
+etichetta tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+
+
+
+| valore | stringa | Vero  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+aggiornamento dei metadati di tipo Astra
+
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema dei metadati di Astra. Se non specificato in fase di creazione, verrà creato un oggetto metadati senza etichette. Se non specificato in fase di aggiornamento, le etichette dell'oggetto metadati, creationTimestamp e createdBy, verranno conservate senza modifiche.
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Falso  a| 
+
+
+
+| CreationTimestamp | stringa | Falso  a| 
+
+
+
+| ModificationTimestamp | stringa | Falso  a| 
+
+
+
+| CreatedBy | stringa | Falso  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+Nome del parametro di query non valido
+
+
+
+| motivo | stringa | Vero  a| 
+Motivo per cui il parametro di query non è valido
+
+|===
+====

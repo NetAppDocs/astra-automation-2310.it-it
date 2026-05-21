@@ -1,0 +1,712 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-tasks.html 
+summary: Elenca tutte le attività 
+---
+= Elenca tutte le attività
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/tasks`#
+
+Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
+
+
+
+== Parametri
+
+[cols="5*"]
+|===
+| Nome | Tipo | In | Obbligatorio | Descrizione 
+
+
+| ID account | stringa | percorso | Vero  a| 
+ID della risorsa account contenitore
+
+* esempio: {{.Account}}
+
+
+
+
+| includi | stringa | query | Falso  a| 
+Indica quali campi devono essere restituiti durante l'elenco di una raccolta.
+
+Esempi di URL: "include=id", "include=id,name"
+
+Esempi OpenAPI: "id"
+
+
+
+| limite | stringa | query | Falso  a| 
+Indica il numero massimo di risorse da restituire quando si elenca una raccolta.
+
+Esempi di URL: "limit=2"
+
+Esempi OpenAPI: "2"
+
+
+
+| filtro | stringa | query | Falso  a| 
+Indica quali campi devono essere confrontati per restituire una risorsa durante l'elenco di una collezione.
+
+Gli operatori supportati sono:
+
+* eq - Uguaglianza
+* lt/gt - Minore di/Maggiore di
+* lte/gte - Minore o uguale a/Maggiore o uguale a
+
+
+Esempio di URL: "filter=field%20eq%20%27value%27"
+
+Esempi OpenAPI: "field eq 'value'"
+
+|===
+
+
+== Risposta
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| elementi | array[Qualsiasi tra: link:#task_1_1_get_response_body["task_1.1_get_response_body"], array[]] | Vero  a| 
+
+
+
+| metadati | link:#type_astra_metadata_list["elenco_metadati_tipo_astra"] | Vero  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-tasks",
+  "version": "1.1",
+  "items": [
+    {
+      "type": "application/astra-task",
+      "version": "1.0",
+      "id": "ae1e6561-9e22-406c-8a5a-762f4604da00",
+      "name": "astra.backup.prep",
+      "summary": "Backup preparation",
+      "description": "Task to prepare for the application backup",
+      "service": "nautilus",
+      "parentTaskID": "9cc8c321-6af1-406c-8158-2c6582c247f8",
+      "userID": "abda967f-cd2c-4237-908e-99266648c553",
+      "resourceID": "626a0978-d55f-4841-8b7c-dc0c0f592c6f",
+      "resourceURI": "/accounts/fdaa655c-15ab-4d34-aa61-1e9098e67be0/k8s/v1/apps/7c8bef49-697e-4fb4-810c-675cef4cf6c9/appSnaps/5cb608f9-571b-492e-a520-5bfb900a9b9c",
+      "resourceCollectionURI": [
+        "/accounts/fdaa655c-15ab-4d34-aa61-1e9098e67be0/topology/v1/clouds/0df3f1a0-7203-4c12-aabf-a7bee6302671/clusters/dfd9de2d-6f0b-437b-a737-c8f7f176cd14/namespaces/f8b58091-4b9c-4c64-9b40-018dbaf7c5de/apps/f670bf11-8850-44bd-b330-815af6186a06/appSnaps/5cb608f9-571b-492e-a520-5bfb900a9b9c",
+        "/accounts/fdaa655c-15ab-4d34-aa61-1e9098e67be0/topology/v1/clouds/0df3f1a0-7203-4c12-aabf-a7bee6302671/clusters/dfd9de2d-6f0b-437b-a737-c8f7f176cd14/namespaces/923708f8-0435-45b5-8c00-fbdef3ffaf25/apps/f670bf11-8850-44bd-b330-815af6186a06/appSnaps/5cb608f9-571b-492e-a520-5bfb900a9b9c"
+      ],
+      "state": "running",
+      "stateTransitions": [
+        {
+          "from": "running",
+          "to": [
+            "paused",
+            "cancelled"
+          ]
+        },
+        {
+          "from": "paused",
+          "to": [
+            "running",
+            "cancelled"
+          ]
+        }
+      ],
+      "stateDetails": [],
+      "orderHint": 0,
+      "percentDone": 20.25,
+      "startTime": "2020-08-06T12:24:52.256624Z",
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "modificationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "createdBy": "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    {
+      "type": "application/astra-task",
+      "version": "1.0",
+      "id": "bc1e6561-9e22-406c-8a5a-762f4604da00",
+      "name": "astra.backup",
+      "summary": "Backup",
+      "description": "Task to take a Backup for an application",
+      "service": "nautilus",
+      "userID": "abda967f-cd2c-4237-908e-99266648c553",
+      "resourceID": "736a0978-d55f-4841-8b7c-dc0c0f592c6f",
+      "resourceURI": "/accounts/fdaa655c-15ab-4d34-aa61-1e9098e67be0/k8s/v1/apps/7c8bef49-697e-4fb4-810c-675cef4cf6c9/appBackups/736a0978-d55f-4841-8b7c-dc0c0f592c6f",
+      "resourceCollectionURI": [
+        "/accounts/fdaa655c-15ab-4d34-aa61-1e9098e67be0/topology/v1/clouds/0df3f1a0-7203-4c12-aabf-a7bee6302671/clusters/dfd9de2d-6f0b-437b-a737-c8f7f176cd14/namespaces/f8b58091-4b9c-4c64-9b40-018dbaf7c5de/apps/f670bf11-8850-44bd-b330-815af6186a06/appBackups/736a0978-d55f-4841-8b7c-dc0c0f592c6f",
+        "/accounts/fdaa655c-15ab-4d34-aa61-1e9098e67be0/topology/v1/clouds/0df3f1a0-7203-4c12-aabf-a7bee6302671/clusters/dfd9de2d-6f0b-437b-a737-c8f7f176cd14/namespaces/923708f8-0435-45b5-8c00-fbdef3ffaf25/apps/f670bf11-8850-44bd-b330-815af6186a06/appBackups/736a0978-d55f-4841-8b7c-dc0c0f592c6f"
+      ],
+      "state": "completed",
+      "stateTransitions": [
+        {
+          "from": "running",
+          "to": [
+            "paused",
+            "cancelled"
+          ]
+        },
+        {
+          "from": "paused",
+          "to": [
+            "running",
+            "cancelled"
+          ]
+        }
+      ],
+      "stateDetails": [],
+      "orderHint": 0,
+      "percentDone": 100,
+      "startTime": "2020-08-06T12:24:52.256624Z",
+      "endTime": "2020-08-06T12:26:52.256624Z",
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "modificationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "createdBy": "00000000-0000-0000-0000-000000000000"
+      }
+    }
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+
+
+| invalidParams | vettore[link:#invalidParams["invalidParams"]] | Falso  a| 
+Elenco dei parametri di query non validi
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Errore
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Esempio di risposta di errore
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definizioni
+
+.Vedi definizioni
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+tipo_transizione_stato_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| da | stringa | Vero  a| 
+
+
+
+| a | array[string] | Vero  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+etichetta tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+
+
+
+| valore | stringa | Vero  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadati
+
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema di metadati Astra
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Vero  a| 
+
+
+
+| CreationTimestamp | stringa | Vero  a| 
+
+
+
+| ModificationTimestamp | stringa | Vero  a| 
+
+
+
+| CreatedBy | stringa | Vero  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+task_1.1_get_response_body
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+Tipo di media della risorsa. I valori definiti sono:
+
+* "application/astra-task"
+
+
+
+
+| versione | stringa | Vero  a| 
+Versione della risorsa. I valori definiti sono:
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | stringa | Vero  a| 
+Identificatore univoco globale della risorsa. I valori definiti sono:
+
+* Conforme allo schema UUIDv4
+
+
+
+
+| nome | stringa | Vero  a| 
+Stringa JSON contenente un nome gerarchico in notazione puntata (.) per l'attività. I valori definiti sono:
+
+* Lunghezza minima: 3
+* Lunghezza massima: 127
+* L'espressione regolare definita è: "^(([a-z])_(\.))_([a-z])+$"
+
+
+
+
+| riepilogo | stringa | Vero  a| 
+Stringa JSON contenente il riepilogo in forma abbreviata dell'attività. I valori definiti sono:
+
+* Lunghezza minima: 3
+* Lunghezza massima: 63
+
+
+
+
+| descrizione | stringa | Vero  a| 
+Stringa JSON contenente una descrizione dell'attività. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 511
+
+
+
+
+| servizio | stringa | Falso  a| 
+Stringa JSON contenente il nome del servizio che gestisce l'attività. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 31
+
+
+
+
+| parentTaskID | stringa | Falso  a| 
+Stringa JSON contenente un identificatore univoco globale dell'attività padre dell'attività. I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| ID utente | stringa | Falso  a| 
+Stringa JSON contenente l'ID utente associato a un'attività. Inclusa solo per le attività associate ad azioni avviate dall'utente. I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| ID risorsa | stringa | Vero  a| 
+Stringa JSON contenente un identificatore univoco globale della risorsa associata all'attività. I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| URI della risorsa | stringa | Vero  a| 
+Stringa JSON contenente l'URI associato all'attività. I valori definiti sono:
+
+* Lunghezza minima: 3
+* Lunghezza massima: 4095
+
+
+
+
+| resourceCollectionURI | array[string] | Vero  a| 
+Array JSON di stringhe JSON, ciascuna delle quali indica l'URL di accesso completamente espanso della risorsa associata all'attività. I valori definiti sono:
+
+* Lunghezza minima: 3
+* Lunghezza massima: 4095
+
+
+
+
+| stato | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica lo stato operativo dell'attività. I valori definiti sono:
+
+* "notStarted" - L'attività non è stata avviata.
+* "in esecuzione" - L'attività è in esecuzione.
+* "completato" - L'attività è stata completata.
+* "pausing" - È stata richiesta la pausa dell'attività.
+* "in pausa" - L'attività è in pausa.
+* "annullamento" - È stata richiesta l'annullamento dell'attività.
+* "annullato" - L'attività è stata annullata.
+* "fallito" - L'attività non è riuscita.
+* Lunghezza minima: 1
+* Lunghezza massima: 31
+
+
+
+
+| stateTransitions | vettore[link:#type_astra_stateTransition["tipo_transizione_stato_astra"]] | Vero  a| 
+Array JSON di oggetti JSON, ognuno dei quali rappresenta l'insieme delle transizioni di stato consentite da un dato stato definito. Ogni oggetto JSON contiene i campi "from" e "to", dove il valore di "from" è il nome di uno stato e il valore di "to" è un array degli stati di destinazione consentiti.
+
+* Lunghezza minima: 1
+* Lunghezza massima: 31 Ad esempio: "stateTransitions" : [ { "from": "running", "to": ["paused", "cancelled"] }, { "from": "paused", "to": ["running", "cancelled"] }, ]
+
+
+
+
+| stateDetails | vettore[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Vero  a| 
+Array JSON di oggetti JSON che elenca dettagli aggiuntivi sullo "stato" corrente. Questo campo indica quando sono presenti condizioni o errori che impediscono allo stato effettivo di corrispondere allo stato desiderato. Se non sono disponibili dettagli, questo array sarà vuoto.
+
+* Elementi minimi: 0
+
+
+
+
+| orderHint | numero | Falso  a| 
+Numero JSON che rappresenta l'ordine delle sottoattività. Questo campo può essere utilizzato dal client per ordinare le sottoattività dalla più piccola alla più grande.
+
+
+
+| percentDone | numero | Falso  a| 
+Numero JSON contenente la percentuale di completamento di un'attività in corso. Al termine dell'attività, questo valore viene impostato su "100".
+
+
+
+| startTime | stringa | Falso  a| 
+Stringa JSON contenente il timestamp che indica quando è iniziata l'attività. I valori definiti sono:
+
+* Conforme allo schema di data e ora ISO-8601
+
+
+
+
+| endTime | stringa | Falso  a| 
+Stringa JSON contenente il timestamp che indica quando l'attività è terminata. I valori definiti sono:
+
+* Conforme allo schema di data e ora ISO-8601
+
+
+
+
+| cancelTime | stringa | Falso  a| 
+Stringa JSON contenente il timestamp che indica quando l'attività è stata annullata. I valori definiti sono:
+
+* Conforme allo schema di data e ora ISO-8601
+
+
+
+
+| metadati | link:#type_astra_metadata["type_astra_metadati"] | Vero  a| 
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema di metadati Astra
+
+
+|===
+[role="api-collapsible-fifth-title"]
+elenco_metadati_tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| continuare | stringa | Falso  a| 
+
+
+
+| conta | numero | Falso  a| 
+
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Falso  a| 
+
+
+
+| CreationTimestamp | stringa | Falso  a| 
+
+
+
+| ModificationTimestamp | stringa | Falso  a| 
+
+
+
+| CreatedBy | stringa | Falso  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+Nome del parametro di query non valido
+
+
+
+| motivo | stringa | Vero  a| 
+Motivo per cui il parametro di query non è valido
+
+|===
+====

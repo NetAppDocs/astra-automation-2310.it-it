@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/application_asset_endpoints.html 
+summary: 'Endpoint delle risorse applicative dell"API Astra (ACC)' 
+---
+= Endpoint delle risorse applicative dell'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Application Asset fornisce l'accesso a raccolte interne di informazioni sullo stato utilizzate per gestire le applicazioni.

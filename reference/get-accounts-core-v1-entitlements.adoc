@@ -1,0 +1,548 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-entitlements.html 
+summary: Elenca tutte le autorizzazioni 
+---
+= Elenca tutte le autorizzazioni
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/entitlements`#
+
+Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
+
+
+
+== Parametri
+
+[cols="5*"]
+|===
+| Nome | Tipo | In | Obbligatorio | Descrizione 
+
+
+| ID account | stringa | percorso | Vero  a| 
+ID della risorsa account contenitore
+
+* esempio: {{.Account}}
+
+
+
+
+| includi | stringa | query | Falso  a| 
+Indica quali campi devono essere restituiti durante l'elenco di una raccolta.
+
+Esempi di URL: "include=id", "include=id,name"
+
+Esempi OpenAPI: "id"
+
+* esempio: prodotto,entitlementType,entitlementValue,allocazione
+
+
+
+
+| limite | stringa | query | Falso  a| 
+Indica il numero massimo di risorse da restituire quando si elenca una raccolta.
+
+Esempi di URL: "limit=2"
+
+Esempi OpenAPI: "2"
+
+
+
+| filtro | stringa | query | Falso  a| 
+Indica quali campi devono essere confrontati per restituire una risorsa durante l'elenco di una collezione.
+
+Gli operatori supportati sono:
+
+* eq - Uguaglianza
+* lt/gt - Minore di/Maggiore di
+* lte/gte - Minore o uguale a/Maggiore o uguale a
+
+
+Esempio di URL: "filter=field%20eq%20%27value%27"
+
+Esempi OpenAPI: "field eq 'value'"
+
+
+
+| OrderBy | stringa | query | Falso  a| 
+Indica l'ordine di visualizzazione delle risorse durante l'elenco di una collezione.
+
+Esempi di URL: "orderBy=name", "orderBy=name%20desc"
+
+Esempi OpenAPI: "name desc"
+
+
+
+| saltare | stringa | query | Falso  a| 
+Indica il numero di risorse da saltare durante l'elenco di una raccolta.
+
+Esempi di URL: "skip=1"
+
+Esempi OpenAPI: "1"
+
+
+
+| conta | stringa | query | Falso  a| 
+Indica se il numero totale di risorse deve essere restituito nell'oggetto metadata.
+
+Esempi di URL: "count=true"
+
+Esempi OpenAPI: "true"
+
+
+
+| continuare |  | query | Falso  a| 
+Indica il token da cui riprendere l'elenco.
+
+Esempi di URL: "continue=+++<continue token="" from="" collection="" metadata="">+++"+++</continue>+++
+
+Esempi OpenAPI: "+++<continue token="" from="" collection="" metadata="">+++"+++</continue>+++</continue>
+
+|===
+
+
+== Risposta
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| elementi | array[Qualsiasi tra: link:#entitlement_1_0_get_response_body["entitlement_1.0_get_response_body"], array[]] | Vero  a| 
+
+
+
+| metadati | link:#type_astra_metadata_list["elenco_metadati_tipo_astra"] | Vero  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-entitlements",
+  "version": "1.0",
+  "items": [
+    [
+      "Astra SDS",
+      "capacity",
+      "2",
+      null
+    ],
+    [
+      "Astra Enterprise",
+      "clusters",
+      "100",
+      "5e9fe8f7-4c54-441c-ac94-fd8451f9ca38"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+
+
+| invalidParams | vettore[link:#invalidParams["invalidParams"]] | Falso  a| 
+Elenco dei parametri di query non validi
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Errore
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Esempio di risposta di errore
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definizioni
+
+.Vedi definizioni
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+etichetta tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+
+
+
+| valore | stringa | Vero  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadati
+
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema di metadati Astra
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Vero  a| 
+
+
+
+| CreationTimestamp | stringa | Vero  a| 
+
+
+
+| ModificationTimestamp | stringa | Vero  a| 
+
+
+
+| CreatedBy | stringa | Vero  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+entitlement_1.0_get_response_body
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+Tipo di media della risorsa. I valori definiti sono:
+
+* "application/astra-entitlement"
+
+
+
+
+| versione | stringa | Vero  a| 
+Versione della risorsa. I valori definiti sono:
+
+* "1,0"
+
+
+
+
+| id | stringa | Vero  a| 
+Identificatore univoco globale della risorsa. I valori definiti sono:
+
+* Conforme allo schema UUIDv4
+
+
+
+
+| allocazione | stringa | Falso  a| 
+Stringa JSON contenente l'ID dell'oggetto a cui è assegnato il diritto. Presente solo quando il diritto viene assegnato. Il contenuto della stringa non è convalidato dallo schema.
+
+
+
+| prodotto | stringa | Falso  a| 
+Stringa JSON contenente la stringa del prodotto estratta dalla licenza o dall'abbonamento. Il contenuto della stringa non è convalidato dallo schema.
+
+
+
+| productVersion | stringa | Falso  a| 
+Stringa JSON contenente la stringa di versione estratta dalla licenza o dall'abbonamento. Il contenuto della stringa non è convalidato dallo schema.
+
+
+
+| entitlementType | stringa | Vero  a| 
+Stringa JSON contenente il tipo di diritto. Questo viene estratto dalla licenza o dall'abbonamento. Il contenuto della stringa non è convalidato dallo schema.
+
+
+
+| entitlementValue | stringa | Vero  a| 
+Stringa JSON contenente la capacità associata al diritto. Il contenuto della stringa non è convalidato dallo schema.
+
+
+
+| entitlementConsumption | stringa | Falso  a| 
+Stringa JSON contenente la quantità di capacità associata al diritto attualmente in uso. Il contenuto della stringa non è convalidato dallo schema.
+
+
+
+| sourceLicense | stringa | Falso  a| 
+Stringa JSON contenente l'ID dell'oggetto licenza da cui proviene il diritto di utilizzo. I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| sourceSubscription | stringa | Falso  a| 
+Stringa JSON contenente l'ID dell'oggetto di sottoscrizione da cui deriva il diritto. I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| validFromTimestamp | stringa | Falso  a| 
+Stringa JSON contenente un timestamp che indica quando il diritto diventa valido. I valori definiti sono:
+
+* Conforme allo schema di data e ora ISO-8601
+
+
+
+
+| validUntilTimestamp | stringa | Falso  a| 
+Stringa JSON contenente un timestamp che indica quando il diritto non è più valido. I valori definiti sono:
+
+* Conforme allo schema di data e ora ISO-8601
+
+
+
+
+| metadati | link:#type_astra_metadata["type_astra_metadati"] | Vero  a| 
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema di metadati Astra
+
+
+|===
+[role="api-collapsible-fifth-title"]
+elenco_metadati_tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| continuare | stringa | Falso  a| 
+
+
+
+| conta | numero | Falso  a| 
+
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Falso  a| 
+
+
+
+| CreationTimestamp | stringa | Falso  a| 
+
+
+
+| ModificationTimestamp | stringa | Falso  a| 
+
+
+
+| CreatedBy | stringa | Falso  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+Nome del parametro di query non valido
+
+
+
+| motivo | stringa | Vero  a| 
+Motivo per cui il parametro di query non è valido
+
+|===
+====

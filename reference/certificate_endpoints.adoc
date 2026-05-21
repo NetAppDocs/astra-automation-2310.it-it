@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/certificate_endpoints.html 
+summary: 'Endpoint del certificato Astra API (ACC)' 
+---
+= Endpoint del certificato Astra API (ACC)
+:allow-uri-read: 
+
+
+L'API Certificate App rappresenta i certificati considerati attendibili dall'amministratore, utilizzati per stabilire connessioni in uscita.

@@ -1,0 +1,586 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-certificates-.html 
+summary: Recupera un certificato 
+---
+= Recupera un certificato
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/certificates/{certificate_id}`#
+
+Restituisce la risorsa API del certificato memorizzata nel corpo della risposta JSON.
+
+
+
+== Parametri
+
+[cols="5*"]
+|===
+| Nome | Tipo | In | Obbligatorio | Descrizione 
+
+
+| ID account | stringa | percorso | Vero  a| 
+ID della risorsa account contenitore
+
+* esempio: {{.Account}}
+
+
+
+
+| ID certificato | stringa | percorso | Vero  a| 
+ID della raccolta di certificati da elencare
+
+|===
+
+
+== Risposta
+
+[source]
+----
+Status: 200, Returns the stored Certificate API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+Tipo di media della risorsa. I valori definiti sono:
+
+* "application/astra-certificate"
+
+
+
+
+| versione | stringa | Vero  a| 
+Versione della risorsa. I valori definiti sono:
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | stringa | Vero  a| 
+Identificatore univoco globale della risorsa. I valori definiti sono:
+
+* Conforme allo schema UUIDv4
+
+
+
+
+| certUse | stringa | Vero  a| 
+Stringa JSON che indica l'utilizzo del certificato. Se non specificato, il valore predefinito è "rootCA". I valori definiti sono:
+
+* "rootCA" - Il certificato è un certificato di un'autorità di certificazione (CA) utilizzato per considerare attendibile qualsiasi certificato firmato da tale CA.
+* "intermediateCA" - Il certificato è un certificato CA intermedio rilasciato da una CA radice.
+
+
+
+
+| certificato | stringa | Vero  a| 
+Stringa JSON contenente un certificato in formato PKCS-11 codificato in base64 (PEM). I valori definiti sono:
+
+* Conforme allo schema di dati codificati in base64
+
+
+
+
+| cn | stringa | Vero  a| 
+Stringa JSON contenente un nome comune estratto dal certificato. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 511
+
+
+
+
+| expiryTimestamp | stringa | Vero  a| 
+Stringa JSON contenente un timestamp che indica quando il certificato scade. I valori definiti sono:
+
+* Conforme allo schema di data e ora ISO-8601
+
+
+
+
+| isSelfSigned | stringa | Vero  a| 
+Stringa JSON che indica se il certificato è autofirmato. Se non specificato in fase di creazione, il valore predefinito è "false". In fase di aggiornamento:
+
+* Se viene fornito un valore, questo verrà utilizzato.
+* Se il valore non viene fornito e il campo "cert" è incluso nell'aggiornamento, il valore verrà impostato su "false".
+* Se il valore non viene fornito e il campo "cert" non è incluso nell'aggiornamento, verrà mantenuto il valore esistente. I valori definiti sono:
+* "vero" - Il certificato è autofirmato.
+* "false" - Il certificato non è autofirmato.
+
+
+
+
+| trustState | stringa | Vero  a| 
+Stringa JSON contenente uno di un insieme di valori enumerati che indicano se il certificato è attendibile. I valori definiti sono:
+
+* "non attendibile" - Il certificato non è attendibile.
+* "attendibile" - Il certificato è contrassegnato come attendibile.
+* "scaduto" - Il certificato è scaduto, quindi non è né attendibile né non attendibile.
+
+
+
+
+| trustStateTransitions | vettore[link:#type_astra_stateTransition["tipo_transizione_stato_astra"]] | Vero  a| 
+Array JSON di oggetti JSON, ognuno dei quali rappresenta l'insieme delle transizioni di stato consentite da un dato stato definito. Ogni oggetto JSON contiene i campi "from" e "to", dove il valore di "from" è il nome di uno stato e il valore di "to" è un array degli stati di destinazione consentiti.
+
+
+
+| trustStateDesired | stringa | Falso  a| 
+Stringa JSON contenente un valore che indica se il certificato è attendibile. Se non specificato in fase di creazione, il valore predefinito è "attendibile". I valori definiti sono:
+
+* "non attendibile" - Il certificato non è attendibile.
+* "attendibile" - Il certificato è contrassegnato come attendibile.
+
+
+
+
+| trustStateDetails | vettore[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Vero  a| 
+Array JSON di oggetti JSON che elenca ulteriori dettagli sullo stato di attendibilità del certificato. Se non sono disponibili dettagli, questo array sarà vuoto.
+
+* Elementi minimi: 0
+
+
+
+
+| metadati | link:#type_astra_metadata_update["aggiornamento dei metadati di tipo Astra"] | Vero  a| 
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema dei metadati di Astra. Se non specificato in fase di creazione, verrà creato un oggetto metadati senza etichette. Se non specificato in fase di aggiornamento, le etichette dell'oggetto metadati, creationTimestamp e createdBy, verranno conservate senza modifiche.
+
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-certificate",
+  "version": "1.1",
+  "id": "a26cbed4-2183-58ce-aa19-e37ca8b0531a",
+  "certUse": "rootCA",
+  "cert": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZyVENDQTVXZ0F3MVJHbnFGbUJSSWRyV1kwPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0t",
+  "cn": "vcenter.example.com",
+  "expiryTimestamp": "2022-03-23T16:48:38.5233461Z",
+  "isSelfSigned": "true",
+  "trustState": "untrusted",
+  "trustStateTransitions": [
+    {
+      "from": "untrusted",
+      "to": [
+        "trusted"
+      ]
+    },
+    {
+      "from": "trusted",
+      "to": [
+        "untrusted"
+      ]
+    }
+  ],
+  "trustStateDetails": [],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+
+
+| invalidParams | vettore[link:#invalidParams["invalidParams"]] | Falso  a| 
+Elenco dei parametri di query non validi
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 503, Service unavailable
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/41",
+  "title": "Service not ready",
+  "detail": "Currently, the service can't respond to this request.",
+  "status": "503"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/164",
+  "title": "Requested resource in unexpected state",
+  "detail": "The requested resource can't be returned because it isn't in the expected state. Wait for the conflict to be resolved and retry the request.",
+  "status": "409"
+}
+----
+====
+
+
+== Errore
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Esempio di risposta di errore
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definizioni
+
+.Vedi definizioni
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+tipo_transizione_stato_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| da | stringa | Vero  a| 
+
+
+
+| a | array[string] | Vero  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+etichetta tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+
+
+
+| valore | stringa | Vero  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+aggiornamento dei metadati di tipo Astra
+
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema dei metadati di Astra. Se non specificato in fase di creazione, verrà creato un oggetto metadati senza etichette. Se non specificato in fase di aggiornamento, le etichette dell'oggetto metadati, creationTimestamp e createdBy, verranno conservate senza modifiche.
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Falso  a| 
+
+
+
+| CreationTimestamp | stringa | Falso  a| 
+
+
+
+| ModificationTimestamp | stringa | Falso  a| 
+
+
+
+| CreatedBy | stringa | Falso  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+Nome del parametro di query non valido
+
+
+
+| motivo | stringa | Vero  a| 
+Motivo per cui il parametro di query non è valido
+
+|===
+====

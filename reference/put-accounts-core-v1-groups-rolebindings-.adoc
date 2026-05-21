@@ -1,0 +1,502 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/put-accounts-core-v1-groups-rolebindings-.html 
+summary: 'Modificare un"associazione di ruolo per un gruppo' 
+---
+= Modificare un'associazione di ruolo per un gruppo
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/roleBindings/{roleBinding_id}`#
+
+Sostituisce l'intera risorsa memorizzata con il corpo della richiesta JSON fornito, preservando i valori chiave non modificabili dall'utente.
+
+
+
+== Parametri
+
+[cols="5*"]
+|===
+| Nome | Tipo | In | Obbligatorio | Descrizione 
+
+
+| ID account | stringa | percorso | Vero  a| 
+ID della risorsa account contenitore
+
+* esempio: {{.Account}}
+
+
+
+
+| ID gruppo | stringa | percorso | Vero  a| 
+ID della risorsa del gruppo contenitore
+
+
+
+| roleBinding_id | stringa | percorso | Vero  a| 
+ID della collezione roleBinding da elencare
+
+|===
+
+
+== Corpo della richiesta
+
+Sostituisce l'intera risorsa memorizzata con il corpo della richiesta JSON fornito, preservando i valori chiave non modificabili dall'utente.
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+Tipo di media della risorsa. I valori definiti sono:
+
+* "application/astra-roleBinding"
+
+
+
+
+| versione | stringa | Vero  a| 
+Versione della risorsa. I valori definiti sono:
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | stringa | Falso  a| 
+Identificatore univoco globale della risorsa. I valori definiti sono:
+
+* Conforme allo schema UUIDv4
+
+
+
+
+| ID utente | stringa | Falso  a| 
+Stringa JSON contenente un ID risorsa utente. I valori definiti sono:
+
+* Conforme allo schema di identificazione Astra. Se non specificato in fase di creazione, verrà utilizzato un UUID nullo. In fase di creazione è possibile specificare solo userID o groupID.
+
+
+
+
+| ID gruppo | stringa | Falso  a| 
+Stringa JSON contenente un ID risorsa di gruppo. I valori definiti sono:
+
+* Conforme allo schema di identificazione Astra. Se non specificato in fase di creazione, verrà utilizzato un UUID nullo. In fase di creazione è possibile specificare solo userID o groupID.
+
+
+
+
+| ID account | stringa | Falso  a| 
+Stringa JSON contenente l'ID di una risorsa account. Per la creazione, questo deve corrispondere all'ID dell'account nell'URI della richiesta. I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| ruolo | stringa | Vero  a| 
+Stringa JSON contenente uno dei quattro ruoli definiti. I valori definiti sono:
+
+* "spettatore"
+* "membro"
+* "admin"
+* "proprietario"
+
+
+
+
+| roleConstraints | array[string] | Falso  a| 
+Array JSON di stringhe JSON che specificano l'ambito dell'assegnazione del ruolo. I valori definiti sono:
+
+* Conforme allo schema dei vincoli di ruolo di Astra. Se non specificato in fase di creazione, il valore verrà impostato su un array di dimensione 1 contenente la stringa "*" che rappresenta "ambito completo". Se non specificato in fase di aggiornamento, il valore verrà mantenuto senza modifiche. Un array vuoto rappresenta "nessun ambito". Esempi:
+* 
++
+= Consenti l'accesso a qualsiasi risorsa: "roleConstraints": ["*"]
+
+* 
++
+= nega l'accesso a tutte le risorse: "roleConstraints": []
+
+* 
++
+= Consenti l'accesso solo a una risorsa namespace specifica: "roleConstraints": [ "namespaces:id='6fa2f917-f730-41b8-9c15-17f531843b31'" ]
+
+* 
++
+= Consenti l'accesso a uno specifico namespace e a tutto ciò che contiene: "roleConstraints": [ "namespaces:id='6fa2f917-f730-41b8-9c15-17f531843b31'.*" ]
+
+* 
++
+= Consenti l'accesso a tutti i namespace etichettati "dev" in qualsiasi cluster in qualsiasi cloud e a tutto ciò che si trova al loro interno: "roleConstraints": [ "namespaces:kubernetesLabels='http://dev.example.com/appname=dev["dev.example.com/appname=dev'.*"]" ]
+
+* 
++
+= Consenti l'accesso solo a tutte le risorse dello spazio dei nomi: "roleConstraints": [ "namespaces:*" ]
+
+* 
++
+= Consenti l'accesso a tutte le risorse dello spazio dei nomi e a tutto ciò che si trova al loro interno: ""roleConstraints": [ "namespaces:__.__" ]
+
+
+
+
+
+| metadati | link:#type_astra_metadata_update["aggiornamento dei metadati di tipo Astra"] | Falso  a| 
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema dei metadati di Astra. Se non specificato in fase di creazione, verrà creato un oggetto metadati senza etichette. Se non specificato in fase di aggiornamento, le etichette dell'oggetto metadati, creationTimestamp e createdBy, verranno conservate senza modifiche.
+
+
+|===
+.Esempio di richiesta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-roleBinding",
+  "version": "1.1",
+  "role": "member",
+  "roleConstraints": [
+    "namespaces:id='c832e1dc-d7c3-464e-9c62-47bf91c46ce8'"
+  ]
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 204, Indicates if the roleBinding resource was updated.
+----
+
+
+== Risposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+
+
+| invalidFields | vettore[link:#invalidFields["invalidFields"]] | Falso  a| 
+Elenco dei campi non validi del corpo della richiesta
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+
+
+| invalidFields | vettore[link:#invalidFields["invalidFields"]] | Falso  a| 
+Elenco dei campi non validi del corpo della richiesta
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Errore
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Esempio di risposta di errore
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/1",
+  "title": "Resource not found",
+  "detail": "The resource specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definizioni
+
+.Vedi definizioni
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+etichetta tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+
+
+
+| valore | stringa | Vero  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+aggiornamento dei metadati di tipo Astra
+
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema dei metadati di Astra. Se non specificato in fase di creazione, verrà creato un oggetto metadati senza etichette. Se non specificato in fase di aggiornamento, le etichette dell'oggetto metadati, creationTimestamp e createdBy, verranno conservate senza modifiche.
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Falso  a| 
+
+
+
+| CreationTimestamp | stringa | Falso  a| 
+
+
+
+| ModificationTimestamp | stringa | Falso  a| 
+
+
+
+| CreatedBy | stringa | Falso  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+Nome del parametro di query non valido
+
+
+
+| motivo | stringa | Vero  a| 
+Motivo per cui il parametro di query non è valido
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+Nome del campo del corpo della richiesta non valido
+
+
+
+| motivo | stringa | Vero  a| 
+Motivo per cui il campo del corpo della richiesta non è valido
+
+|===
+====

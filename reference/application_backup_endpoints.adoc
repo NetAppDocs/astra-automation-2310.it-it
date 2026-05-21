@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/application_backup_endpoints.html 
+summary: 'Endpoint di backup dell"applicazione Astra API (ACC)' 
+---
+= Endpoint di backup dell'applicazione Astra API (ACC)
+:allow-uri-read: 
+
+
+L'API di backup delle applicazioni consente a un utente di creare e visualizzare i backup di un'applicazione gestita.

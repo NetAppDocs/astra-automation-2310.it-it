@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/schedule_endpoints.html 
+summary: 'Endpoint di pianificazione dell"API Astra (ACC)' 
+---
+= Endpoint di pianificazione dell'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Schedule consente di definire diverse operazioni di protezione dei dati programmate.

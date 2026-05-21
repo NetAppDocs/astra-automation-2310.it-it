@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/license_endpoints.html 
+summary: 'Endpoint di licenza Astra API (ACC)' 
+---
+= Endpoint di licenza Astra API (ACC)
+:allow-uri-read: 
+
+
+L'API delle licenze rappresenta le licenze caricate nell'account.

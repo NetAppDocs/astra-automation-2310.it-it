@@ -1,0 +1,509 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-clouds.html 
+summary: Elenca tutti i cloud 
+---
+= Elenca tutti i cloud
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds`#
+
+Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
+
+
+
+== Parametri
+
+[cols="5*"]
+|===
+| Nome | Tipo | In | Obbligatorio | Descrizione 
+
+
+| ID account | stringa | percorso | Vero  a| 
+ID della risorsa account contenitore
+
+* esempio: {{.Account}}
+
+
+
+
+| includi | stringa | query | Falso  a| 
+Indica quali campi devono essere restituiti durante l'elenco di una raccolta.
+
+Esempi di URL: "include=id", "include=id,name"
+
+Esempi OpenAPI: "id"
+
+* esempio: id,nome,stato
+
+
+
+
+| limite | stringa | query | Falso  a| 
+Indica il numero massimo di risorse da restituire quando si elenca una raccolta.
+
+Esempi di URL: "limit=2"
+
+Esempi OpenAPI: "2"
+
+
+
+| filtro | stringa | query | Falso  a| 
+Indica quali campi devono essere confrontati per restituire una risorsa durante l'elenco di una collezione.
+
+Gli operatori supportati sono:
+
+* eq - Uguaglianza
+* lt/gt - Minore di/Maggiore di
+* lte/gte - Minore o uguale a/Maggiore o uguale a
+
+
+Esempio di URL: "filter=field%20eq%20%27value%27"
+
+Esempi OpenAPI: "field eq 'value'"
+
+|===
+
+
+== Risposta
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| elementi | array[Qualsiasi tra: link:#cloud_1_1_get_response_body["cloud_1.1_get_response_body"], array[]] | Vero  a| 
+
+
+
+| metadati | link:#type_astra_metadata_list["elenco_metadati_tipo_astra"] | Vero  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-clouds",
+  "version": "1.1",
+  "items": [
+    [
+      "2f9e63fa-8ba8-414a-a57c-0f3042b80682",
+      "gcp",
+      "discovering"
+    ],
+    [
+      "f723febe-b167-44dd-b07d-c075a8bbe4f3",
+      "aws",
+      "failed"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+
+
+| invalidParams | vettore[link:#invalidParams["invalidParams"]] | Falso  a| 
+Elenco dei parametri di query non validi
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Errore
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Esempio di risposta di errore
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definizioni
+
+.Vedi definizioni
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+etichetta tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+
+
+
+| valore | stringa | Vero  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+aggiornamento dei metadati di tipo Astra
+
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema dei metadati di Astra. Se non specificato in fase di creazione, verrà creato un oggetto metadati senza etichette. Se non specificato in fase di aggiornamento, le etichette dell'oggetto metadati, creationTimestamp e createdBy, verranno conservate senza modifiche.
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Falso  a| 
+
+
+
+| CreationTimestamp | stringa | Falso  a| 
+
+
+
+| ModificationTimestamp | stringa | Falso  a| 
+
+
+
+| CreatedBy | stringa | Falso  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+cloud_1.1_get_response_body
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+Tipo di media della risorsa. I valori definiti sono:
+
+* "application/astra-cloud"
+
+
+
+
+| versione | stringa | Vero  a| 
+Versione della risorsa. I valori definiti sono:
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | stringa | Vero  a| 
+Identificatore univoco globale della risorsa. I valori definiti sono:
+
+* Conforme allo schema UUIDv4
+
+
+
+
+| nome | stringa | Vero  a| 
+Stringa JSON contenente il nome del cloud. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 63
+* Questa stringa viene convalidata internamente per prevenire attacchi XSS, Unicode, directory traversal e SQL-injection
+
+
+
+
+| stato | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica lo stato operativo del cloud. I valori definiti sono:
+
+* "in sospeso" - Il cloud è programmato per la scoperta
+* "scoperta" - Il cloud è in fase di scoperta
+* "provisioning" - Il cloud è in fase di provisioning
+* "in esecuzione" - Il cloud è in esecuzione normalmente
+* "fallito" - Il cloud si trova in uno stato di errore permanente
+* "rimosso" - Il cloud non è attualmente accessibile
+* "sconosciuto" - Non è possibile determinare lo stato del cloud
+
+
+
+
+| stateUnready | array[string] | Vero  a| 
+Array JSON di stringhe JSON, ognuna delle quali indica il motivo per cui un cloud non è in grado di passare allo stato "in esecuzione" o perché è passato allo stato "non riuscito". I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 127
+
+
+
+
+| cloudType | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica il tipo di cloud. I valori definiti sono:
+
+* "gcp" - Il cloud è fornito da Google
+* "azure" - Il cloud è fornito da Microsoft
+* "aws" - Il cloud è fornito da Amazon
+* "privato" - Il cloud è gestito dal cliente
+
+
+
+
+| ID credenziale | stringa | Falso  a| 
+Stringa JSON contenente un valore che indica l'ID della credenziale che contiene l'account di servizio per il cloud. Questo è necessario per cloudType "gcp", "azure" e "aws". I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| defaultBucketID | stringa | Falso  a| 
+Stringa JSON contenente l'ID di un bucket da utilizzare di default durante la creazione di backup per le applicazioni nel cloud. Questo parametro è necessario quando si clonano applicazioni tra cluster e viene utilizzato di default se non viene specificato un bucket durante la creazione di backup e pianificazioni. I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| metadati | link:#type_astra_metadata_update["aggiornamento dei metadati di tipo Astra"] | Vero  a| 
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema dei metadati di Astra. Se non specificato in fase di creazione, verrà creato un oggetto metadati senza etichette. Se non specificato in fase di aggiornamento, le etichette dell'oggetto metadati, creationTimestamp e createdBy, verranno conservate senza modifiche.
+
+
+|===
+[role="api-collapsible-fifth-title"]
+elenco_metadati_tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| continuare | stringa | Falso  a| 
+
+
+
+| conta | numero | Falso  a| 
+
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Falso  a| 
+
+
+
+| CreationTimestamp | stringa | Falso  a| 
+
+
+
+| ModificationTimestamp | stringa | Falso  a| 
+
+
+
+| CreatedBy | stringa | Falso  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+Nome del parametro di query non valido
+
+
+
+| motivo | stringa | Vero  a| 
+Motivo per cui il parametro di query non è valido
+
+|===
+====

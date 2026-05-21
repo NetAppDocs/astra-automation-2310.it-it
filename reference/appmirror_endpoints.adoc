@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/appmirror_endpoints.html 
+summary: 'Endpoint AppMirror API di Astra (ACC)' 
+---
+= Endpoint AppMirror API di Astra (ACC)
+:allow-uri-read: 
+
+
+L'API AppMirror consente la gestione delle relazioni AppMirror.

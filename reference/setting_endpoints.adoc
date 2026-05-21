@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/setting_endpoints.html 
+summary: 'Endpoint di impostazione dell"API Astra (ACC)' 
+---
+= Endpoint di impostazione dell'API Astra (ACC)
+:allow-uri-read: 
+
+
+Un'impostazione dell'account è una raccolta di coppie chiave/valore importanti per una funzionalità nota in un account Astra. L'API delle impostazioni fornisce l'accesso a informazioni importanti su un'impostazione dell'account.

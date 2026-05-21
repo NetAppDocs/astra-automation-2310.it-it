@@ -1,0 +1,460 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-asups-.html 
+summary: Recupera una risorsa ASUP 
+---
+= Recupera una risorsa ASUP
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/asups/{asup_id}`#
+
+Restituisce la risorsa API ASUP memorizzata nel corpo della risposta JSON. Se il bundle AutoSupport "creationState" è "completed" o "partial", il bundle AutoSupport può essere scaricato specificando un'intestazione Accept contenente "_/_" o "application/gzip".
+
+
+
+== Parametri
+
+[cols="5*"]
+|===
+| Nome | Tipo | In | Obbligatorio | Descrizione 
+
+
+| ID account | stringa | percorso | Vero  a| 
+ID della risorsa account contenitore
+
+* esempio: {{.Account}}
+
+
+
+
+| asup_id | stringa | percorso | Vero  a| 
+ID della raccolta asup da elencare
+
+|===
+
+
+== Risposta
+
+[source]
+----
+Status: 200, Returns the stored ASUP API resource in the JSON response body. If the AutoSupport bundle "creationState" is "completed" or "partial", the AutoSupport bundle can be downloaded by specifying an Accept header containing "*/*" or "application/gzip".
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+Tipo di media della risorsa. I valori definiti sono:
+
+* "application/astra-asup"
+
+
+
+
+| versione | stringa | Vero  a| 
+Versione della risorsa. I valori definiti sono:
+
+* "1,0"
+
+
+
+
+| id | stringa | Vero  a| 
+Identificatore univoco globale della risorsa. I valori definiti sono:
+
+* Conforme allo schema UUIDv4
+
+
+
+
+| creationState | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica lo stato di creazione del bundle AutoSupport. Per gli stati "completed" e "partial", il bundle può essere scaricato eseguendo una richiesta GET all'URI della risorsa con un'intestazione Accept contenente "_/*_" o "application/gzip". I valori definiti sono:
+
+* "in esecuzione" - AutoSupport bundle la generazione è in corso normalmente.
+* "completato" - la generazione del pacchetto AutoSupport è stata completata.
+* "Parziale" - AutoSupport bundle la generazione del pacchetto è stata completata, ma alcuni dati non sono stati inclusi nel pacchetto.
+* "fallito" - AutoSupport bundle la generazione del pacchetto si trova in uno stato di errore permanente.
+
+
+
+
+| creationStateDetails | vettore[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Vero  a| 
+Array JSON di oggetti JSON che elenca ulteriori dettagli sul motivo per cui "creationState" è passato allo stato "parziale" o "non riuscito". Se non sono disponibili dettagli, questo array sarà vuoto.
+
+* Elementi minimi: 0
+
+
+
+
+| caricamento | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica se caricare il AutoSupport bundle dopo la sua corretta creazione. I valori definiti sono:
+
+* "vero" - Carica il AutoSupport bundle.
+* "falso" - Non caricare il AutoSupport bundle.
+
+
+
+
+| uploadState | stringa | Falso  a| 
+Stringa JSON contenente un valore che indica lo stato del caricamento del bundle AutoSupport se è stato richiesto. I valori definiti sono:
+
+* "in sospeso" - il caricamento del bundle AutoSupport è programmato per quando la creazione del bundle AutoSupport è completata ("creationState" è "in esecuzione").
+* "bloccato" - il caricamento del bundle AutoSupport non è stato tentato perché il bundle non è stato creato ("creationState" è "non riuscito") oppure il caricamento è stato bloccato perché non esiste una licenza.
+* "in esecuzione" - il caricamento del bundle AutoSupport è in corso normalmente ("creationState" è "completato" o "parziale").
+* "Completato" - AutoSupport bundle upload è stato completato.
+* "non riuscito" - AutoSupport bundle upload è in uno stato di errore permanente.
+
+
+
+
+| uploadStateDetails | vettore[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Falso  a| 
+Array JSON di oggetti JSON che elenca ulteriori dettagli sul motivo per cui "uploadState" è passato a "failed". Se non sono disponibili dettagli, questo array sarà vuoto.
+
+* Elementi minimi: 0
+
+
+
+
+| triggerType | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica cosa ha attivato la creazione della risorsa ASUP. I valori definiti sono:
+
+* "manuale" - La risorsa ASUP e il relativo AutoSupport bundle sono stati creati manualmente.
+* "programmato" - La risorsa ASUP e il relativo AutoSupport bundle sono stati creati secondo una pianificazione configurata.
+
+
+
+
+| dataWindowStart | stringa | Vero  a| 
+Stringa JSON contenente un timestamp che indica l'ora di inizio della finestra di raccolta di dati del bundle AutoSupport. Il valore predefinito è 24 ore prima del valore della chiave "dataWindowEnd". Deve verificarsi prima del valore della chiave "dataWindowEnd". Il massimo è 7 giorni prima dell'ora corrente della richiesta. I valori definiti sono:
+
+* Conforme allo schema di data e ora ISO-8601
+
+
+
+
+| dataWindowEnd | stringa | Vero  a| 
+Stringa JSON contenente un timestamp che indica l'ora di fine della finestra di raccolta di dati del bundle AutoSupport. Il valore predefinito è l'ora corrente della richiesta. I valori definiti sono:
+
+* Conforme allo schema di data e ora ISO-8601
+
+
+
+
+| metadati | link:#type_astra_metadata["type_astra_metadati"] | Vero  a| 
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema dei metadati di Astra. Se non specificato in fase di creazione, verrà creato un oggetto metadati senza etichette.
+
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-asup",
+  "version": "1.0",
+  "id": "9950003f-a1c7-5ca7-8930-06eec25f60aa",
+  "creationState": "completed",
+  "creationStateDetails": [],
+  "upload": "false",
+  "triggerType": "manual",
+  "dataWindowStart": "2020-08-05T12:24:00.000000Z",
+  "dataWindowEnd": "2020-08-06T12:24:52.000000Z",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+
+
+| invalidParams | vettore[link:#invalidParams["invalidParams"]] | Falso  a| 
+Elenco dei parametri di query non validi
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Errore
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Esempio di risposta di errore
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definizioni
+
+.Vedi definizioni
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+etichetta tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+
+
+
+| valore | stringa | Vero  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadati
+
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema dei metadati di Astra. Se non specificato in fase di creazione, verrà creato un oggetto metadati senza etichette.
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Vero  a| 
+
+
+
+| CreationTimestamp | stringa | Vero  a| 
+
+
+
+| ModificationTimestamp | stringa | Vero  a| 
+
+
+
+| CreatedBy | stringa | Vero  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+Nome del parametro di query non valido
+
+
+
+| motivo | stringa | Vero  a| 
+Motivo per cui il parametro di query non è valido
+
+|===
+====

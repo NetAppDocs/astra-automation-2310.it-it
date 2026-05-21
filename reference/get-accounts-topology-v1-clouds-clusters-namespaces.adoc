@@ -1,0 +1,621 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-clouds-clusters-namespaces.html 
+summary: Elenca gli spazi dei nomi per un cloud 
+---
+= Elenca gli spazi dei nomi per un cloud
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/namespaces`#
+
+Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
+
+
+
+== Parametri
+
+[cols="5*"]
+|===
+| Nome | Tipo | In | Obbligatorio | Descrizione 
+
+
+| ID account | stringa | percorso | Vero  a| 
+ID della risorsa account contenitore
+
+* esempio: {{.Account}}
+
+
+
+
+| cloud_id | stringa | percorso | Vero  a| 
+ID della risorsa cloud
+
+
+
+| cluster_id | stringa | percorso | Vero  a| 
+ID della risorsa cluster contenitore
+
+
+
+| includi | stringa | query | Falso  a| 
+Indica quali campi devono essere restituiti durante l'elenco di una raccolta.
+
+Esempi di URL: "include=id", "include=id,name"
+
+Esempi OpenAPI: "id"
+
+* esempio: id,nome,kubernetesLabels
+
+
+
+
+| limite | stringa | query | Falso  a| 
+Indica il numero massimo di risorse da restituire quando si elenca una raccolta.
+
+Esempi di URL: "limit=2"
+
+Esempi OpenAPI: "2"
+
+
+
+| filtro | stringa | query | Falso  a| 
+Indica quali campi devono essere confrontati per restituire una risorsa durante l'elenco di una collezione.
+
+Gli operatori supportati sono:
+
+* eq - Uguaglianza
+* lt/gt - Minore di/Maggiore di
+* lte/gte - Minore o uguale a/Maggiore o uguale a
+
+
+Esempio di URL: "filter=field%20eq%20%27value%27"
+
+Esempi OpenAPI: "field eq 'value'"
+
+|===
+
+
+== Risposta
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| elementi | array[Qualsiasi tra: link:#namespace_1_1_get_response_body["namespace_1.1_get_response_body"], array[]] | Vero  a| 
+
+
+
+| metadati | link:#type_astra_metadata_list["elenco_metadati_tipo_astra"] | Vero  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-namespaces",
+  "version": "1.1",
+  "items": [
+    [
+      "7d451d2f-196e-4234-aee9-7e2376047e63",
+      "kube-system",
+      [
+        {
+          "name": "app.kubernetes.io/environment",
+          "value": "dev"
+        }
+      ]
+    ],
+    [
+      "66b0873b-214f-4ac7-89d8-922432f941eb",
+      "jenkins",
+      [
+        {
+          "name": "app.kubernetes.io/environment",
+          "value": "dev"
+        }
+      ]
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+
+
+| invalidParams | vettore[link:#invalidParams["invalidParams"]] | Falso  a| 
+Elenco dei parametri di query non validi
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Errore
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Esempio di risposta di errore
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definizioni
+
+.Vedi definizioni
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+targetSchema
+
+[role="api-collapsible-fifth-title"]
+accept-post
+
+[role="api-collapsible-fifth-title"]
+accetta-put
+
+[role="api-collapsible-fifth-title"]
+suggerimenti
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| stato | stringa | Falso  a| 
+
+
+
+| permettere | array[string] | Falso  a| 
+
+
+
+| accept-post | link:#accept-post["accept-post"] | Falso  a| 
+
+
+
+| autorizzazioni | array[string] | Falso  a| 
+
+
+
+| accetta-put | link:#accept-put["accetta-put"] | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_link
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| rel | stringa | Vero  a| 
+
+
+
+| href | stringa | Vero  a| 
+
+
+
+| tipo | stringa | Falso  a| 
+
+
+
+| targetSchema | link:#targetSchema["targetSchema"] | Falso  a| 
+
+
+
+| titolo | stringa | Falso  a| 
+
+
+
+| suggerimenti | link:#hints["suggerimenti"] | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+etichetta tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+
+
+
+| valore | stringa | Vero  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadati
+
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema di metadati Astra
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Vero  a| 
+
+
+
+| CreationTimestamp | stringa | Vero  a| 
+
+
+
+| ModificationTimestamp | stringa | Vero  a| 
+
+
+
+| CreatedBy | stringa | Vero  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+namespace_1.1_get_response_body
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+Tipo di media della risorsa. I valori definiti sono:
+
+* "application/astra-namespace"
+
+
+
+
+| versione | stringa | Vero  a| 
+Versione della risorsa. I valori definiti sono:
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | stringa | Vero  a| 
+Identificatore univoco globale della risorsa. I valori definiti sono:
+
+* Conforme allo schema UUIDv4
+
+
+
+
+| collegamenti | vettore[link:#type_astra_link["type_astra_link"]] | Vero  a| 
+Collegamenti che descrivono le operazioni supportate sulla risorsa.
+
+
+
+| nome | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica il nome dello spazio dei nomi. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 255
+
+
+
+
+| namespaceState | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica lo stato del namespace. I valori definiti sono:
+
+* "scoperto" - Lo spazio dei nomi è stato trovato nel cluster
+* "rimosso" - Lo spazio dei nomi è stato eliminato dal cluster, oppure il cluster non è gestito ma potrebbero esserci risorse che fanno riferimento allo spazio dei nomi
+
+
+
+
+| namespaceStateDetails | vettore[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Vero  a| 
+Array JSON di oggetti JSON che elenca ulteriori dettagli sul motivo per cui "state" è passato a "state a", "state b" o "state c". Se non sono disponibili dettagli, questo array sarà vuoto. I valori definiti sono:
+
+* Elementi minimi: 0
+
+
+
+
+| kubernetesLabels | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Falso  a| 
+Array JSON di oggetti JSON, ciascuno contenente un'etichetta Kubernetes associata al namespace. I valori definiti sono:
+
+* Conforme allo schema Kubernetes Label Array
+
+
+
+
+| clusterID | stringa | Vero  a| 
+Stringa JSON contenente un identificatore univoco globale del cluster in cui è contenuto il namespace. I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| systemType | stringa | Falso  a| 
+Stringa JSON che indica che lo spazio dei nomi è di tipo spazio dei nomi di sistema. Questo campo identifica quale tipo di spazio dei nomi di sistema, se presente, è lo spazio dei nomi (solo versione 1.1). I valori definiti sono:
+
+* "kubernetes" - Uno spazio dei nomi di sistema generico di Kubernetes (K8s), ad esempio "kube-system"
+* "netapp" - Uno spazio dei nomi di sistema NetApp, ad esempio "trident" o "netapp-monitoring"
+* "openshift" - Uno OpenShift spazio dei nomi di sistema, ad esempio "openshift-monitoring"
+* "rke" - Uno spazio dei nomi Rancher, ad esempio "cattle-logging"
+* "other" - Spazi dei nomi di sistema comuni che non necessariamente rientrano altrove, ad esempio "ingress-nginx", "tekton-system"
+
+
+
+
+| metadati | link:#type_astra_metadata["type_astra_metadati"] | Vero  a| 
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema di metadati Astra
+
+
+|===
+[role="api-collapsible-fifth-title"]
+elenco_metadati_tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| continuare | stringa | Falso  a| 
+
+
+
+| conta | numero | Falso  a| 
+
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Falso  a| 
+
+
+
+| CreationTimestamp | stringa | Falso  a| 
+
+
+
+| ModificationTimestamp | stringa | Falso  a| 
+
+
+
+| CreatedBy | stringa | Falso  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+Nome del parametro di query non valido
+
+
+
+| motivo | stringa | Vero  a| 
+Motivo per cui il parametro di query non è valido
+
+|===
+====

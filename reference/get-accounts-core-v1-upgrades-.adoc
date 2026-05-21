@@ -1,0 +1,474 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-upgrades-.html 
+summary: Recupera un aggiornamento 
+---
+= Recupera un aggiornamento
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/upgrades/{upgrade_id}`#
+
+Restituisce la risorsa API di upgrade memorizzata nel corpo della risposta JSON.
+
+
+
+== Parametri
+
+[cols="5*"]
+|===
+| Nome | Tipo | In | Obbligatorio | Descrizione 
+
+
+| ID account | stringa | percorso | Vero  a| 
+ID della risorsa account contenitore
+
+* esempio: {{.Account}}
+
+
+
+
+| upgrade_id | stringa | percorso | Vero  a| 
+ID della raccolta di aggiornamenti da elencare
+
+|===
+
+
+== Risposta
+
+[source]
+----
+Status: 200, Returns the stored Upgrade API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+Tipo di media della risorsa. I valori definiti sono:
+
+* "application/astra-upgrade"
+
+
+
+
+| versione | stringa | Vero  a| 
+Versione della risorsa. I valori definiti sono:
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | stringa | Vero  a| 
+Identificatore univoco globale della risorsa. I valori definiti sono:
+
+* Conforme allo schema UUIDv4
+
+
+
+
+| componentName | stringa | Vero  a| 
+Stringa JSON contenente il nome del tipo di software che può essere aggiornato. I valori definiti sono:
+
+* "acc"
+* "acs"
+* "Trident"
+* "kubernetes"
+
+
+
+
+| componentInstance | stringa | Vero  a| 
+Stringa JSON contenente l'URI del componente che può essere aggiornato. I valori definiti sono:
+
+* Lunghezza minima: 3
+* Lunghezza massima: 4095
+
+
+
+
+| ID componente | stringa | Vero  a| 
+Stringa JSON contenente un identificatore univoco globale del componente che può essere aggiornato. I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| upgradeVersion | stringa | Vero  a| 
+Stringa JSON contenente il SemVer del file immagine del software a cui è possibile eseguire l'aggiornamento. I valori definiti sono:
+
+* Conforme allo SemVer Schema
+
+
+
+
+| currentVersion | stringa | Vero  a| 
+Stringa JSON contenente la versione corrente SemVer dell'entità da aggiornare. I valori definiti sono:
+
+* Conforme allo SemVer Schema
+
+
+
+
+| dipendenze | array[string] | Vero  a| 
+Array JSON di stringhe JSON, ciascuna contenente l'UUID di un aggiornamento che deve essere completato prima che questo aggiornamento possa procedere. Utilizzato per determinare quali aggiornamenti verranno eseguiti come prerequisiti e in quale ordine. I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| stato | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica lo stato operativo dell'aggiornamento. Se l'aggiornamento automatico è abilitato, gli aggiornamenti inizieranno nello stato "scheduled". Altrimenti, gli aggiornamenti inizieranno nello stato "proposed". I valori definiti sono:
+
+* "non disponibile" - L'aggiornamento non è disponibile al momento
+* "proposto" - L'aggiornamento è proposto ma non verrà eseguito automaticamente finché non verrà approvato
+* "pianificato" - L'aggiornamento è stato approvato ma non è pronto per essere installato a causa di dipendenze, finestre temporali o risorse disponibili
+* "in esecuzione" - L'aggiornamento è in corso
+* "completato" - L'aggiornamento è stato completato
+* "non riuscito" - L'aggiornamento non è stato completato
+
+
+
+
+| stateDesired | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica lo stato desiderato per "state". Questo campo è incluso solo quando l'utente può richiedere direttamente una modifica dello stato della risorsa. I valori definiti sono:
+
+* "proposto" - L'aggiornamento non è approvato e non deve essere eseguito
+* "programmato" - L'aggiornamento è stato approvato e deve essere eseguito nella finestra temporale specificata
+* "in esecuzione" - L'aggiornamento deve essere eseguito immediatamente, indipendentemente dalla finestra temporale
+
+
+
+
+| stateDetails | vettore[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Vero  a| 
+Array JSON di oggetti JSON che elenca dettagli aggiuntivi sullo "stato" corrente. Se non sono disponibili dettagli, questo array sarà vuoto.
+
+* Elementi minimi: 0
+
+
+
+
+| metadati | link:#type_astra_metadata_update["aggiornamento dei metadati di tipo Astra"] | Vero  a| 
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema dei metadati Astra. Se non specificato durante l'aggiornamento, le etichette dell'oggetto metadati, creationTimestamp e createdBy, verranno conservate senza modifiche.
+
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-upgrade",
+  "version": "1.1",
+  "id": "aa9a8e88-c012-55b1-b514-7cd94dc79008",
+  "componentName": "trident",
+  "componentInstance": "https://<dns_name>/accounts/0b311ae7-d89a-4a11-a52c-1349ca090415/topology/v1/clouds/fdda3ff3-a46a-43a4-902e-444fde2baeba/storageBackends/72d19c3c-eb43-4bec-b23e-a228c900aded",
+  "componentID": "72d19c3c-eb43-4bec-b23e-a228c900aded",
+  "upgradeVersion": "21.07.1",
+  "currentVersion": "21.04.1",
+  "dependencies": [],
+  "state": "scheduled",
+  "stateDesired": "scheduled",
+  "stateDetails": [],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+
+
+| invalidParams | vettore[link:#invalidParams["invalidParams"]] | Falso  a| 
+Elenco dei parametri di query non validi
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Errore
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Esempio di risposta di errore
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definizioni
+
+.Vedi definizioni
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+etichetta tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+
+
+
+| valore | stringa | Vero  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+aggiornamento dei metadati di tipo Astra
+
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema dei metadati Astra. Se non specificato durante l'aggiornamento, le etichette dell'oggetto metadati, creationTimestamp e createdBy, verranno conservate senza modifiche.
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Falso  a| 
+
+
+
+| CreationTimestamp | stringa | Falso  a| 
+
+
+
+| ModificationTimestamp | stringa | Falso  a| 
+
+
+
+| CreatedBy | stringa | Falso  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+Nome del parametro di query non valido
+
+
+
+| motivo | stringa | Vero  a| 
+Motivo per cui il parametro di query non è valido
+
+|===
+====

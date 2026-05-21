@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/asup_endpoints.html 
+summary: 'Endpoint ASUP dell"API Astra (ACC)' 
+---
+= Endpoint ASUP dell'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API ASUP fornisce l'accesso alle risorse ASUP per creare e, facoltativamente, caricare i AutoSupport bundle.

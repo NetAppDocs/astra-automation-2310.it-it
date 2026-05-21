@@ -1,0 +1,549 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-hooksources.html 
+summary: Elenca tutte le fonti di aggancio 
+---
+= Elenca tutte le fonti di aggancio
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/hookSources`#
+
+Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
+
+
+
+== Parametri
+
+[cols="5*"]
+|===
+| Nome | Tipo | In | Obbligatorio | Descrizione 
+
+
+| ID account | stringa | percorso | Vero  a| 
+ID della risorsa account contenitore
+
+* esempio: {{.Account}}
+
+
+
+
+| includi | stringa | query | Falso  a| 
+Indica quali campi devono essere restituiti durante l'elenco di una raccolta.
+
+Esempi di URL: "include=id", "include=id,name"
+
+Esempi OpenAPI: "id"
+
+
+
+| limite | stringa | query | Falso  a| 
+Indica il numero massimo di risorse da restituire quando si elenca una raccolta.
+
+Esempi di URL: "limit=2"
+
+Esempi OpenAPI: "2"
+
+
+
+| filtro | stringa | query | Falso  a| 
+Indica quali campi devono essere confrontati per restituire una risorsa durante l'elenco di una collezione.
+
+Gli operatori supportati sono:
+
+* eq - Uguaglianza
+* lt/gt - Minore di/Maggiore di
+* lte/gte - Minore o uguale a/Maggiore o uguale a
+
+
+Esempio di URL: "filter=field%20eq%20%27value%27"
+
+Esempi OpenAPI: "field eq 'value'"
+
+|===
+
+
+== Risposta
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| elementi | array[Qualsiasi tra: link:#hookSource_1_0_get_response_body["hookSource_1.0_get_response_body"], array[]] | Vero  a| 
+
+
+
+| metadati | link:#type_astra_metadata_list["elenco_metadati_tipo_astra"] | Vero  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-hookSources",
+  "version": "1.0",
+  "items": [
+    {
+      "type": "application/astra-hookSource",
+      "version": "1.0",
+      "id": "2d6154dd-6863-4a26-8017-6be092b8b0bd",
+      "name": "Payroll script",
+      "private": "false",
+      "preloaded": "false",
+      "sourceType": "script",
+      "source": "ZWNobyAiVkhKaGJuTWdVbWxuYUhSeklRPT0iIHwgYmFzZTY0IC1k",
+      "sourceMD5Checksum": "b1a4b8b0144c3f6be553b626130ca145",
+      "description": "Pre and post hook script for payroll",
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "modificationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "createdBy": "64182074-ddb6-42eb-b7f4-b6a02cf9ba7c"
+      }
+    },
+    {
+      "type": "application/astra-hookSource",
+      "version": "1.0",
+      "id": "b71c6793-aa9b-4654-92ef-60663a0aedac",
+      "name": "Payroll script",
+      "private": "true",
+      "preloaded": "false",
+      "sourceType": "script",
+      "sourceMD5Checksum": "6469094cb279f6d91358bc5062d15baf",
+      "description": "Pre and post hook script for payroll",
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2020-08-08T12:24:52.256624Z",
+        "modificationTimestamp": "2020-08-08T12:24:52.256624Z",
+        "createdBy": "64182074-ddb6-42eb-b7f4-b6a02cf9ba7c"
+      }
+    },
+    {
+      "type": "application/astra-hookSource",
+      "version": "1.0",
+      "id": "682fe9d2-52d2-4c30-bcec-ecefddde359c",
+      "name": "NetApp preloaded ",
+      "private": "true",
+      "preloaded": "false",
+      "sourceType": "script",
+      "sourceMD5Checksum": "7864495443c1087104520a320a2225c9",
+      "description": "NetApp Postgres preloaded snapshot pre and post",
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2020-07-12T12:24:52.256624Z",
+        "modificationTimestamp": "2020-07-12T12:24:52.256624Z",
+        "createdBy": "4428cfd4-27fd-4248-9f49-bd3a02043ab8"
+      }
+    }
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+
+
+| invalidParams | vettore[link:#invalidParams["invalidParams"]] | Falso  a| 
+Elenco dei parametri di query non validi
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Errore
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Esempio di risposta di errore
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definizioni
+
+.Vedi definizioni
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+etichetta tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+
+
+
+| valore | stringa | Vero  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+aggiornamento dei metadati di tipo Astra
+
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema dei metadati di Astra. Se non specificato in fase di creazione, verrà creato un oggetto metadati senza etichette. Se non specificato in fase di aggiornamento, le etichette dell'oggetto metadati, creationTimestamp e createdBy, verranno conservate senza modifiche.
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Falso  a| 
+
+
+
+| CreationTimestamp | stringa | Falso  a| 
+
+
+
+| ModificationTimestamp | stringa | Falso  a| 
+
+
+
+| CreatedBy | stringa | Falso  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+hookSource_1.0_get_response_body
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+Tipo di media della risorsa. I valori definiti sono:
+
+* "applicazione/astra-hookSource"
+
+
+
+
+| versione | stringa | Vero  a| 
+Versione della risorsa. I valori definiti sono:
+
+* "1,0"
+
+
+
+
+| id | stringa | Vero  a| 
+Identificatore univoco globale della risorsa. I valori definiti sono:
+
+* Conforme allo schema UUIDv4
+
+
+
+
+| nome | stringa | Vero  a| 
+Stringa JSON contenente un nome specificato dall'utente per la risorsa. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 63 Il nome deve essere univoco all'interno di tutte le risorse sorgente dell'hook.
+
+
+
+
+| privato | stringa | Vero  a| 
+Stringa JSON che indica se il campo sorgente verrà esposto nelle API o verrà lasciato intenzionalmente vuoto. I valori definiti sono:
+
+* "true" - Il valore sorgente è privato e non verrà esposto tramite l'API.
+* "false" - Il valore sorgente non è privato e verrà esposto tramite l'API.
+
+
+
+
+| precaricato | stringa | Vero  a| 
+Stringa JSON che indica se la sorgente è stata precaricata. I valori definiti sono:
+
+* "vero" - La sorgente è stata precaricata.
+* "false" - La sorgente non è stata precaricata. Le risorse sorgente hook precaricate sono di sola lettura.
+
+
+
+
+| sourceType | stringa | Vero  a| 
+Stringa JSON che definisce il tipo di origine dell'hook. I valori definiti sono:
+
+* "script" - Script di shell. Il testo sorgente in chiaro non deve contenere dati binari o caratteri di ritorno a capo, altrimenti viene restituito un errore.
+
+
+
+
+| fonte | stringa | Falso  a| 
+Stringa JSON contenente lo script da eseguire in formato base64. I valori definiti sono:
+
+* Lunghezza minima: 0
+* Lunghezza massima: 131072
+* Conforme allo schema di codifica dati base64. La dimensione massima di un valore sorgente è 128 KiB quando codificato utilizzando base64.
+
+
+
+
+| sourceMD5Checksum | stringa | Vero  a| 
+Stringa JSON contenente il checksum MD5 calcolato per il valore della chiave "source". I valori definiti sono:
+
+* L'espressione regolare definita è: "^([0-9a-fA-F]){32}$"
+
+
+
+
+| descrizione | stringa | Falso  a| 
+Stringa JSON contenente una descrizione specificata dall'utente della sorgente dell'hook. I valori definiti sono:
+
+* Lunghezza minima: 0
+* Lunghezza massima: 511
+
+
+
+
+| metadati | link:#type_astra_metadata_update["aggiornamento dei metadati di tipo Astra"] | Vero  a| 
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema dei metadati di Astra. Se non specificato in fase di creazione, verrà creato un oggetto metadati senza etichette. Se non specificato in fase di aggiornamento, le etichette dell'oggetto metadati, creationTimestamp e createdBy, verranno conservate senza modifiche.
+
+
+|===
+[role="api-collapsible-fifth-title"]
+elenco_metadati_tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| continuare | stringa | Falso  a| 
+
+
+
+| conta | numero | Falso  a| 
+
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Falso  a| 
+
+
+
+| CreationTimestamp | stringa | Falso  a| 
+
+
+
+| ModificationTimestamp | stringa | Falso  a| 
+
+
+
+| CreatedBy | stringa | Falso  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+Nome del parametro di query non valido
+
+
+
+| motivo | stringa | Vero  a| 
+Motivo per cui il parametro di query non è valido
+
+|===
+====

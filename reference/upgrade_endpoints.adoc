@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/upgrade_endpoints.html 
+summary: 'Endpoint di aggiornamento dell"API Astra (ACC)' 
+---
+= Endpoint di aggiornamento dell'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Upgrade App consente di accedere ai componenti software idonei all'aggiornamento e di avviare gli aggiornamenti. La disponibilità degli aggiornamenti è determinata in base ai pacchetti registrati tramite l'API Packages.

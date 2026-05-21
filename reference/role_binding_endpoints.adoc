@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/role_binding_endpoints.html 
+summary: 'Endpoint di associazione dei ruoli dell"API Astra (ACC)' 
+---
+= Endpoint di associazione dei ruoli dell'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Role Binding descrive le relazioni tra le coppie utente-account o gruppo-account, insieme ai set di autorizzazioni loro concesse (ruoli).

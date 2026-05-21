@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/user_endpoints.html 
+summary: 'Endpoint utente dell"API Astra (ACC)' 
+---
+= Endpoint utente dell'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API utente rappresenta gli utenti che sono in grado di interagire con il sistema.

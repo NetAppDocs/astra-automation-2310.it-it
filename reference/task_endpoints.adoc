@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/task_endpoints.html 
+summary: 'Endpoint delle attività dell"API Astra (ACC)' 
+---
+= Endpoint delle attività dell'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Task App fornisce l'accesso alle risorse delle attività gestite al fine di rappresentare attività di lunga durata.

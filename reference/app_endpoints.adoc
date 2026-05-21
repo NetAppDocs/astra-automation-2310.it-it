@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/app_endpoints.html 
+summary: 'Endpoint API Astra (ACC) dell"app' 
+---
+= Endpoint API Astra (ACC) dell'app
+:allow-uri-read: 
+
+
+L'API App rappresenta le applicazioni Kubernetes, incluse quelle non gestite da Astra.

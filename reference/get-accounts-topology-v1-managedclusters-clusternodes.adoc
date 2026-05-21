@@ -1,0 +1,598 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-managedclusters-clusternodes.html 
+summary: Elenca i nodi del cluster per un cluster gestito 
+---
+= Elenca i nodi del cluster per un cluster gestito
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/clusterNodes`#
+
+Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
+
+
+
+== Parametri
+
+[cols="5*"]
+|===
+| Nome | Tipo | In | Obbligatorio | Descrizione 
+
+
+| ID account | stringa | percorso | Vero  a| 
+ID della risorsa account contenitore
+
+* esempio: {{.Account}}
+
+
+
+
+| ID cluster gestito | stringa | percorso | Vero  a| 
+ID della risorsa managedCluster contenitore
+
+
+
+| includi | stringa | query | Falso  a| 
+Indica quali campi devono essere restituiti durante l'elenco di una raccolta.
+
+Esempi di URL: "include=id", "include=id,name"
+
+Esempi OpenAPI: "id"
+
+* esempio: nome,instanceType
+
+
+
+
+| limite | stringa | query | Falso  a| 
+Indica il numero massimo di risorse da restituire quando si elenca una raccolta.
+
+Esempi di URL: "limit=2"
+
+Esempi OpenAPI: "2"
+
+|===
+
+
+== Risposta
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| elementi | array[Qualsiasi tra: link:#clusterNode_1_0_get_response_body["clusterNode_1.0_get_response_body"], array[]] | Vero  a| 
+
+
+
+| metadati | link:#type_astra_metadata_list["elenco_metadati_tipo_astra"] | Vero  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-clusterNodes",
+  "version": "1.0",
+  "items": [
+    [
+      "test-0",
+      "e2-medium"
+    ],
+    [
+      "test-1",
+      "e2-medium"
+    ],
+    [
+      "test-2",
+      "e2-medium"
+    ],
+    [
+      "test-3",
+      "e2-micro"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+
+
+| invalidParams | vettore[link:#invalidParams["invalidParams"]] | Falso  a| 
+Elenco dei parametri di query non validi
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Errore
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Esempio di risposta di errore
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definizioni
+
+.Vedi definizioni
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+etichette
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+Stringa JSON contenente il nome dell'etichetta I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 63
+* L'espressione regolare definita è: "^([\S.]{1,253}\/)?([a-z0-9A-Z_.-]){1,63}$"
+
+
+
+
+| valore | stringa | Vero  a| 
+Stringa JSON contenente il valore dell'etichetta Definiti valori sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 63
+* L'espressione regolare definita è: "^([a-z0-9A-Z_.-]){1,63}$"
+
+
+|===
+[role="api-collapsible-fifth-title"]
+etichetta tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+
+
+
+| valore | stringa | Vero  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadati
+
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema di metadati Astra
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Vero  a| 
+
+
+
+| CreationTimestamp | stringa | Vero  a| 
+
+
+
+| ModificationTimestamp | stringa | Vero  a| 
+
+
+
+| CreatedBy | stringa | Vero  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+clusterNode_1.0_get_response_body
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+Tipo di media della risorsa. I valori definiti sono:
+
+* "application/astra-clusterNode"
+
+
+
+
+| versione | stringa | Vero  a| 
+Versione della risorsa. I valori definiti sono:
+
+* "1,0"
+
+
+
+
+| id | stringa | Vero  a| 
+Identificatore univoco globale della risorsa. I valori definiti sono:
+
+* Conforme allo schema UUIDv4
+
+
+
+
+| nome | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica il nome Kubernetes del nodo. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 254
+
+
+
+
+| ruolo | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica il ruolo Kubernetes per il nodo. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 254
+
+
+
+
+| etichette | vettore[link:#labels["etichette"]] | Vero  a| 
+Array JSON di oggetti JSON, ognuno dei quali contiene etichette Kubernetes associate al nodo. Se non sono disponibili dettagli, questo array sarà vuoto.
+
+* Elementi minimi: 0
+
+
+
+
+| creationTime | stringa | Vero  a| 
+Stringa JSON contenente un timestamp ISO 8601 che indica quando è stato creato il nodo. I valori definiti sono:
+
+* Conforme allo schema di data e ora ISO-8601
+
+
+
+
+| indirizzo IP esterno | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica l'indirizzo IP interno del nodo. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 63
+
+
+
+
+| IP interno | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica l'indirizzo IP esterno del nodo. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 63
+
+
+
+
+| zona | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica la zona Kubernetes per il nodo. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 254
+
+
+
+
+| regione | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica la regione Kubernetes per il nodo. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 254
+
+
+
+
+| instanceType | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica il tipo di istanza Kubernetes per il nodo. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 254
+
+
+
+
+| kernelVersion | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica la versione del kernel utilizzata dal nodo. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 254
+
+
+
+
+| osImage | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica l'immagine del sistema operativo utilizzata dal nodo. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 254
+
+
+
+
+| numCpus | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica il numero di CPU assegnate al nodo. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 254
+
+
+
+
+| memoria | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica la quantità di memoria assegnata al nodo. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 254
+
+
+
+
+| stato | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica lo stato operativo del nodo. I valori definiti sono:
+
+* "in esecuzione" - Il nodo è in esecuzione normalmente
+* "provisioning" - Il nodo è in fase di provisioning
+* "scoperta" - Gli aspetti del nodo sono in fase di scoperta
+* "in sospeso" - Il nodo è programmato per la scoperta
+* "fallito" - Il nodo si trova in uno stato di errore
+* "sconosciuto" - Lo stato del nodo non può essere determinato
+
+
+
+
+| metadati | link:#type_astra_metadata["type_astra_metadati"] | Vero  a| 
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema di metadati Astra
+
+
+|===
+[role="api-collapsible-fifth-title"]
+elenco_metadati_tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| continuare | stringa | Falso  a| 
+
+
+
+| conta | numero | Falso  a| 
+
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Falso  a| 
+
+
+
+| CreationTimestamp | stringa | Falso  a| 
+
+
+
+| ModificationTimestamp | stringa | Falso  a| 
+
+
+
+| CreatedBy | stringa | Falso  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+Nome del parametro di query non valido
+
+
+
+| motivo | stringa | Vero  a| 
+Motivo per cui il parametro di query non è valido
+
+|===
+====

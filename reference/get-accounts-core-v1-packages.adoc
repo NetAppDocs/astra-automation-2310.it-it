@@ -1,0 +1,849 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-packages.html 
+summary: Elenca tutti i pacchetti 
+---
+= Elenca tutti i pacchetti
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/packages`#
+
+Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
+
+
+
+== Parametri
+
+[cols="5*"]
+|===
+| Nome | Tipo | In | Obbligatorio | Descrizione 
+
+
+| ID account | stringa | percorso | Vero  a| 
+ID della risorsa account contenitore
+
+* esempio: {{.Account}}
+
+
+
+
+| filtro | stringa | query | Falso  a| 
+Indica quali campi devono essere confrontati per restituire una risorsa durante l'elenco di una collezione.
+
+Gli operatori supportati sono:
+
+* eq - Uguaglianza
+* lt/gt - Minore di/Maggiore di
+* lte/gte - Minore o uguale a/Maggiore o uguale a
+
+
+Esempio di URL: "filter=field%20eq%20%27value%27"
+
+Esempi OpenAPI: "field eq 'value'"
+
+
+
+| OrderBy | stringa | query | Falso  a| 
+Indica l'ordine di visualizzazione delle risorse durante l'elenco di una collezione.
+
+Esempi di URL: "orderBy=name", "orderBy=name%20desc"
+
+Esempi OpenAPI: "name desc"
+
+
+
+| includi | stringa | query | Falso  a| 
+Indica quali campi devono essere restituiti durante l'elenco di una raccolta.
+
+Esempi di URL: "include=id", "include=id,name"
+
+Esempi OpenAPI: "id"
+
+* esempio: id,packageName,packageVersion,softwareType
+
+
+
+
+| limite | stringa | query | Falso  a| 
+Indica il numero massimo di risorse da restituire quando si elenca una raccolta.
+
+Esempi di URL: "limit=2"
+
+Esempi OpenAPI: "2"
+
+|===
+
+
+== Risposta
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| elementi | array[Qualsiasi tra: link:#package_1_0_get_response_body["package_1.0_get_response_body"], array[]] | Vero  a| 
+
+
+
+| metadati | link:#type_astra_metadata_list["elenco_metadati_tipo_astra"] | Vero  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-packages",
+  "version": "1.0",
+  "items": [
+    [
+      "e280ff62-be35-4f31-a31b-a210a1ad1b33",
+      "acc",
+      "22.01.0",
+      "install"
+    ],
+    [
+      "e8507dad-d33f-44b3-9c15-ec55ba6f6473",
+      "acc",
+      "22.01.1",
+      "patch"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+
+
+| invalidParams | vettore[link:#invalidParams["invalidParams"]] | Falso  a| 
+Elenco dei parametri di query non validi
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Errore
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Esempio di risposta di errore
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definizioni
+
+.Vedi definizioni
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+tipo_transizione_stato_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| da | stringa | Vero  a| 
+
+
+
+| a | array[string] | Vero  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+dependsOnImages
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| imagePath | stringa | Vero  a| 
+Stringa JSON contenente il percorso di questa immagine Docker. Non deve contenere il nome del registro, ma solo il percorso assoluto dalla directory principale all'immagine. Esempio: /globalcicd/acc I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 1023
+
+
+
+
+| imageName | stringa | Vero  a| 
+Stringa JSON contenente il nome dell'immagine Docker. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 63
+
+
+
+
+| imageTag | stringa | Vero  a| 
+Stringa JSON che rappresenta il tag/la versione di questa immagine. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 31
+
+
+|===
+[role="api-collapsible-fifth-title"]
+immagini
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| imageName | stringa | Vero  a| 
+Stringa JSON contenente il nome dell'immagine Docker. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 63
+
+
+
+
+| imagePath | stringa | Vero  a| 
+Stringa JSON contenente il percorso di questa immagine Docker. Non deve contenere il nome del registro, ma solo il percorso assoluto dalla directory principale all'immagine. Esempio: /globalcicd/acc I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 1023
+
+
+
+
+| imageTag | stringa | Vero  a| 
+Stringa JSON che rappresenta il tag/la versione di questa immagine. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 31
+
+
+
+
+| imageDigest | stringa | Vero  a| 
+Stringa JSON che rappresenta il digest di questa immagine. I valori definiti sono:
+
+* L'espressione regolare definita è: "^(sha256:)[0-9a-f]{64}$"
+
+
+
+
+| dependsOnImages | vettore[link:#dependsOnImages["dependsOnImages"]] | Falso  a| 
+Array JSON di oggetti JSON che descrivono le immagini necessarie per installare o aggiornare l'immagine corrente.
+
+|===
+[role="api-collapsible-fifth-title"]
+dependsOnComponents
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| componentName | stringa | Vero  a| 
+Stringa JSON che descrive il nome del componente. I valori definiti sono:
+
+* "acc"
+* "acs"
+* "Trident"
+* "kubernetes"
+
+
+
+
+| versioni | array[string] | Vero  a| 
+Array JSON di stringhe JSON che definiscono la versione del componente necessaria per installare l'immagine corrente.
+
+|===
+[role="api-collapsible-fifth-title"]
+artefatti
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| artifactName | stringa | Vero  a| 
+Stringa JSON contenente il nome del file. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 63
+
+
+
+
+| artifactIdentifier | stringa | Vero  a| 
+Stringa JSON contenente un identificatore per questo file. Tra versioni dello stesso tipo di pacchetto, il nome del file potrebbe cambiare ma l'identificatore di solito rimane lo stesso. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 511
+
+
+
+
+| artifactPath | stringa | Vero  a| 
+Stringa JSON contenente il percorso di questo artefatto dalla radice di un Astra Control Center Data Store/posizione noto. Esempio: /vmware/1.0/ I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 1023
+
+
+
+
+| artifactVersion | stringa | Falso  a| 
+Stringa JSON contenente la versione di quell'artefatto, se fornita. I valori definiti sono:
+
+* Conforme allo SemVer Schema
+* Lunghezza minima: 1
+* Lunghezza massima: 31
+
+
+
+
+| dependsOnComponents | vettore[link:#dependsOnComponents["dependsOnComponents"]] | Falso  a| 
+Array JSON di oggetti JSON che descrivono i componenti installati necessari per installare/aggiornare l'immagine corrente.
+
+|===
+[role="api-collapsible-fifth-title"]
+file
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| fileName | stringa | Vero  a| 
+Stringa JSON contenente il nome del file. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 63
+
+
+
+
+| fileIdentifier | stringa | Vero  a| 
+Stringa JSON contenente un identificatore di questo file. Tra versioni dello stesso tipo di pacchetto, il nome del file potrebbe cambiare ma l'identificatore di solito rimane lo stesso. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 511
+
+
+
+
+| fileMediaType | stringa | Vero  a| 
+Stringa JSON contenente il tipo di media del file. I valori definiti sono tutti i tipi di media definiti da https://www.iana.org/assignments/media-types/media-types.xhtml["IANA"]. Inoltre, è supportato application/x-yaml o application/x-yaml per i file yaml.
+
+* Lunghezza minima: 1
+* Lunghezza massima: 211
+
+
+
+
+| fileContents | stringa | Vero  a| 
+Stringa JSON contenente il contenuto del file. I valori definiti sono:
+
+* Conforme allo schema Base64 FIXME - Come specifichiamo che questo è compresso? Quale algoritmo, ecc?
+
+
+|===
+[role="api-collapsible-fifth-title"]
+upgradableVersions
+
+Oggetto JSON contenente le versioni minima e massima che possono essere aggiornate alla versione del pacchetto.
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| minVersion | stringa | Falso  a| 
+Stringa JSON che descrive la versione minima che può essere aggiornata alla versione del pacchetto. I valori definiti sono:
+
+* Conforme allo SemVer Schema
+
+
+
+
+| maxVersion | stringa | Falso  a| 
+Stringa JSON che descrive la versione massima che può essere aggiornata alla versione del pacchetto. I valori definiti sono:
+
+* Conforme allo SemVer Schema
+
+
+|===
+[role="api-collapsible-fifth-title"]
+dipendenze
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| componentName | stringa | Vero  a| 
+Stringa JSON che descrive il nome del componente. I valori definiti sono:
+
+* "acc"
+* "acs"
+* "Trident"
+* "kubernetes"
+
+
+
+
+| componentMinVersion | stringa | Falso  a| 
+Stringa JSON che descrive la versione minima richiesta per quel componente. I valori definiti sono:
+
+* Conforme allo SemVer Schema
+
+
+
+
+| componentMaxVersion | stringa | Falso  a| 
+Stringa JSON che descrive la versione massima richiesta per quel componente. I valori definiti sono:
+
+* Conforme allo SemVer Schema
+
+
+|===
+[role="api-collapsible-fifth-title"]
+etichetta tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+
+
+
+| valore | stringa | Vero  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadati
+
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema dei metadati di Astra. Se non specificato in fase di creazione, verrà creato un oggetto metadati senza etichette.
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Vero  a| 
+
+
+
+| CreationTimestamp | stringa | Vero  a| 
+
+
+
+| ModificationTimestamp | stringa | Vero  a| 
+
+
+
+| CreatedBy | stringa | Vero  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+package_1.0_get_response_body
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+Tipo di media della risorsa. I valori definiti sono:
+
+* "application/astra-package"
+
+
+
+
+| versione | stringa | Vero  a| 
+Versione della risorsa. I valori definiti sono:
+
+* "1,0"
+
+
+
+
+| id | stringa | Vero  a| 
+Identificatore univoco globale della risorsa. I valori definiti sono:
+
+* Conforme allo schema UUIDv4
+
+
+
+
+| packageName | stringa | Vero  a| 
+Stringa JSON contenente il nome del pacchetto. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 31 Esempi di valori:
+* "acc"
+* "acs"
+* "Trident"
+
+
+
+
+| packageVersion | stringa | Vero  a| 
+Stringa JSON contenente la SemVer del pacchetto. I valori definiti sono:
+
+* Conforme allo SemVer Schema
+
+
+
+
+| packageType | stringa | Vero  a| 
+Stringa JSON contenente il tipo di pacchetto, che indica se si tratta di un pacchetto di installazione completo o di una patch. I valori definiti sono:
+
+* "installare"
+* "patch"
+
+
+
+
+| bundleName | array[string] | Falso  a| 
+Array JSON di stringhe JSON contenenti il nome del bundle in cui è contenuto il pacchetto.
+
+
+
+| severityLevel | stringa | Vero  a| 
+Stringa JSON che descrive il livello di gravità di questa patch o installazione. I valori definiti sono:
+
+* "consigliato" - L'installazione è consigliata - Valore predefinito
+* "critico" - L'installazione è fortemente consigliata per risolvere bug critici e/o patch di sicurezza
+
+
+
+
+| packageState | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica lo stato operativo del pacchetto. Dopo la verifica del pacchetto e dopo l'importazione, lo stato indicherà "complete". Altrimenti, lo stato indicherà "incomplete". I valori definiti sono:
+
+* "verifying" - Il pacchetto è in fase di convalida
+* "corrotto" - Il pacchetto è corrotto
+* "incompleto" - Il pacchetto è privo di elementi
+* "Disponibile" - Tutti gli elementi associati al pacchetto sono disponibili e il pacchetto è pronto per l'uso
+
+
+
+
+| packageStateTransitions | vettore[link:#type_astra_stateTransition["tipo_transizione_stato_astra"]] | Vero  a| 
+Array JSON di oggetti JSON, ognuno dei quali rappresenta l'insieme delle transizioni di stato consentite da un dato stato definito. Ogni oggetto JSON contiene i campi "from" e "to", dove il valore "from" è il nome di uno stato e il valore "to" è un array di stati di destinazione consentiti. I valori definiti sono:
+
+* Conforme allo schema di transizione statale
+
+
+
+
+| packageStateDetails | vettore[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Vero  a| 
+Array JSON di oggetti JSON che elenca dettagli aggiuntivi sullo "stato" corrente. Se non sono disponibili dettagli, questo array sarà vuoto.
+
+* Elementi minimi: 0
+
+
+
+
+| immagini | vettore[link:#images["immagini"]] | Falso  a| 
+Array JSON di oggetti JSON, ognuno dei quali contiene un'immagine Docker che fa parte del pacchetto.
+
+
+
+| artefatti | vettore[link:#artifacts["artefatti"]] | Falso  a| 
+Array JSON di oggetti JSON che descrivono gli artefatti aggiuntivi (binari e altri) associati a questo pacchetto.
+
+
+
+| file | vettore[link:#files["file"]] | Falso  a| 
+Array JSON di oggetti JSON, ognuno dei quali rappresenta un artefatto non immagine associato a questo pacchetto.
+
+
+
+| upgradableVersions | link:#upgradableVersions["upgradableVersions"] | Falso  a| 
+Oggetto JSON contenente le versioni minima e massima che possono essere aggiornate alla versione del pacchetto.
+
+
+
+| dipendenze | vettore[link:#dependencies["dipendenze"]] | Falso  a| 
+Array JSON di oggetti JSON che descrivono quale versione minima di una determinata dipendenza è richiesta per installare questo pacchetto
+
+
+
+| metadati | link:#type_astra_metadata["type_astra_metadati"] | Vero  a| 
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema dei metadati di Astra. Se non specificato in fase di creazione, verrà creato un oggetto metadati senza etichette.
+
+
+|===
+[role="api-collapsible-fifth-title"]
+elenco_metadati_tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| continuare | stringa | Falso  a| 
+
+
+
+| conta | numero | Falso  a| 
+
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Falso  a| 
+
+
+
+| CreationTimestamp | stringa | Falso  a| 
+
+
+
+| ModificationTimestamp | stringa | Falso  a| 
+
+
+
+| CreatedBy | stringa | Falso  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+Nome del parametro di query non valido
+
+
+
+| motivo | stringa | Vero  a| 
+Motivo per cui il parametro di query non è valido
+
+|===
+====

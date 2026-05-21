@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/storage_class_endpoints.html 
+summary: 'Endpoint della classe di storage Astra API (ACC)' 
+---
+= Endpoint della classe di storage Astra API (ACC)
+:allow-uri-read: 
+
+
+L'API Storage Class descrive le classi di archiviazione note a un determinato cluster.

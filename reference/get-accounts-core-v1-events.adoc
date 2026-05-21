@@ -1,0 +1,729 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-events.html 
+summary: Elenca tutti gli eventi 
+---
+= Elenca tutti gli eventi
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/events`#
+
+Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
+
+
+
+== Parametri
+
+[cols="5*"]
+|===
+| Nome | Tipo | In | Obbligatorio | Descrizione 
+
+
+| ID account | stringa | percorso | Vero  a| 
+ID della risorsa account contenitore
+
+* esempio: {{.Account}}
+
+
+
+
+| includi | stringa | query | Falso  a| 
+Indica quali campi devono essere restituiti durante l'elenco di una raccolta.
+
+Esempi di URL: "include=id", "include=id,name"
+
+Esempi OpenAPI: "id"
+
+* esempio: id,summary
+
+
+
+
+| limite | stringa | query | Falso  a| 
+Indica il numero massimo di risorse da restituire quando si elenca una raccolta.
+
+Esempi di URL: "limit=2"
+
+Esempi OpenAPI: "2"
+
+
+
+| filtro | stringa | query | Falso  a| 
+Indica quali campi devono essere confrontati per restituire una risorsa durante l'elenco di una collezione.
+
+Gli operatori supportati sono:
+
+* eq - Uguaglianza
+* lt/gt - Minore di/Maggiore di
+* lte/gte - Minore o uguale a/Maggiore o uguale a
+
+
+Esempio di URL: "filter=field%20eq%20%27value%27"
+
+Esempi OpenAPI: "field eq 'value'"
+
+
+
+| OrderBy | stringa | query | Falso  a| 
+Indica l'ordine di visualizzazione delle risorse durante l'elenco di una collezione.
+
+Esempi di URL: "orderBy=name", "orderBy=name%20desc"
+
+Esempi OpenAPI: "name desc"
+
+
+
+| saltare | stringa | query | Falso  a| 
+Indica il numero di risorse da saltare durante l'elenco di una raccolta.
+
+Esempi di URL: "skip=1"
+
+Esempi OpenAPI: "1"
+
+
+
+| conta | stringa | query | Falso  a| 
+Indica se il numero totale di risorse deve essere restituito nell'oggetto metadata.
+
+Esempi di URL: "count=true"
+
+Esempi OpenAPI: "true"
+
+
+
+| continuare |  | query | Falso  a| 
+Indica il token da cui riprendere l'elenco.
+
+Esempi di URL: "continue=+++<continue token="" from="" collection="" metadata="">+++"+++</continue>+++
+
+Esempi OpenAPI: "+++<continue token="" from="" collection="" metadata="">+++"+++</continue>+++</continue>
+
+|===
+
+
+== Risposta
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| elementi | array[Qualsiasi tra: link:#event_1_4_get_response_body["event_1.4_get_response_body"], array[]] | Vero  a| 
+
+
+
+| metadati | link:#type_astra_metadata_list["elenco_metadati_tipo_astra"] | Vero  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-events",
+  "version": "1.4",
+  "items": [
+    [
+      "4f8273ee-883d-47f0-a512-9e27b6285f20",
+      "Discovering Applications in Cluster"
+    ],
+    [
+      "1cdd26dc-5eb0-4cf4-a0c1-39a9b83720e1",
+      "Application Discovered"
+    ],
+    [
+      "2064d1c1-4bc6-466e-9c30-b941a11be16a",
+      "Application Discovery Failed"
+    ],
+    [
+      "4325f971-ca9c-4a52-bc9a-da6ec62e6bfe",
+      "Application Discovered"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+
+
+| invalidParams | vettore[link:#invalidParams["invalidParams"]] | Falso  a| 
+Elenco dei parametri di query non validi
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Errore
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Esempio di risposta di errore
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definizioni
+
+.Vedi definizioni
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+dati
+
+Oggetto JSON contenente informazioni aggiuntive specifiche dell'evento.
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| ttl | numero | Falso  a| 
+Numero JSON che indica il numero di secondi (dall'eventTime) per cui l'evento verrà conservato. Questo campo è incluso solo quando un evento viene eliminato automaticamente dopo il numero di secondi specificato. Quando viene eliminato, se l'evento ha una destinazione di notifica, vengono eliminate anche tutte le notifiche associate. Quando viene eliminato, se l'evento ha una destinazione banner, viene rimosso anche il banner. L'assenza di questo campo (o un valore di "0") significa che un evento non verrà eliminato automaticamente.
+
+
+
+| isAcknowledgeable | stringa | Falso  a| 
+Stringa JSON che indica se il banner è chiudibile. I valori definiti sono:
+
+* "vero" - Il banner è chiudibile
+* "falso" - Il banner non è chiudibile
+
+
+|===
+[role="api-collapsible-fifth-title"]
+etichetta tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+
+
+
+| valore | stringa | Vero  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadati
+
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema di metadati Astra
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Vero  a| 
+
+
+
+| CreationTimestamp | stringa | Vero  a| 
+
+
+
+| ModificationTimestamp | stringa | Vero  a| 
+
+
+
+| CreatedBy | stringa | Vero  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+event_1.4_get_response_body
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+Tipo di media della risorsa. I valori definiti sono:
+
+* "application/astra-event"
+
+
+
+
+| versione | stringa | Vero  a| 
+Versione della risorsa. I valori definiti sono:
+
+* "1,0"
+* "1,1"
+* "1,2"
+* "1,3"
+* "1,4"
+
+
+
+
+| id | stringa | Vero  a| 
+Identificatore univoco globale della risorsa. I valori definiti sono:
+
+* Conforme allo schema UUIDv4
+
+
+
+
+| nome | stringa | Vero  a| 
+Stringa JSON contenente un nome gerarchico dell'evento in notazione puntata (.). I valori definiti sono:
+
+* Lunghezza minima: 3
+* Lunghezza massima: 127
+* L'espressione regolare definita è: "^(([a-z])_(\.))_([a-z])+$"
+
+
+
+
+| sequenceCount | numero | Vero  a| 
+Numero JSON contenente un conteggio sequenziale. Il numero viene incrementato dal sistema ogni volta che viene ricevuto un nuovo evento.
+
+
+
+| riepilogo | stringa | Vero  a| 
+Stringa JSON contenente il riepilogo breve (meno di 40 caratteri) dell'evento. I valori definiti sono:
+
+* Lunghezza minima: 3
+* Lunghezza massima: 79
+
+
+
+
+| eventTime | stringa | Vero  a| 
+Stringa JSON contenente un timestamp che indica quando si è verificato un evento. I valori definiti sono:
+
+* Conforme allo schema di data e ora ISO-8601
+
+
+
+
+| fonte | stringa | Vero  a| 
+Stringa JSON contenente il nome in minuscolo del servizio che genera un evento. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 19
+* L'espressione regolare definita è: "^([a-z-])*$"
+
+
+
+
+| ID risorsa | stringa | Vero  a| 
+Stringa JSON contenente l'ID della risorsa associata a un evento. I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| ID risorsa aggiuntivi | array[string] | Vero  a| 
+Array JSON di stringhe JSON, ciascuna contenente un ID risorsa di una risorsa aggiuntiva associata all'evento. Mentre il campo "resourceID" contiene la risorsa principale associata a questo evento, questo campo contiene un qualsiasi numero di ID risorsa aggiuntivi da associare agli stessi eventi. Se non sono associate risorse aggiuntive all'evento, l'array sarà vuoto. I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| resourceType | stringa | Vero  a| 
+Stringa JSON contenente il tipo di media della risorsa associata a un evento. I valori definiti sono:
+
+* Lunghezza minima: 4
+* Lunghezza massima: 79
+* L'espressione regolare definita è: "^application\/astra-([a-zA-Z])+$"
+
+
+
+
+| ID correlazione | stringa | Vero  a| 
+Stringa JSON contenente un ID di correlazione UUIDv4 che consente di raggruppare eventi correlati. I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| gravità | stringa | Vero  a| 
+Stringa JSON contenente uno dei seguenti valori che indicano la gravità di un evento. I valori definiti sono:
+
+* "risolto" - Indica che un evento precedentemente segnalato che descrive una condizione non è più attivo. Un evento con gravità "risolto" utilizzerà lo stesso riepilogo e ID di correlazione per consentirne l'abbinamento.
+* "indeterminato" - Indica che la gravità non può essere determinata.
+* "informativo" - Indica un cambiamento di stato che è sia previsto che normale (non definito in X.733).
+* "Avviso" - Indica il rilevamento di un potenziale o imminente guasto che potrebbe influire sul servizio, prima che si manifestino effetti significativi.
+* "critico" - Indica che si è verificata una condizione che influisce sul servizio e che è necessaria un'azione correttiva immediata. Le definizioni di "risolto", "indeterminato", "avvertimento" e "critico" si basano sulle definizioni contenute nella clausola 8.1.2.3 del CCITT X.733.
+
+
+
+
+| classe | stringa | Vero  a| 
+Stringa JSON contenente uno dei seguenti valori che indicano la classe dell'evento. I valori definiti sono:
+
+* "sistema" - L'evento è correlato a un evento o a una richiesta interna.
+* "utente" - L'evento è correlato a un evento o a una richiesta avviata dall'utente.
+* "sicurezza" - L'evento è correlato a un problema di sicurezza.
+
+
+
+
+| descrizione | stringa | Vero  a| 
+Stringa JSON contenente un testo descrittivo esteso sull'evento. I valori definiti sono:
+
+* Lunghezza minima: 3
+* Lunghezza massima: 1023
+
+
+
+
+| descrizioneURL | stringa | Falso  a| 
+Stringa JSON contenente l'URL che abilita e collega un pulsante nel banner alla documentazione esterna. I valori definiti sono:
+
+* Lunghezza minima: 3
+* Lunghezza massima: 4095
+
+
+
+
+| correctiveAction | stringa | Falso  a| 
+Stringa JSON contenente un testo descrittivo esteso sulle azioni correttive da intraprendere in risposta all'evento. I valori definiti sono:
+
+* Lunghezza minima: 3
+* Lunghezza massima: 1023
+
+
+
+
+| URL dell'azione correttiva | stringa | Falso  a| 
+Stringa JSON contenente l'URL che collega un pulsante nel banner a una pagina all'interno dell'interfaccia utente per risolvere il problema. I valori definiti sono:
+
+* Lunghezza minima: 3
+* Lunghezza massima: 4095
+
+
+
+
+| visibilità | array[string] | Falso  a| 
+Array JSON di stringhe JSON, ognuna delle quali indica un ruolo RBAC autorizzato a visualizzare l'evento. I ruoli sono definiti insieme tramite l'operatore OR. Facoltativo. Se omesso, un utente con qualsiasi ruolo RBAC può visualizzare l'evento. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 63
+
+
+
+
+| destinazioni | array[string] | Falso  a| 
+Array JSON di stringhe JSON, ognuna delle quali indica una destinazione aggiuntiva per l'evento. Queste stringhe consentono a un servizio di fornire suggerimenti su dove un evento dovrebbe essere instradato oltre al registro delle attività. Facoltativo. I valori definiti sono:
+
+* "notifica" - L'evento è contrassegnato come notifica e sarà accessibile tramite l'endpoint API delle notifiche.
+* "banner" - L'evento è contrassegnato come banner.
+* "supporto" - L'evento è contrassegnato come evento correlato al supporto.
+
+
+
+
+| URI della risorsa | stringa | Falso  a| 
+Stringa JSON contenente l'URI associato all'evento. Inclusa solo per gli eventi relativi alle operazioni API. I valori definiti sono:
+
+* Lunghezza minima: 3
+* Lunghezza massima: 4095
+
+
+
+
+| URL della raccolta risorse | array[string] | Falso  a| 
+Array JSON di stringhe JSON, ciascuna delle quali indica l'URL di accesso completo della risorsa associata all'evento. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 1023
+
+
+
+
+| resourceMethod | stringa | Falso  a| 
+Stringa JSON contenente il metodo HTTP invocato. Inclusa solo per gli eventi relativi alle operazioni API. I valori definiti sono:
+
+* "opzioni" - Operazione API OPTIONS
+* "post" - Operazione API POST
+* "get" - Operazione API GET
+* "put" - Operazione API PUT
+* "elimina" - Operazione API DELETE
+
+
+
+
+| resourceMethodResult | stringa | Falso  a| 
+Stringa JSON contenente il risultato del metodo HTTP invocato. Inclusa solo per gli eventi relativi alle operazioni API. I valori definiti sono:
+
+* L'espressione regolare definita è: "^[1-5][0-9]{2}$"
+
+
+
+
+| ID utente | stringa | Falso  a| 
+Stringa JSON contenente l'ID utente associato a un evento. Inclusa solo per gli eventi associati ad azioni avviate dall'utente. I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| ID account | stringa | Falso  a| 
+Stringa JSON contenente l'ID dell'account associato a un evento. Inclusa solo per gli eventi associati a un account. I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| dati | link:#data["dati"] | Falso  a| 
+Oggetto JSON contenente informazioni aggiuntive specifiche dell'evento.
+
+
+
+| metadati | link:#type_astra_metadata["type_astra_metadati"] | Vero  a| 
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema di metadati Astra
+
+
+|===
+[role="api-collapsible-fifth-title"]
+elenco_metadati_tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| continuare | stringa | Falso  a| 
+
+
+
+| conta | numero | Falso  a| 
+
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Falso  a| 
+
+
+
+| CreationTimestamp | stringa | Falso  a| 
+
+
+
+| ModificationTimestamp | stringa | Falso  a| 
+
+
+
+| CreatedBy | stringa | Falso  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+Nome del parametro di query non valido
+
+
+
+| motivo | stringa | Vero  a| 
+Motivo per cui il parametro di query non è valido
+
+|===
+====

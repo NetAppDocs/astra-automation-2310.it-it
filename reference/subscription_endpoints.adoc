@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/subscription_endpoints.html 
+summary: 'Endpoint di sottoscrizione Astra API (ACC)' 
+---
+= Endpoint di sottoscrizione Astra API (ACC)
+:allow-uri-read: 
+
+
+L'API di sottoscrizione fornisce l'accesso alle risorse di sottoscrizione al fine di rappresentare le sottoscrizioni attive.

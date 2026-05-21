@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/group_endpoints.html 
+summary: 'Endpoint di gruppo API Astra (ACC)' 
+---
+= Endpoint di gruppo API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API di gruppo fornisce l'accesso alle risorse di gruppo di Astra.

@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/entitlement_endpoints.html 
+summary: 'Endpoint di autorizzazione API Astra (ACC)' 
+---
+= Endpoint di autorizzazione API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Entitlement indica quali funzionalità o capacità sono abilitate dalle licenze e dagli abbonamenti attivi per un account.

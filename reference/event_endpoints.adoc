@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/event_endpoints.html 
+summary: 'Endpoint degli eventi dell"API Astra (ACC)' 
+---
+= Endpoint degli eventi dell'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Event fornisce l'accesso agli eventi che si verificano nel sistema.

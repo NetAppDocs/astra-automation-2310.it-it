@@ -1,0 +1,762 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-clouds-clusters.html 
+summary: Elenca i cluster per un cloud 
+---
+= Elenca i cluster per un cloud
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters`#
+
+Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
+
+
+
+== Parametri
+
+[cols="5*"]
+|===
+| Nome | Tipo | In | Obbligatorio | Descrizione 
+
+
+| ID account | stringa | percorso | Vero  a| 
+ID della risorsa account contenitore
+
+* esempio: {{.Account}}
+
+
+
+
+| cloud_id | stringa | percorso | Vero  a| 
+ID della risorsa cloud
+
+
+
+| includi | stringa | query | Falso  a| 
+Indica quali campi devono essere restituiti durante l'elenco di una raccolta.
+
+Esempi di URL: "include=id", "include=id,name"
+
+Esempi OpenAPI: "id"
+
+* esempio: id,nome,managedState
+
+
+
+
+| limite | stringa | query | Falso  a| 
+Indica il numero massimo di risorse da restituire quando si elenca una raccolta.
+
+Esempi di URL: "limit=2"
+
+Esempi OpenAPI: "2"
+
+
+
+| filtro | stringa | query | Falso  a| 
+Indica quali campi devono essere confrontati per restituire una risorsa durante l'elenco di una collezione.
+
+Gli operatori supportati sono:
+
+* eq - Uguaglianza
+* lt/gt - Minore di/Maggiore di
+* lte/gte - Minore o uguale a/Maggiore o uguale a
+
+
+Esempio di URL: "filter=field%20eq%20%27value%27"
+
+Esempi OpenAPI: "field eq 'value'"
+
+|===
+
+
+== Risposta
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| elementi | array[Qualsiasi tra: link:#cluster_1_6_get_response_body["cluster_1.6_get_response_body"], array[]] | Vero  a| 
+
+
+
+| metadati | link:#type_astra_metadata_list["elenco_metadati_tipo_astra"] | Vero  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-clusters",
+  "version": "1.6",
+  "items": [
+    [
+      "0f284377-e5dc-4dcd-bacd-3197f2b8a347",
+      "GKE-21",
+      "managed"
+    ],
+    [
+      "04dc80fa-d1d8-4850-a49f-3b70d0ec1369",
+      "GKE-22",
+      "unmanaged"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+
+
+| invalidParams | vettore[link:#invalidParams["invalidParams"]] | Falso  a| 
+Elenco dei parametri di query non validi
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Errore
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Esempio di risposta di errore
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definizioni
+
+.Vedi definizioni
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+etichetta tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+
+
+
+| valore | stringa | Vero  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+aggiornamento dei metadati di tipo Astra
+
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema dei metadati di Astra. Se non specificato in fase di creazione, verrà creato un oggetto metadati senza etichette. Se non specificato in fase di aggiornamento, le etichette dell'oggetto metadati, creationTimestamp e createdBy, verranno conservate senza modifiche.
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Falso  a| 
+
+
+
+| CreationTimestamp | stringa | Falso  a| 
+
+
+
+| ModificationTimestamp | stringa | Falso  a| 
+
+
+
+| CreatedBy | stringa | Falso  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+cluster_1.6_get_response_body
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+Tipo di media della risorsa. I valori definiti sono:
+
+* "application/astra-cluster"
+
+
+
+
+| versione | stringa | Vero  a| 
+Versione della risorsa. I valori definiti sono:
+
+* "1,0"
+* "1,1"
+* "1,2"
+* "1,3"
+* "1,4"
+* "1,5"
+* "1,6"
+
+
+
+
+| id | stringa | Vero  a| 
+Identificatore univoco globale della risorsa. I valori definiti sono:
+
+* Conforme allo schema UUIDv4
+
+
+
+
+| nome | stringa | Vero  a| 
+Stringa JSON contenente un nome per il cluster. Se non specificato, verrà utilizzato il nome Kubernetes del cluster. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 63
+* Questa stringa viene convalidata internamente per prevenire attacchi XSS, Unicode, directory traversal e SQL-injection
+
+
+
+
+| stato | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica lo stato operativo del cluster. I valori definiti sono:
+
+* "in sospeso" - Il cluster è programmato per la scoperta
+* "scoperta" - Il cluster è in fase di scoperta
+* "Provisioning" - Il cluster è in fase di provisioning
+* "in esecuzione" - Il cluster è in esecuzione normalmente
+* "fallito" - Il cluster si trova in uno stato di errore permanente
+* "rimosso" - Il cluster non è attualmente accessibile
+* "sconosciuto" - Non è possibile determinare lo stato del cluster
+
+
+
+
+| stateUnready | array[string] | Vero  a| 
+Array JSON di stringhe JSON, ognuna delle quali indica un motivo per cui il cluster non è in grado di passare allo stato "in esecuzione", quando si verificano problemi mentre è nello stato "in esecuzione", o perché è passato allo stato "non riuscito" o "rimosso". I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 127
+
+
+
+
+| managedState | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica lo stato di gestione del cluster. I valori definiti sono:
+
+* "in sospeso" - Il cluster è programmato per essere scoperto o aggiunto
+* "non idoneo" - Il cluster è in stato "in esecuzione", non è gestito e non è idoneo alla gestione. I motivi di questa non idoneità sono forniti nel valore chiave unready
+* "non gestito" - Il cluster è nello stato "in esecuzione" o "non riuscito", non è gestito ed è idoneo alla gestione
+* "gestione" - Il cluster è nello stato "in esecuzione" ed è in fase di gestione
+* "gestito" - Il cluster si trova nello stato "in esecuzione", "non riuscito" o "rimosso" ed è sotto gestione
+
+
+
+
+| protectionState | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica lo stato di protezione del cluster. I valori definiti sono:
+
+* "full" - La classe di archiviazione predefinita del cluster supporta gli snapshot
+* "parziale" - Il cluster ha solo storageClasses che non supportano gli snapshot
+* "atRisk" - La classe di archiviazione predefinita del cluster non supporta gli snapshot
+
+
+
+
+| protectionStateDetails | vettore[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Vero  a| 
+Array JSON di oggetti JSON che elenca dettagli aggiuntivi sullo stato di protezione corrente, incluso il motivo per cui è stato raggiunto tale stato. Se non sono disponibili dettagli, questo array sarà vuoto. I valori definiti sono:
+
+* Elementi minimi: 0
+
+
+
+
+| restoreTargetSupported | stringa | Falso  a| 
+Stringa JSON contenente un valore che indica la capacità del cluster di essere un _target_ delle operazioni di gestione dei dati dell'applicazione. I valori definiti sono:
+
+* "vero" - Il cluster è una destinazione idonea per le operazioni di gestione dei dati dell'app.
+* "falso" - Il cluster _non_ è una destinazione idonea per le operazioni di gestione dei dati delle app.
+
+
+
+
+| snapshotSupported | stringa | Falso  a| 
+Stringa JSON contenente un valore che indica la capacità del cluster di eseguire operazioni simili al backup per la gestione dei dati delle applicazioni. I valori definiti sono:
+
+* "vero" - Il cluster è idoneo a eseguire operazioni di gestione dei dati dell'app.
+* "falso" - Il cluster _non_ è idoneo a eseguire operazioni di gestione dei dati dell'app.
+
+
+
+
+| managedStateUnready | array[string] | Vero  a| 
+Array JSON di stringhe JSON, ognuna delle quali indica un motivo per cui il cluster non è idoneo a essere gestito, oppure che il cluster è gestito ma si sono verificati errori non critici durante la gestione del cluster. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 127
+
+
+
+
+| managedTimestamp | stringa | Falso  a| 
+Stringa JSON contenente il timestamp che indica quando il cluster è stato messo sotto gestione. I valori definiti sono:
+
+* Conforme allo schema di data e ora ISO-8601. Questa chiave viene restituita solo quando un cluster ha un managedState di "managed".
+
+
+
+
+| tridentVersion | stringa | Falso  a| 
+Stringa JSON contenente la versione di Trident installata sul cluster. I valori definiti sono:
+
+* Conforme allo schema di versione del software
+
+
+
+
+| acpVersion | stringa | Falso  a| 
+Stringa JSON contenente la versione di Astra Control Provisioner installata sul cluster. I valori definiti sono:
+
+* Conforme allo schema di versione del software
+
+
+
+
+| tridentManagedState | stringa | Falso  a| 
+Stringa JSON contenente uno di un insieme di valori enumerati che indicano lo stato di gestione di Trident su questo cluster. I valori definiti sono:
+
+* "gestito" - L'istanza Trident sul cluster è gestita da Astra
+* "non gestito" - L'istanza Trident sul cluster non è gestita da Astra
+
+
+
+
+| tridentManagedStateDesired | stringa | Falso  a| 
+Stringa JSON contenente un valore che indica lo stato di gestione desiderato per Trident. I valori definiti sono:
+
+* "gestito" - Gestisci Trident su questo cluster
+* "non gestito" - Non gestire Trident su questo cluster
+
+
+
+
+| tridentManagedStateDetails | vettore[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Falso  a| 
+Array JSON di oggetti JSON che elenca ulteriori dettagli sul motivo per cui lo stato è passato a "gestito" o "non gestito". + Se non sono disponibili dettagli, questo array sarà vuoto.
+
+* Elementi minimi: 0
+
+
+
+
+| tridentManagedStateAllowed | array[string] | Falso  a| 
+Stati che possono essere richiesti in un dato tridentManagedState. I seguenti stati possono essere richiesti in ciascuno stato definito:
+
+* "gestito": "gestito"
+* "unmanaged": "non gestito"
+
+
+
+
+| inUse | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica se il cluster ha applicazioni gestite e pertanto non può essere eliminato. I valori definiti sono:
+
+* "falso" - Il cluster non è gestito oppure è gestito ma non ha applicazioni gestite associate ad esso
+* "vero" - Il cluster è gestito e ha applicazioni gestite associate con esso
+
+
+
+
+| accHost | stringa | Falso  a| 
+Stringa JSON che indica che questo cluster ospita l'istanza di Astra Control Center a cui si sta attualmente accedendo. I valori definiti sono:
+
+* "true" - Questo cluster ospita l'istanza di Astra Control Center a cui si sta attualmente accedendo.
+
+
+
+
+| clusterType | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica il tipo di cluster. I valori definiti sono:
+
+* "gke" - Kubernetes ospitato su Google Kubernetes Engine
+* "aks" - Kubernetes ospitato su Microsoft Azure Kubernetes Service
+* "eks" - Kubernetes ospitato su Amazon Elastic Kubernetes Service
+* "rke" - Il cluster è di tipo Rancher
+* "tanzu" - Il cluster è di tipo Tanzu Kubernetes Grid
+* "openshift" - Il cluster è di tipo OpenShift
+* "anthos" - Il cluster è di tipo GKE Anthos
+* "kubernetes" - Il cluster è Kubernetes generico
+
+
+
+
+| clusterVersion | stringa | Falso  a| 
+Stringa JSON contenente un valore che indica la rappresentazione della versione semantica dell'ambiente del cluster. Per i cluster Kubernetes, questa è la versione di Kubernetes. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 31
+
+
+
+
+| clusterVersionString | stringa | Falso  a| 
+Stringa JSON contenente un valore che indica le informazioni di versione estese per l'ambiente del cluster. Per i cluster Kubernetes, questa è la versione completa di Kubernetes. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 31
+
+
+
+
+| clusterCreationTimestamp | stringa | Falso  a| 
+Stringa JSON contenente il timestamp che indica quando il cluster è stato originariamente creato. I valori definiti sono:
+
+* Conforme allo schema di data e ora ISO-8601
+
+
+
+
+| spazi dei nomi | array[string] | Falso  a| 
+Array JSON di stringhe JSON, ognuna delle quali indica uno spazio dei nomi all'interno del cluster. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 253
+
+
+
+
+| defaultStorageClass | stringa | Falso  a| 
+Stringa JSON contenente un ID di classe di archiviazione corrispondente alla classe di archiviazione predefinita impostata in Kubernetes. I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| cloudID | stringa | Vero  a| 
+Stringa JSON contenente un valore che indica l'ID del cloud su cui è in esecuzione il cluster. I valori definiti sono:
+
+* Conforme allo schema identificativo Astra
+
+
+
+
+| ID credenziale | stringa | Falso  a| 
+Stringa JSON contenente un valore che indica l'ID della credenziale che contiene il file kubeconfig per il cluster. I valori definiti sono:
+
+* Conforme allo schema di identificazione Astra. Se vengono forniti privateRouteID e connectorCapabilities con almeno l'opzione relay, credentialID è facoltativo. Se non vengono forniti, credentialID è obbligatorio, altrimenti viene generato un errore. Se vengono forniti credentialID e un connettore compatibile con relay, viene generato un errore.
+
+
+
+
+| posizione | stringa | Falso  a| 
+Stringa JSON contenente un valore fornito dal cloud su cui è in esecuzione il cluster, che indica la posizione specifica del cluster per quel cloud. I valori definiti sono:
+
+* Lunghezza minima: 1
+* Lunghezza massima: 63
+
+
+
+
+| isMultizonal | stringa | Falso  a| 
+Stringa JSON contenente un valore fornito dal cloud su cui è in esecuzione il cluster, che indica se il cluster si estende su due o più zone di disponibilità. I valori definiti sono:
+
+* "vero" - Il cluster si estende su due o più zone di disponibilità
+* "falso" - Il cluster è interamente situato all'interno di un'unica zona di disponibilità
+
+
+
+
+| privateRouteID | stringa | Falso  a| 
+Stringa JSON contenente l'ID della posizione per i cluster privati.
+
+* Lunghezza minima: 1
+* Lunghezza massima: 255
+
+
+
+
+| connectorCapabilities | array[string] | Falso  a| 
+Funzionalità del connettore associato a questo cluster. Opzionale per la compatibilità con le versioni precedenti. Se non presente, proxy è la funzionalità presunta.
+
+
+
+| apiServiceID | stringa | Falso  a| 
+Stringa JSON contenente l'UUID dall'oggetto servizio API di Kubernetes (k8s). Utilizzata per identificare in modo univoco un cluster.
+
+
+
+| metadati | link:#type_astra_metadata_update["aggiornamento dei metadati di tipo Astra"] | Vero  a| 
+Metadati specificati dal client e dal servizio associati alla risorsa. I valori definiti sono:
+
+* Conforme allo schema dei metadati di Astra. Se non specificato in fase di creazione, verrà creato un oggetto metadati senza etichette. Se non specificato in fase di aggiornamento, le etichette dell'oggetto metadati, creationTimestamp e createdBy, verranno conservate senza modifiche.
+
+
+|===
+[role="api-collapsible-fifth-title"]
+elenco_metadati_tipo_astra
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| continuare | stringa | Falso  a| 
+
+
+
+| conta | numero | Falso  a| 
+
+
+
+| etichette | vettore[link:#type_astra_label["etichetta tipo_astra"]] | Falso  a| 
+
+
+
+| CreationTimestamp | stringa | Falso  a| 
+
+
+
+| ModificationTimestamp | stringa | Falso  a| 
+
+
+
+| CreatedBy | stringa | Falso  a| 
+
+
+
+| modifiedBy | stringa | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+Nome del parametro di query non valido
+
+
+
+| motivo | stringa | Vero  a| 
+Motivo per cui il parametro di query non è valido
+
+|===
+====

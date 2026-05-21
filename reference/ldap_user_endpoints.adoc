@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/ldap_user_endpoints.html 
+summary: 'Endpoint utente LDAP dell"API Astra (ACC)' 
+---
+= Endpoint utente LDAP dell'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API utente LDAP fornisce accesso in sola lettura agli utenti LDAP all'interno del LDAP server configurato.

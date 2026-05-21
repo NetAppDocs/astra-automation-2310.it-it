@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/unread_notification_endpoints.html 
+summary: 'Endpoint di notifica non letta dell"API Astra (ACC)' 
+---
+= Endpoint di notifica non letta dell'API Astra (ACC)
+:allow-uri-read: 
+
+
+L'API Notifiche non lette fornisce informazioni sulle notifiche che non sono state lette da un determinato utente e consente di contrassegnarle come lette.

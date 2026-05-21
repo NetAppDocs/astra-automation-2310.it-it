@@ -1,0 +1,268 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/delete-accounts-k8s-v1-apps-appmirrors-.html 
+summary: 'Eliminare una risorsa AppMirror per un"app' 
+---
+= Eliminare una risorsa AppMirror per un'app
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-delete]#ELIMINA# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appMirrors/{appMirror_id}`#
+
+Rimuove la risorsa API AppMirror specificata. Avvia un processo per rimuovere in modo asincrono la risorsa AppMirror, insieme a tutte le risorse sui cluster di origine e destinazione che sono state create a seguito della relazione AppMirror. Le risorse rimosse dipendono dallo stato della relazione al momento dell'eliminazione.
+
+*Effetti collaterali*
+
+* Il campo stateDesired è impostato su "eliminato".
+* Il campo relativo allo stato è impostato su "deleting".
+* Se lo stato è "established", gli TridentMirrorRelationships e PersistentVolumeClaims creati dalla relazione AppMirror verranno eliminati.
+* Se lo stato è ""failedOver", le TridentMirrorRelationships create dalla relazione AppMirror verranno eliminate e le PersistentVolumeClaims nell'applicazione di destinazione verranno lasciate al loro posto.
+* Al termine dell'operazione di eliminazione asincrona, la risorsa API AppMirror verrà rimossa sia dall'applicazione di origine che dalla destinazione.
+
+
+
+
+== Parametri
+
+[cols="5*"]
+|===
+| Nome | Tipo | In | Obbligatorio | Descrizione 
+
+
+| ID account | stringa | percorso | Vero  a| 
+ID della risorsa account contenitore
+
+* esempio: {{.Account}}
+
+
+
+
+| app_id | stringa | percorso | Vero  a| 
+ID della risorsa dell'app che la contiene
+
+
+
+| appMirror_id | stringa | percorso | Vero  a| 
+ID della collezione appMirror da elencare
+
+|===
+
+
+== Risposta
+
+[source]
+----
+Status: 204, Indicates if the appMirror resource was deleted.
+----
+
+
+== Risposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+
+
+| invalidParams | vettore[link:#invalidParams["invalidParams"]] | Falso  a| 
+Elenco dei parametri di query non validi
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Risposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Risposta tipo
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Errore
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| tipo | stringa | Vero  a| 
+
+
+
+| titolo | stringa | Vero  a| 
+
+
+
+| dettaglio | stringa | Vero  a| 
+
+
+
+| stato | stringa | Vero  a| 
+
+
+
+| ID correlazione | stringa | Falso  a| 
+
+|===
+.Esempio di risposta di errore
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/1",
+  "title": "Resource not found",
+  "detail": "The resource specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definizioni
+
+.Vedi definizioni
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obbligatorio | Descrizione 
+
+
+| nome | stringa | Vero  a| 
+Nome del parametro di query non valido
+
+
+
+| motivo | stringa | Vero  a| 
+Motivo per cui il parametro di query non è valido
+
+|===
+====
