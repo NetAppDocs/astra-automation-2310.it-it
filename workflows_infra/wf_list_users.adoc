@@ -18,6 +18,7 @@ summary: È possibile elencare gli utenti definiti per un account Astra specific
 
 
 
+[[1-list-the-users]]
 === 1. Elencare gli utenti
 
 Eseguire la seguente chiamata API REST.

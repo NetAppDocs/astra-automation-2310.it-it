@@ -7,6 +7,7 @@ summary: Recupera una classe di archiviazione per un cloud
 ---
 = Recupera una classe di archiviazione per un cloud
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/storageClasses/{storageClass_id}`#
@@ -15,6 +16,7 @@ Restituisce la risorsa API della classe di archiviazione memorizzata nel corpo d
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -46,6 +48,7 @@ ID della collezione storageClass da elencare
 |===
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -222,6 +225,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -267,6 +271,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -317,6 +322,7 @@ Elenco dei parametri di query non validi
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -362,6 +368,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Errore
 
 [source]
@@ -407,11 +414,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definizioni
 
 .Vedi definizioni
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 etichetta tipo_astra
 
@@ -427,6 +436,7 @@ etichetta tipo_astra
 | valore | stringa | Vero  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadati
 
@@ -459,6 +469,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

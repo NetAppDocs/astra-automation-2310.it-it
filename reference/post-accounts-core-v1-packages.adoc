@@ -7,6 +7,7 @@ summary: Crea un nuovo pacchetto
 ---
 = Crea un nuovo pacchetto
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/packages`#
@@ -15,6 +16,7 @@ Indica i valori desiderati per la risorsa API Package da creare.
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -31,6 +33,7 @@ ID della risorsa account contenitore
 |===
 
 
+[[request-body]]
 == Corpo della richiesta
 
 Indica i valori desiderati per la risorsa API Package da creare.
@@ -191,6 +194,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -428,6 +432,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -473,6 +478,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -523,6 +529,7 @@ Elenco dei campi non validi del corpo della richiesta
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -573,6 +580,7 @@ Elenco dei campi non validi del corpo della richiesta
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -618,6 +626,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Errore
 
 [source]
@@ -663,11 +672,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definizioni
 
 .Vedi definizioni
 [%collapsible]
 ====
+[[dependsOnImages]]
 [role="api-collapsible-fifth-title"]
 dependsOnImages
 
@@ -702,6 +713,7 @@ Stringa JSON che rappresenta il tag/la versione di questa immagine. I valori def
 
 
 |===
+[[images]]
 [role="api-collapsible-fifth-title"]
 immagini
 
@@ -749,6 +761,7 @@ Stringa JSON che rappresenta il digest di questa immagine. I valori definiti son
 Array JSON di oggetti JSON che descrivono le immagini necessarie per installare o aggiornare l'immagine corrente.
 
 |===
+[[dependsOnComponents]]
 [role="api-collapsible-fifth-title"]
 dependsOnComponents
 
@@ -772,6 +785,7 @@ Stringa JSON che descrive il nome del componente. I valori definiti sono:
 Array JSON di stringhe JSON che definiscono la versione del componente necessaria per installare l'immagine corrente.
 
 |===
+[[artifacts]]
 [role="api-collapsible-fifth-title"]
 artefatti
 
@@ -821,6 +835,7 @@ Stringa JSON contenente la versione di quell'artefatto, se fornita. I valori def
 Array JSON di oggetti JSON che descrivono i componenti installati necessari per installare/aggiornare l'immagine corrente.
 
 |===
+[[files]]
 [role="api-collapsible-fifth-title"]
 file
 
@@ -863,6 +878,7 @@ Stringa JSON contenente il contenuto del file. I valori definiti sono:
 
 
 |===
+[[upgradableVersions]]
 [role="api-collapsible-fifth-title"]
 upgradableVersions
 
@@ -888,6 +904,7 @@ Stringa JSON che descrive la versione massima che può essere aggiornata alla ve
 
 
 |===
+[[dependencies]]
 [role="api-collapsible-fifth-title"]
 dipendenze
 
@@ -922,6 +939,7 @@ Stringa JSON che descrive la versione massima richiesta per quel componente. I v
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 etichetta tipo_astra
 
@@ -937,6 +955,7 @@ etichetta tipo_astra
 | valore | stringa | Vero  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadati
 
@@ -969,6 +988,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[type_astra_stateTransition]]
 [role="api-collapsible-fifth-title"]
 tipo_transizione_stato_astra
 
@@ -984,9 +1004,11 @@ tipo_transizione_stato_astra
 | a | array[string] | Vero  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -1010,6 +1032,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -1027,6 +1050,7 @@ Nome del parametro di query non valido
 Motivo per cui il parametro di query non è valido
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

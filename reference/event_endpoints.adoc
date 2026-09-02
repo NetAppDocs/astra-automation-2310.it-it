@@ -7,6 +7,7 @@ summary: 'Endpoint degli eventi dell"API Astra (ACC)'
 ---
 = Endpoint degli eventi dell'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Event fornisce l'accesso agli eventi che si verificano nel sistema.

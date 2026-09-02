@@ -18,12 +18,14 @@ summary: È possibile gestire un cluster Kubernetes in modo da eseguire le opera
 
 
 
+[[1-select-the-cluster-to-manage]]
 === 1. Selezionare il cluster da gestire
 
 Eseguire il flusso di lavoro link:../workflows_infra/wf_list_clusters.html["Elencare i cluster"] e selezionare il cluster desiderato. La proprietà `managedState` del cluster deve essere `unmanaged`.
 
 
 
+[[2-optionally-select-the-storage-class]]
 === 2. Se si desidera, selezionare la classe di storage
 
 Eseguire il flusso di lavoro come opzione link:../workflows_infra/wf_list_storage_classes.html["Elencare le classi di storage"] e selezionare la classe di storage desiderata.
@@ -33,6 +35,7 @@ NOTE: Se non si fornisce una classe di storage durante la chiamata per gestire i
 
 
 
+[[3-manage-the-cluster]]
 === 3. Gestire il cluster
 
 Eseguire la seguente chiamata API REST per gestire il cluster.

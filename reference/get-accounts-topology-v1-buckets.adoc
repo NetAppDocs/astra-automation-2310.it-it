@@ -7,6 +7,7 @@ summary: Elenca tutti i bucket
 ---
 = Elenca tutti i bucket
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/buckets`#
@@ -15,6 +16,7 @@ Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se 
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -31,6 +33,7 @@ ID della risorsa account contenitore
 |===
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -80,6 +83,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -125,6 +129,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -175,6 +180,7 @@ Elenco dei parametri di query non validi
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -220,6 +226,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Errore
 
 [source]
@@ -265,14 +272,17 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definizioni
 
 .Vedi definizioni
 [%collapsible]
 ====
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -296,6 +306,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
 
 |===
+[[s3]]
 [role="api-collapsible-fifth-title"]
 s3
 
@@ -323,6 +334,7 @@ Stringa JSON contenente il nome del bucket S3. I valori definiti sono:
 
 
 |===
+[[gcp]]
 [role="api-collapsible-fifth-title"]
 gcp
 
@@ -341,6 +353,7 @@ Stringa JSON contenente il nome del bucket Google Cloud di supporto. I valori de
 
 
 |===
+[[azure]]
 [role="api-collapsible-fifth-title"]
 azure
 
@@ -368,6 +381,7 @@ Stringa JSON contenente il nome del blob Azure sottostante. I valori definiti so
 
 
 |===
+[[bucketParameters]]
 [role="api-collapsible-fifth-title"]
 bucketParameters
 
@@ -392,6 +406,7 @@ Oggetto JSON che fornisce i parametri del protocollo Google Cloud.
 Oggetto JSON che fornisce i parametri del protocollo Azure.
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 etichetta tipo_astra
 
@@ -407,6 +422,7 @@ etichetta tipo_astra
 | valore | stringa | Vero  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 aggiornamento dei metadati di tipo Astra
 
@@ -439,6 +455,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[bucket_1_2_get_response_body]]
 [role="api-collapsible-fifth-title"]
 bucket_1.2_get_response_body
 
@@ -552,6 +569,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 elenco_metadati_tipo_astra
 
@@ -587,6 +605,7 @@ elenco_metadati_tipo_astra
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

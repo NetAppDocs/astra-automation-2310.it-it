@@ -7,6 +7,7 @@ summary: 'Endpoint delle risorse applicative dell"API Astra (ACC)'
 ---
 = Endpoint delle risorse applicative dell'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Application Asset fornisce l'accesso a raccolte interne di informazioni sullo stato utilizzate per gestire le applicazioni.

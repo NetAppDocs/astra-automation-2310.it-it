@@ -21,6 +21,7 @@ NOTE: Concettualmente, una RISORSA REST* è simile a un *oggetto* come definito 
 
 
 
+[[attributes-of-the-astra-resources]]
 == Attributi delle risorse Astra
 
 L'API REST di Astra Control è conforme ai principi di progettazione RESTful. Ogni istanza di risorsa Astra viene creata in base a un tipo di risorsa ben definito. Un insieme di istanze di risorse dello stesso tipo viene definito *insieme*. Le chiamate API agiscono su singole risorse o raccolte di risorse.
@@ -58,6 +59,7 @@ NOTE: L'identificatore di risorsa è la chiave principale utilizzata per le racc
 
 
 
+[[common-structure-for-astra-resources]]
 == Struttura comune per le risorse Astra
 
 Ogni risorsa Astra Control viene definita utilizzando una struttura comune.

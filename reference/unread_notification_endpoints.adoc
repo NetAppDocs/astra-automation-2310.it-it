@@ -7,6 +7,7 @@ summary: 'Endpoint di notifica non letta dell"API Astra (ACC)'
 ---
 = Endpoint di notifica non letta dell'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Notifiche non lette fornisce informazioni sulle notifiche che non sono state lette da un determinato utente e consente di contrassegnarle come lette.

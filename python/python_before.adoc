@@ -21,6 +21,7 @@ NOTE: Oltre ad accedere direttamente all'API REST di Astra Control utilizzando P
 
 
 
+[[prepare-the-environment]]
 == Preparare l'ambiente
 
 I requisiti di configurazione di base per eseguire gli script Python sono descritti di seguito.
@@ -39,6 +40,7 @@ La workstation in cui vengono eseguiti gli script deve disporre dell'accesso di 
 
 
 
+[[create-the-json-input-files]]
 == Creare i file di input JSON
 
 Gli script Python si basano sulle informazioni di configurazione contenute nei file di input JSON. I file di esempio sono forniti di seguito.

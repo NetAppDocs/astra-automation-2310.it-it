@@ -18,6 +18,7 @@ summary: È possibile elencare gli spazi dei nomi disponibili.
 
 
 
+[[1-list-the-namespaces]]
 === 1. Elencare gli spazi dei nomi
 
 Eseguire la seguente chiamata API REST per elencare gli spazi dei nomi.

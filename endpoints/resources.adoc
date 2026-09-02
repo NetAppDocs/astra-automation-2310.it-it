@@ -21,6 +21,7 @@ NOTE: Il formato del percorso e dell'URL completo utilizzati per accedere alle r
 
 
 
+[[summary-of-astra-control-rest-resources]]
 == Riepilogo delle risorse REST di Astra Control
 
 Gli endpoint delle risorse principali forniti nell'API REST di Astra Control sono organizzati in tre categorie. È possibile accedere a ciascuna risorsa con il set completo di operazioni CRUD (creazione, lettura, aggiornamento, eliminazione), salvo dove indicato.
@@ -29,6 +30,7 @@ La colonna *Release* indica la release Astra quando la risorsa è stata introdot
 
 
 
+[[core-resources]]
 === Risorse di base
 
 Gli endpoint principali delle risorse forniscono i servizi di base necessari per stabilire e mantenere l'ambiente di runtime Astra.
@@ -114,6 +116,7 @@ Gli endpoint principali delle risorse forniscono i servizi di base necessari per
 |===
 
 
+[[managed-application-resources]]
 === Risorse applicative gestite
 
 Gli endpoint delle risorse applicative gestite forniscono l'accesso alle applicazioni Kubernetes gestite.
@@ -139,6 +142,7 @@ Gli endpoint delle risorse applicative gestite forniscono l'accesso alle applica
 |===
 
 
+[[topology-resources]]
 === Risorse per la topologia
 
 Gli endpoint delle risorse di topologia forniscono l'accesso alle applicazioni non gestite e alle risorse di storage.
@@ -185,6 +189,7 @@ Gli endpoint delle risorse di topologia forniscono l'accesso alle applicazioni n
 |===
 
 
+[[additional-resources-and-endpoints]]
 == Risorse ed endpoint aggiuntivi
 
 Esistono diverse risorse aggiuntive e endpoint che è possibile utilizzare per supportare un'implementazione Astra.

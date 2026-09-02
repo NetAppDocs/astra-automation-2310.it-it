@@ -7,6 +7,7 @@ summary: Recupera una notifica non letta
 ---
 = Recupera una notifica non letta
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/unreadNotifications/{unreadNotification_id}`#
@@ -15,6 +16,7 @@ Restituisce la risorsa API di notifica non letta memorizzata nel corpo della ris
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -41,6 +43,7 @@ ID della collezione unreadNotification da elencare
 |===
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -131,6 +134,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -176,6 +180,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -226,6 +231,7 @@ Elenco dei parametri di query non validi
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -271,6 +277,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Errore
 
 [source]
@@ -316,11 +323,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definizioni
 
 .Vedi definizioni
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 etichetta tipo_astra
 
@@ -336,6 +345,7 @@ etichetta tipo_astra
 | valore | stringa | Vero  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadati
 
@@ -368,6 +378,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

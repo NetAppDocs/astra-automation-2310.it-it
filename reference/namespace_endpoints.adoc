@@ -7,6 +7,7 @@ summary: 'Endpoint dello spazio dei nomi dell"API Astra (ACC)'
 ---
 = Endpoint dello spazio dei nomi dell'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Namespace fornisce accesso in sola lettura alle risorse namespace al fine di descrivere i namespace associati a un determinato cluster.

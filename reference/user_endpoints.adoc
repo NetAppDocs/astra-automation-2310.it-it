@@ -7,6 +7,7 @@ summary: 'Endpoint utente dell"API Astra (ACC)'
 ---
 = Endpoint utente dell'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API utente rappresenta gli utenti che sono in grado di interagire con il sistema.

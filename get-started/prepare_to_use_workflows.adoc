@@ -18,6 +18,7 @@ Prima di utilizzarli con un'implementazione live, è necessario conoscere l'orga
 
 
 
+[[introduction]]
 == Introduzione
 
 Un _workflow_ è una sequenza di uno o più passaggi necessari per eseguire un'attività o un obiettivo amministrativo specifico. Ogni fase del flusso di lavoro di Astra Control è una delle seguenti:
@@ -31,6 +32,7 @@ I flussi di lavoro includono i passaggi principali e i parametri necessari per e
 
 
 
+[[common-input-parameters]]
 == Parametri di input comuni
 
 I parametri di input descritti di seguito sono comuni a tutti gli esempi di curl utilizzati per illustrare una chiamata API REST.
@@ -40,6 +42,7 @@ NOTE: Poiché questi parametri di input sono universalmente richiesti, non vengo
 
 
 
+[[path-parameters]]
 === Parametri del percorso
 
 Il percorso dell'endpoint utilizzato con ogni chiamata API REST include i seguenti parametri. Vedere anche link:../rest-core/url_format.html["Formato URL"] per ulteriori informazioni.
@@ -49,6 +52,7 @@ ID account:: Questo è il valore UUIDv4 che identifica l'account Astra in cui vi
 
 
 
+[[request-headers]]
 === Intestazioni delle richieste
 
 A seconda della chiamata API REST, potrebbe essere necessario includere diverse intestazioni di richiesta.
@@ -60,6 +64,7 @@ Accettare:: È possibile dichiarare il tipo di supporto specifico del contenuto 
 
 
 
+[[presentation-of-tokens-and-identifiers]]
 == Presentazione di token e identificatori
 
 Il token API e gli altri valori ID utilizzati con gli esempi di curl sono opachi e non sono comprensibili. Per migliorare la leggibilità dei campioni, non vengono utilizzati i valori token e ID effettivi. Piuttosto, vengono utilizzate parole chiave riservate più piccole che hanno diversi benefici:
@@ -86,6 +91,7 @@ Ecco alcune delle parole chiave riservate più comuni utilizzate negli esempi di
 |===
 
 
+[[workflow-categories]]
 == Categorie di workflow
 
 Sono disponibili due ampie categorie di flussi di lavoro Astra in base al modello di implementazione. Se si utilizza Astra Control Center, è necessario iniziare con i flussi di lavoro dell'infrastruttura e passare ai flussi di lavoro di gestione. Quando si utilizza Astra Control Service, in genere è possibile accedere direttamente ai flussi di lavoro di gestione.
@@ -95,12 +101,14 @@ NOTE: Gli esempi di arricciatura nei flussi di lavoro utilizzano l'URL per Astra
 
 
 
+[[infrastructure-workflows]]
 === Flussi di lavoro dell'infrastruttura
 
 Questi flussi di lavoro si occupano dell'infrastruttura Astra, inclusi credenziali, bucket e backend dello storage. Sono necessari con Astra Control Center, ma nella maggior parte dei casi possono essere utilizzati anche con Astra Control Service. I flussi di lavoro si concentrano sulle attività necessarie per stabilire e gestire un cluster gestito da Astra.
 
 
 
+[[management-workflows]]
 === Workflow di gestione
 
 È possibile utilizzare questi flussi di lavoro dopo aver gestito un cluster. I flussi di lavoro si concentrano sulla protezione delle applicazioni e supportano operazioni come il backup, il ripristino e la clonazione di un'applicazione.

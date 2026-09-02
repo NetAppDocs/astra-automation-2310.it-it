@@ -18,12 +18,14 @@ summary: 'È possibile elencare i backup creati per un"applicazione specifica.'
 
 
 
+[[before-you-begin]]
 === Prima di iniziare
 
 È necessario disporre dell'ID dell'applicazione per cui si desidera elencare i backup. Se necessario, è possibile utilizzare il flusso di lavoro link:wf_list_man_apps.html["Elencare le applicazioni"] per individuare l'applicazione.
 
 
 
+[[1-list-the-backups]]
 === 1. Elencare i backup
 
 Eseguire la seguente chiamata API REST.

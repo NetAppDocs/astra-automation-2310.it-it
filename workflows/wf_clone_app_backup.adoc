@@ -18,6 +18,7 @@ summary: È possibile creare una nuova applicazione clonandola da un backup.
 
 
 
+[[before-you-begin]]
 === Prima di iniziare
 
 Tenere presente quanto segue a proposito di questo flusso di lavoro:
@@ -31,18 +32,21 @@ NOTE: Per clonare un'applicazione in un cluster diverso, è necessario aggiornar
 
 
 
+[[1-select-the-app-to-clone]]
 === 1. Selezionare l'applicazione da clonare
 
 Eseguire il flusso di lavoro link:wf_list_man_apps.html["Elencare le applicazioni"] e selezionare l'applicazione che si desidera clonare. Per la chiamata DI PAUSA utilizzata per clonare l'applicazione sono necessari diversi valori delle risorse.
 
 
 
+[[2-select-the-backup-to-use]]
 === 2. Selezionare il backup da utilizzare
 
 Eseguire il flusso di lavoro link:wf_list_backups.html["Elencare i backup"] e selezionare il backup che si desidera utilizzare.
 
 
 
+[[3-clone-the-app]]
 === 3. Clonare l'applicazione
 
 Eseguire la seguente chiamata API REST.

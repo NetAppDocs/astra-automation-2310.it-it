@@ -7,6 +7,7 @@ summary: 'Endpoint API Astra (ACC) dell"app'
 ---
 = Endpoint API Astra (ACC) dell'app
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API App rappresenta le applicazioni Kubernetes, incluse quelle non gestite da Astra.

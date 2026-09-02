@@ -7,6 +7,7 @@ summary: 'Panoramica dell"API Astra (ACC)'
 ---
 = Panoramica dell'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 La documentazione di riferimento dell'API REST di Astra Control contiene i dettagli di tutte le chiamate API REST, inclusi gli endpoint, i metodi HTTP, i parametri di input e le risposte. Questa documentazione completa è utile quando si sviluppano applicazioni di automazione utilizzando l'API. L'API REST di Astra fornisce accesso CRUD (Create-Read-Update-Delete) a tutte le risorse di Astra Control, salvo diversa indicazione per una specifica categoria di risorse. Questa documentazione di riferimento si applica alla release 23.10 di Astra Control REST API.

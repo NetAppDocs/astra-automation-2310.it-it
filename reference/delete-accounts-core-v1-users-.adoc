@@ -7,6 +7,7 @@ summary: Elimina un utente
 ---
 = Elimina un utente
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#ELIMINA# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}`#
@@ -21,6 +22,7 @@ Rimuove la risorsa API utente specificata.
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -42,6 +44,7 @@ ID della raccolta utenti da elencare
 |===
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -50,6 +53,7 @@ Status: 204, Indicates if the user resource was deleted.
 ----
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -95,6 +99,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -145,6 +150,7 @@ Elenco dei parametri di query non validi
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -190,6 +196,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Errore
 
 [source]
@@ -235,11 +242,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definizioni
 
 .Vedi definizioni
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

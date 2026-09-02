@@ -18,6 +18,7 @@ Puoi elencare i cloud definiti e disponibili per un account Astra specifico.
 
 
 
+[[1-list-the-clouds]]
 === 1. Elencare i cloud
 
 Eseguire la seguente chiamata API REST per elencare i cloud.

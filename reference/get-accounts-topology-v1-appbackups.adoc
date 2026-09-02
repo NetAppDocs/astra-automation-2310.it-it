@@ -7,6 +7,7 @@ summary: Elenca tutti i backup delle applicazioni
 ---
 = Elenca tutti i backup delle applicazioni
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups`#
@@ -15,6 +16,7 @@ Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se 
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -52,6 +54,7 @@ Esempi OpenAPI: "2"
 |===
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -101,6 +104,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -146,6 +150,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -196,6 +201,7 @@ Elenco dei parametri di query non validi
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -241,6 +247,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -286,6 +293,7 @@ Status: 500, Internal server error
 ====
 
 
+[[error]]
 == Errore
 
 [source]
@@ -331,14 +339,17 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definizioni
 
 .Vedi definizioni
 [%collapsible]
 ====
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -362,6 +373,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 etichetta tipo_astra
 
@@ -377,6 +389,7 @@ etichetta tipo_astra
 | valore | stringa | Vero  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadati
 
@@ -409,6 +422,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[appBackup_1_2_get_response_body]]
 [role="api-collapsible-fifth-title"]
 appBackup_1.2_get_response_body
 
@@ -548,6 +562,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 elenco_metadati_tipo_astra
 
@@ -583,6 +598,7 @@ elenco_metadati_tipo_astra
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

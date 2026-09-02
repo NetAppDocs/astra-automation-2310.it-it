@@ -7,6 +7,7 @@ summary: 'Endpoint hook di esecuzione dell"API Astra (ACC)'
 ---
 = Endpoint hook di esecuzione dell'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Execution Hook consente una gestione semplificata degli hook di esecuzione. Gli hook di esecuzione contengono configurazioni aggiuntive e riferimenti a una risorsa sorgente dell'hook.

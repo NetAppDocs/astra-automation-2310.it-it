@@ -7,6 +7,7 @@ summary: 'Endpoint utente LDAP dell"API Astra (ACC)'
 ---
 = Endpoint utente LDAP dell'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API utente LDAP fornisce accesso in sola lettura agli utenti LDAP all'interno del LDAP server configurato.

@@ -7,6 +7,7 @@ summary: 'Elimina un"app'
 ---
 = Elimina un'app
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#ELIMINA# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v2/apps/{app_id}`#
@@ -21,6 +22,7 @@ Rimuove la risorsa API dell'app specificata.
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -42,6 +44,7 @@ ID della raccolta di app da elencare
 |===
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -50,6 +53,7 @@ Status: 204, Indicates if the app resource was deleted.
 ----
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -95,6 +99,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -145,6 +150,7 @@ Elenco dei parametri di query non validi
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -190,6 +196,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -235,6 +242,7 @@ Status: 500, Internal server error
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -280,6 +288,7 @@ Status: 409, Conflict
 ====
 
 
+[[error]]
 == Errore
 
 [source]
@@ -325,11 +334,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definizioni
 
 .Vedi definizioni
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

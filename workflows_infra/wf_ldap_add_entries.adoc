@@ -27,12 +27,14 @@ NOTE: Le credenziali LDAP sono sotto forma di nome utente come indirizzo e-mail 
 
 
 
+[[add-and-bind-an-individual-user]]
 == Aggiungere e associare un singolo utente
 
 È possibile assegnare un ruolo a ciascun utente Astra utilizzato dopo l'autenticazione LDAP. Ciò è appropriato quando vi è un numero limitato di utenti e ciascuno potrebbe avere caratteristiche amministrative diverse.
 
 
 
+[[1-add-a-user]]
 === 1. Aggiungere un utente
 
 Eseguire la seguente chiamata API REST per aggiungere un utente ad Astra e indicare che LDAP è il provider di autenticazione.
@@ -123,6 +125,7 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 ----
 
 
+[[2-add-a-role-binding-for-the-user]]
 === 2. Aggiungere un'associazione di ruolo per l'utente
 
 Eseguire la seguente chiamata API REST per associare l'utente a un ruolo specifico. È necessario creare l'UUID dell'utente nel passaggio precedente.
@@ -193,12 +196,14 @@ Tenere presente quanto segue in merito ai parametri di risposta:
 
 
 
+[[add-and-bind-a-group]]
 == Aggiungere e associare un gruppo
 
 È possibile assegnare un ruolo a un gruppo Astra che viene utilizzato dopo l'autenticazione LDAP. Ciò è appropriato quando vi è un numero elevato di utenti e ciascuno potrebbe avere caratteristiche amministrative simili.
 
 
 
+[[1-add-a-group]]
 === 1. Aggiungere un gruppo
 
 Eseguire la seguente chiamata API REST per aggiungere un gruppo ad Astra e indicare che LDAP è il provider di autenticazione.
@@ -265,6 +270,7 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 ----
 
 
+[[2-add-a-role-binding-for-the-group]]
 === 2. Aggiungere un'associazione di ruolo per il gruppo
 
 Eseguire la seguente chiamata API REST per associare il gruppo a un ruolo specifico. È necessario creare l'UUID del gruppo nel passaggio precedente. Gli utenti che sono membri del gruppo potranno accedere ad Astra dopo che LDAP ha eseguito l'autenticazione.

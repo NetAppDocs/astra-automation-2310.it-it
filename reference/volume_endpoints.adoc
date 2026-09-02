@@ -7,6 +7,7 @@ summary: 'Endpoint di volume dell"API Astra (ACC)'
 ---
 = Endpoint di volume dell'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Volume fornisce visibilità sui volumi Kubernetes associati alle applicazioni.

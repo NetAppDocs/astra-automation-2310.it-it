@@ -18,12 +18,14 @@ summary: 'È possibile elencare le istantanee acquisite per un"applicazione spec
 
 
 
+[[before-you-begin]]
 === Prima di iniziare
 
 È necessario disporre dell'ID dell'applicazione per la quale si desidera elencare le snapshot. Se necessario, è possibile utilizzare il flusso di lavoro link:wf_list_man_apps.html["Elencare le applicazioni"] per individuare l'applicazione.
 
 
 
+[[1-list-the-snapshots]]
 === 1. Elencare le istantanee
 
 Eseguire la seguente chiamata API REST per elencare le snapshot.

@@ -7,6 +7,7 @@ summary: Recupera un account
 ---
 = Recupera un account
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}`#
@@ -15,6 +16,7 @@ Restituisce la risorsa API Account memorizzata nel corpo della risposta JSON.
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -31,6 +33,7 @@ ID della raccolta di account da elencare
 |===
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -139,6 +142,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -184,6 +188,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -234,6 +239,7 @@ Elenco dei parametri di query non validi
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -279,6 +285,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Errore
 
 [source]
@@ -324,11 +331,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definizioni
 
 .Vedi definizioni
 [%collapsible]
 ====
+[[postalAddress]]
 [role="api-collapsible-fifth-title"]
 postalAddress
 
@@ -392,6 +401,7 @@ Stringa JSON contenente informazioni aggiuntive facoltative sull'indirizzo strad
 
 
 |===
+[[accountContact]]
 [role="api-collapsible-fifth-title"]
 accountContact
 
@@ -454,6 +464,7 @@ Stringa JSON contenente il numero di telefono dell'utente. Se questa chiave non 
 Oggetto JSON contenente una raccolta di stringhe JSON che specificano un indirizzo. Se questa chiave non esiste, indica che non è stato fornito alcun indirizzo. Se questa chiave esiste, saranno presenti tutte e sei le stringhe JSON contenute. Se non si fornisce nulla, la stringa sarà vuota.
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 etichetta tipo_astra
 
@@ -469,6 +480,7 @@ etichetta tipo_astra
 | valore | stringa | Vero  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 aggiornamento dei metadati di tipo Astra
 
@@ -501,6 +513,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

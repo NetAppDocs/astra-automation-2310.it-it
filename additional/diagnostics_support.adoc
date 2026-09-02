@@ -18,6 +18,7 @@ Con l'API REST di Astra Control sono disponibili diverse funzionalità di suppor
 
 
 
+[[api-resources]]
 == Risorse API
 
 Ci sono diverse funzionalità di Astra esposte attraverso le risorse API che forniscono informazioni diagnostiche e supporto.

@@ -7,6 +7,7 @@ summary: 'Recuperare una risorsa dell"applicazione da un backup dell"applicazion
 ---
 = Recuperare una risorsa dell'applicazione da un backup dell'applicazione per un'app
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups/{appBackup_id}/appAssets/{appAsset_id}`#
@@ -15,6 +16,7 @@ Restituisce la risorsa API Application Asset memorizzata nel corpo della rispost
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -46,6 +48,7 @@ ID della collezione appAsset da elencare
 |===
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -190,6 +193,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -235,6 +239,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -285,6 +290,7 @@ Elenco dei parametri di query non validi
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -330,6 +336,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Errore
 
 [source]
@@ -375,11 +382,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definizioni
 
 .Vedi definizioni
 [%collapsible]
 ====
+[[GVK]]
 [role="api-collapsible-fifth-title"]
 GVK
 
@@ -416,11 +425,13 @@ Stringa JSON contenente un identificatore di versione assegnato da Kubernetes. I
 
 
 |===
+[[type_json]]
 [role="api-collapsible-fifth-title"]
 tipo_json
 
 Oggetto JSON contenente l'intero contenuto della definizione della risorsa Kubernetes.
 
+[[labels]]
 [role="api-collapsible-fifth-title"]
 etichette
 
@@ -448,6 +459,7 @@ Stringa JSON contenente il valore dell'etichetta Definiti valori sono:
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 etichetta tipo_astra
 
@@ -463,6 +475,7 @@ etichetta tipo_astra
 | valore | stringa | Vero  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadati
 
@@ -495,6 +508,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

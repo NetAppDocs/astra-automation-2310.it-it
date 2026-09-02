@@ -7,6 +7,7 @@ summary: 'Crea una nuova Snapshot dell"applicazione per un"app'
 ---
 = Crea una nuova Snapshot dell'applicazione per un'app
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appSnaps`#
@@ -15,6 +16,7 @@ Indica i valori desiderati per la risorsa API Application Snapshot da creare.
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID della risorsa dell'app che la contiene
 |===
 
 
+[[request-body]]
 == Corpo della richiesta
 
 Indica i valori desiderati per la risorsa API Application Snapshot da creare.
@@ -94,6 +97,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -228,6 +232,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -273,6 +278,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -323,6 +329,7 @@ Elenco dei campi non validi del corpo della richiesta
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -368,6 +375,7 @@ Status: 409, Conflict
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -413,6 +421,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Errore
 
 [source]
@@ -458,11 +467,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definizioni
 
 .Vedi definizioni
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 etichetta tipo_astra
 
@@ -478,6 +489,7 @@ etichetta tipo_astra
 | valore | stringa | Vero  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadati
 
@@ -510,9 +522,11 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -536,6 +550,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -553,6 +568,7 @@ Nome del parametro di query non valido
 Motivo per cui il parametro di query non è valido
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

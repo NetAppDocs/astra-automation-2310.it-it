@@ -7,6 +7,7 @@ summary: Creare una nuova app per un cluster gestito
 ---
 = Creare una nuova app per un cluster gestito
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/topology/v2/managedClusters/{managedCluster_id}/apps`#
@@ -15,6 +16,7 @@ Indica i valori desiderati per la risorsa API dell'app da creare.
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID della risorsa managedCluster contenitore
 |===
 
 
+[[request-body]]
 == Corpo della richiesta
 
 Indica i valori desiderati per la risorsa API dell'app da creare.
@@ -172,6 +175,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -446,6 +450,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -491,6 +496,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -536,6 +542,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -581,6 +588,7 @@ Status: 409, Conflict
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -626,6 +634,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Errore
 
 [source]
@@ -671,11 +680,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definizioni
 
 .Vedi definizioni
 [%collapsible]
 ====
+[[GVK]]
 [role="api-collapsible-fifth-title"]
 GVK
 
@@ -712,6 +723,7 @@ Stringa JSON contenente un identificatore di versione assegnato da Kubernetes.
 
 
 |===
+[[clusterScopedResources]]
 [role="api-collapsible-fifth-title"]
 clusterScopedResources
 
@@ -735,6 +747,7 @@ Array JSON di stringhe JSON che rappresentano un selettore di etichette per le G
 
 
 |===
+[[namespaceScopedResources]]
 [role="api-collapsible-fifth-title"]
 namespaceScopedResources
 
@@ -766,6 +779,7 @@ Array JSON di stringhe JSON che rappresentano un selettore di etichette all'inte
 
 
 |===
+[[namespaceMapping]]
 [role="api-collapsible-fifth-title"]
 namespaceMapping
 
@@ -793,6 +807,7 @@ Stringa JSON contenente il nome del namespace sul cluster di destinazione. I val
 
 
 |===
+[[storageClassMapping]]
 [role="api-collapsible-fifth-title"]
 storageClassMapping
 
@@ -821,6 +836,7 @@ Stringa JSON contenente il nome della classe di archiviazione di destinazione. I
 
 
 |===
+[[GVKN]]
 [role="api-collapsible-fifth-title"]
 GVKN
 
@@ -880,6 +896,7 @@ Array JSON di stringhe JSON che descrivono i selettori di etichette Kubernetes u
 
 
 |===
+[[restoreFilter]]
 [role="api-collapsible-fifth-title"]
 restoreFilter
 
@@ -899,6 +916,7 @@ Stringa JSON contenente un valore che indica come i filtri delle risorse selezio
 Array JSON di oggetti JSON che descrivono le risorse da filtrare durante un ripristino selettivo. Una risorsa corrisponde a un singolo elemento filtro GVKN se tutti i campi filtro specificati corrispondono al campo risorsa corrispondente. I campi filtro che sono array (ad esempio, namespaces e nomi) corrispondono se almeno uno dei loro elementi corrisponde al campo risorsa corrispondente. Il campo labelSelectors richiede che tutti i selettori corrispondano. Una risorsa che corrisponde a qualsiasi filtro nell'array di oggetti filtro GVKN viene inclusa o esclusa dal ripristino in base al valore resourceSelectionCriteria. Specificare oggetti GVKN vuoti comporta un errore di convalida.
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 etichetta tipo_astra
 
@@ -914,6 +932,7 @@ etichetta tipo_astra
 | valore | stringa | Vero  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 aggiornamento dei metadati di tipo Astra
 
@@ -946,15 +965,19 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[targetSchema]]
 [role="api-collapsible-fifth-title"]
 targetSchema
 
+[[accept-post]]
 [role="api-collapsible-fifth-title"]
 accept-post
 
+[[accept-put]]
 [role="api-collapsible-fifth-title"]
 accetta-put
 
+[[hints]]
 [role="api-collapsible-fifth-title"]
 suggerimenti
 
@@ -982,6 +1005,7 @@ suggerimenti
 | accetta-put | link:#accept-put["accetta-put"] | Falso  a| 
 
 |===
+[[type_astra_link]]
 [role="api-collapsible-fifth-title"]
 type_astra_link
 
@@ -1013,6 +1037,7 @@ type_astra_link
 | suggerimenti | link:#hints["suggerimenti"] | Falso  a| 
 
 |===
+[[namespaceScopedResources]]
 [role="api-collapsible-fifth-title"]
 namespaceScopedResources
 
@@ -1044,6 +1069,7 @@ Array JSON di stringhe JSON che rappresentano un selettore di etichette all'inte
 
 
 |===
+[[type_astra_stateTransition]]
 [role="api-collapsible-fifth-title"]
 tipo_transizione_stato_astra
 
@@ -1059,9 +1085,11 @@ tipo_transizione_stato_astra
 | a | array[string] | Vero  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -1085,6 +1113,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
 
 |===
+[[restoreFilter]]
 [role="api-collapsible-fifth-title"]
 restoreFilter
 
@@ -1104,6 +1133,7 @@ Stringa JSON contenente un valore che indica come i filtri delle risorse selezio
 Array JSON di oggetti JSON che descrivono le risorse da filtrare durante un ripristino selettivo. Una risorsa corrisponde a un singolo elemento filtro GVKN se tutti i campi filtro specificati corrispondono al campo risorsa corrispondente. I campi filtro che sono array (ad esempio, namespaces e nomi) corrispondono se almeno uno dei loro elementi corrisponde al campo risorsa corrispondente. Il campo labelSelectors richiede che tutti i selettori corrispondano. Una risorsa che corrisponde a qualsiasi filtro nell'array di oggetti filtro GVKN viene inclusa o esclusa dal ripristino in base al valore resourceSelectionCriteria. Specificare oggetti GVKN vuoti comporta un errore di convalida.
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -1121,6 +1151,7 @@ Nome del parametro di query non valido
 Motivo per cui il parametro di query non è valido
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

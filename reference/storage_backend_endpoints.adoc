@@ -7,6 +7,7 @@ summary: 'Endpoint di backend di archiviazione dell"API Astra (ACC)'
 ---
 = Endpoint di backend di archiviazione dell'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Storage Backend fornisce l'accesso alle rappresentazioni dei provider di servizi di archiviazione (backend di archiviazione) che possono essere utilizzati da cluster e applicazioni gestiti.

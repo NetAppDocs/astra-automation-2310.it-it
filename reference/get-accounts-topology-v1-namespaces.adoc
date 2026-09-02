@@ -7,6 +7,7 @@ summary: Elenca tutti i namespace
 ---
 = Elenca tutti i namespace
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/namespaces`#
@@ -15,6 +16,7 @@ Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se 
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -68,6 +70,7 @@ Esempi OpenAPI: "field eq 'value'"
 |===
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -127,6 +130,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -172,6 +176,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -222,6 +227,7 @@ Elenco dei parametri di query non validi
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -267,6 +273,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Errore
 
 [source]
@@ -312,20 +319,25 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definizioni
 
 .Vedi definizioni
 [%collapsible]
 ====
+[[targetSchema]]
 [role="api-collapsible-fifth-title"]
 targetSchema
 
+[[accept-post]]
 [role="api-collapsible-fifth-title"]
 accept-post
 
+[[accept-put]]
 [role="api-collapsible-fifth-title"]
 accetta-put
 
+[[hints]]
 [role="api-collapsible-fifth-title"]
 suggerimenti
 
@@ -353,6 +365,7 @@ suggerimenti
 | accetta-put | link:#accept-put["accetta-put"] | Falso  a| 
 
 |===
+[[type_astra_link]]
 [role="api-collapsible-fifth-title"]
 type_astra_link
 
@@ -384,9 +397,11 @@ type_astra_link
 | suggerimenti | link:#hints["suggerimenti"] | Falso  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -410,6 +425,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 etichetta tipo_astra
 
@@ -425,6 +441,7 @@ etichetta tipo_astra
 | valore | stringa | Vero  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadati
 
@@ -457,6 +474,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[namespace_1_1_get_response_body]]
 [role="api-collapsible-fifth-title"]
 namespace_1.1_get_response_body
 
@@ -556,6 +574,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 elenco_metadati_tipo_astra
 
@@ -591,6 +610,7 @@ elenco_metadati_tipo_astra
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

@@ -18,18 +18,21 @@ summary: 'È possibile ripristinare un"applicazione creando una nuova applicazio
 
 
 
+[[1-select-the-app-to-restore]]
 === 1. Selezionare l'applicazione da ripristinare
 
 Eseguire il flusso di lavoro link:wf_list_man_apps.html["Elencare le applicazioni"] e selezionare l'applicazione che si desidera clonare. Per la chiamata DI PAUSA utilizzata per ripristinare l'applicazione sono necessari diversi valori di risorse.
 
 
 
+[[2-select-the-backup-to-use]]
 === 2. Selezionare il backup da utilizzare
 
 Eseguire il flusso di lavoro link:wf_list_backups.html["Elencare i backup"] e selezionare il backup che si desidera utilizzare.
 
 
 
+[[3-restore-the-app]]
 === 3. Ripristinare l'applicazione
 
 Eseguire la seguente chiamata API REST. È necessario fornire l'ID per un backup (come mostrato di seguito) o uno snapshot.

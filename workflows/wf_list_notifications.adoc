@@ -18,6 +18,7 @@ Puoi elencare le notifiche per un account Astra specifico. Questa operazione pot
 
 
 
+[[1-list-the-notifications]]
 === 1. Elencare le notifiche
 
 Eseguire la seguente chiamata API REST.

@@ -7,6 +7,7 @@ summary: Crea un nuovo token per un utente
 ---
 = Crea un nuovo token per un utente
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/tokens`#
@@ -15,6 +16,7 @@ Indica i valori desiderati per la risorsa Token API da creare.
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID della risorsa utente contenente
 |===
 
 
+[[request-body]]
 == Corpo della richiesta
 
 Indica i valori desiderati per la risorsa Token API da creare.
@@ -92,6 +95,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -183,6 +187,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -228,6 +233,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -278,6 +284,7 @@ Elenco dei campi non validi del corpo della richiesta
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -328,6 +335,7 @@ Elenco dei campi non validi del corpo della richiesta
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -373,6 +381,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Errore
 
 [source]
@@ -418,11 +427,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definizioni
 
 .Vedi definizioni
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 etichetta tipo_astra
 
@@ -438,6 +449,7 @@ etichetta tipo_astra
 | valore | stringa | Vero  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 aggiornamento dei metadati di tipo Astra
 
@@ -470,6 +482,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -487,6 +500,7 @@ Nome del parametro di query non valido
 Motivo per cui il parametro di query non è valido
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

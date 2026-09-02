@@ -7,6 +7,7 @@ summary: Recupera una notifica
 ---
 = Recupera una notifica
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/notifications/{notification_id}`#
@@ -15,6 +16,7 @@ Restituisce la risorsa Notification API memorizzata nel corpo della risposta JSO
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID della raccolta di notifiche da elencare
 |===
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -338,6 +341,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -383,6 +387,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -433,6 +438,7 @@ Elenco dei parametri di query non validi
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -478,6 +484,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Errore
 
 [source]
@@ -523,11 +530,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definizioni
 
 .Vedi definizioni
 [%collapsible]
 ====
+[[data]]
 [role="api-collapsible-fifth-title"]
 dati
 
@@ -551,6 +560,7 @@ Stringa JSON che indica se il banner è chiudibile. I valori definiti sono:
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 etichetta tipo_astra
 
@@ -566,6 +576,7 @@ etichetta tipo_astra
 | valore | stringa | Vero  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadati
 
@@ -598,6 +609,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

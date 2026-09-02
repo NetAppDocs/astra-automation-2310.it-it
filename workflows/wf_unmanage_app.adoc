@@ -18,6 +18,7 @@ Puoi rimuovere un'applicazione gestita quando non è più necessaria. La rimozio
 
 
 
+[[before-you-begin]]
 === Prima di iniziare
 
 Devi disporre dell'ID dell'applicazione che desideri annullare la gestione. Se necessario, è possibile utilizzare il flusso di lavoro link:wf_list_man_apps.html["Elencare le applicazioni"] per individuare l'applicazione.
@@ -26,6 +27,7 @@ I backup e le snapshot dell'applicazione non vengono rimossi automaticamente qua
 
 
 
+[[1-unmanaged-the-app]]
 === 1. Applicazione non gestita
 
 Eseguire la seguente chiamata API REST per rimuovere l'applicazione.

@@ -7,6 +7,7 @@ summary: 'Endpoint dei token API di Astra (ACC)'
 ---
 = Endpoint dei token API di Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Token consente agli utenti di creare e gestire i token di accesso API.

@@ -7,6 +7,7 @@ summary: Elenca tutte le fonti di aggancio
 ---
 = Elenca tutte le fonti di aggancio
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/hookSources`#
@@ -15,6 +16,7 @@ Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se 
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -65,6 +67,7 @@ Esempi OpenAPI: "field eq 'value'"
 |===
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -156,6 +159,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -201,6 +205,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -251,6 +256,7 @@ Elenco dei parametri di query non validi
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -296,6 +302,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Errore
 
 [source]
@@ -341,11 +348,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definizioni
 
 .Vedi definizioni
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 etichetta tipo_astra
 
@@ -361,6 +370,7 @@ etichetta tipo_astra
 | valore | stringa | Vero  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 aggiornamento dei metadati di tipo Astra
 
@@ -393,6 +403,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[hookSource_1_0_get_response_body]]
 [role="api-collapsible-fifth-title"]
 hookSource_1.0_get_response_body
 
@@ -494,6 +505,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 elenco_metadati_tipo_astra
 
@@ -529,6 +541,7 @@ elenco_metadati_tipo_astra
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

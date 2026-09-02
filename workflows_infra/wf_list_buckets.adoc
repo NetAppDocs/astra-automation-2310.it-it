@@ -18,6 +18,7 @@ summary: È possibile elencare i bucket S3 definiti per un account Astra specifi
 
 
 
+[[1-list-the-buckets]]
 === 1. Elencare i bucket
 
 Eseguire la seguente chiamata API REST per elencare i bucket.

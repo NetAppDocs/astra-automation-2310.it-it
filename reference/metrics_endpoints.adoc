@@ -7,6 +7,7 @@ summary: 'Endpoint delle metriche dell"API Astra (ACC)'
 ---
 = Endpoint delle metriche dell'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Metrics rappresenta metriche associate a un determinato account.

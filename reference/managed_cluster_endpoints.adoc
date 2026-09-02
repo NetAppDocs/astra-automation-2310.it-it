@@ -7,6 +7,7 @@ summary: 'Endpoint del cluster gestito da Astra API (ACC)'
 ---
 = Endpoint del cluster gestito da Astra API (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Managed Cluster rappresenta i cluster Kubernetes gestiti.

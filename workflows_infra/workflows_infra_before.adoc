@@ -21,12 +21,14 @@ NOTE: Questi flussi di lavoro possono essere ampliati e migliorati da NetApp in 
 
 
 
+[[general-preparation]]
 == Preparazione generale
 
 Prima di utilizzare uno qualsiasi dei flussi di lavoro Astra, assicurarsi di rivedere link:../get-started/prepare_to_use_workflows.html["Preparati a utilizzare i flussi di lavoro"].
 
 
 
+[[workflow-categories]]
 == Categorie di workflow
 
 I flussi di lavoro dell'infrastruttura sono organizzati in diverse categorie per facilitare l'individuazione di quello desiderato.

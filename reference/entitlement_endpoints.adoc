@@ -7,6 +7,7 @@ summary: 'Endpoint di autorizzazione API Astra (ACC)'
 ---
 = Endpoint di autorizzazione API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Entitlement indica quali funzionalità o capacità sono abilitate dalle licenze e dagli abbonamenti attivi per un account.

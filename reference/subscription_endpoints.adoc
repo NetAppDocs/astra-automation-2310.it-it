@@ -7,6 +7,7 @@ summary: 'Endpoint di sottoscrizione Astra API (ACC)'
 ---
 = Endpoint di sottoscrizione Astra API (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API di sottoscrizione fornisce l'accesso alle risorse di sottoscrizione al fine di rappresentare le sottoscrizioni attive.

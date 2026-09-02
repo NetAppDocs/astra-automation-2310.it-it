@@ -7,6 +7,7 @@ summary: 'Endpoint di backup dell"applicazione Astra API (ACC)'
 ---
 = Endpoint di backup dell'applicazione Astra API (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API di backup delle applicazioni consente a un utente di creare e visualizzare i backup di un'applicazione gestita.

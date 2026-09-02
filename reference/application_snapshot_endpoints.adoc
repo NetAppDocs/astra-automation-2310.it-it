@@ -7,6 +7,7 @@ summary: 'Endpoint Snapshot dell"applicazione Astra API (ACC)'
 ---
 = Endpoint Snapshot dell'applicazione Astra API (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Application Snapshot consente a un utente di creare e visualizzare snapshot di un'applicazione gestita.

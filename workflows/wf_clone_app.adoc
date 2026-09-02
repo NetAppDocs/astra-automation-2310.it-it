@@ -18,6 +18,7 @@ summary: 'È possibile creare una nuova applicazione clonando un"applicazione es
 
 
 
+[[before-you-begin]]
 === Prima di iniziare
 
 Tenere presente quanto segue a proposito di questo flusso di lavoro:
@@ -32,12 +33,14 @@ NOTE: Per clonare un'applicazione in un cluster diverso, è necessario aggiornar
 
 
 
+[[1-select-the-app-to-clone]]
 === 1. Selezionare l'applicazione da clonare
 
 Eseguire il flusso di lavoro link:wf_list_man_apps.html["Elencare le applicazioni"] e selezionare l'applicazione che si desidera clonare. Per la chiamata DI PAUSA utilizzata per clonare l'applicazione sono necessari diversi valori delle risorse.
 
 
 
+[[2-clone-the-app]]
 === 2. Clonare l'applicazione
 
 Eseguire la seguente chiamata API REST per clonare l'applicazione.

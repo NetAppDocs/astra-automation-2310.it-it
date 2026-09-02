@@ -7,6 +7,7 @@ summary: Recupera tutte le metriche per un account
 ---
 = Recupera tutte le metriche per un account
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/metrics`#
@@ -15,6 +16,7 @@ Restituisce tutte le metriche per l'account
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -31,6 +33,7 @@ ID della risorsa account contenitore
 |===
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -39,6 +42,7 @@ Status: 200, Returns a OpenMetrics text document containing all metrics for the 
 ----
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -84,6 +88,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Errore
 
 [source]

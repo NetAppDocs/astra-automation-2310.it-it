@@ -7,6 +7,7 @@ summary: 'Recuperare un hook di esecuzione per un"app'
 ---
 = Recuperare un hook di esecuzione per un'app
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHooks/{executionHook_id}`#
@@ -15,6 +16,7 @@ Restituisce la risorsa API Execution Hook memorizzata nel corpo della risposta J
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -41,6 +43,7 @@ ID della executionHook collection da elencare
 |===
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -273,6 +276,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -318,6 +322,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -368,6 +373,7 @@ Elenco dei parametri di query non validi
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -413,6 +419,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Errore
 
 [source]
@@ -458,11 +465,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definizioni
 
 .Vedi definizioni
 [%collapsible]
 ====
+[[matchingCriteria]]
 [role="api-collapsible-fifth-title"]
 matchingCriteria
 
@@ -480,6 +489,7 @@ Stringa JSON che identifica il tipo di criterio di corrispondenza.
 Stringa JSON contenente un'espressione regolare da abbinare al tipo di corrispondenza specificato. Sintassi dell'espressione regolare: https://github.com/google/re2/wiki/Syntax[]
 
 |===
+[[type_k8s_label]]
 [role="api-collapsible-fifth-title"]
 type_k8s_label
 
@@ -495,6 +505,7 @@ type_k8s_label
 | valore | stringa | Vero  a| 
 
 |===
+[[matchingContainers]]
 [role="api-collapsible-fifth-title"]
 matchingContainers
 
@@ -527,6 +538,7 @@ Stringa JSON del nome del container corrispondente.
 Stringa JSON del nome dello spazio dei nomi del pod del container corrispondente.
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 etichetta tipo_astra
 
@@ -542,6 +554,7 @@ etichetta tipo_astra
 | valore | stringa | Vero  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 aggiornamento dei metadati di tipo Astra
 
@@ -574,6 +587,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

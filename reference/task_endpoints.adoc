@@ -7,6 +7,7 @@ summary: 'Endpoint delle attività dell"API Astra (ACC)'
 ---
 = Endpoint delle attività dell'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Task App fornisce l'accesso alle risorse delle attività gestite al fine di rappresentare attività di lunga durata.

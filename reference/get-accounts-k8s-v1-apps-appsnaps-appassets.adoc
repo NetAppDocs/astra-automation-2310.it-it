@@ -7,6 +7,7 @@ summary: 'Elenca le risorse dell"applicazione per uno snapshot dell"applicazione
 ---
 = Elenca le risorse dell'applicazione per uno snapshot dell'applicazione
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appSnaps/{appSnap_id}/appAssets`#
@@ -15,6 +16,7 @@ Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se 
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -62,6 +64,7 @@ Esempi OpenAPI: "2"
 |===
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -117,6 +120,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -162,6 +166,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -207,6 +212,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -252,6 +258,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Errore
 
 [source]
@@ -297,11 +304,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definizioni
 
 .Vedi definizioni
 [%collapsible]
 ====
+[[GVK]]
 [role="api-collapsible-fifth-title"]
 GVK
 
@@ -338,11 +347,13 @@ Stringa JSON contenente un identificatore di versione assegnato da Kubernetes. I
 
 
 |===
+[[type_json]]
 [role="api-collapsible-fifth-title"]
 tipo_json
 
 Oggetto JSON contenente l'intero contenuto della definizione della risorsa Kubernetes.
 
+[[labels]]
 [role="api-collapsible-fifth-title"]
 etichette
 
@@ -370,6 +381,7 @@ Stringa JSON contenente il valore dell'etichetta Definiti valori sono:
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 etichetta tipo_astra
 
@@ -385,6 +397,7 @@ etichetta tipo_astra
 | valore | stringa | Vero  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadati
 
@@ -417,6 +430,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[appAsset_1_1_get_response_body]]
 [role="api-collapsible-fifth-title"]
 appAsset_1.1_get_response_body
 
@@ -518,6 +532,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 elenco_metadati_tipo_astra
 
@@ -553,6 +568,7 @@ elenco_metadati_tipo_astra
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

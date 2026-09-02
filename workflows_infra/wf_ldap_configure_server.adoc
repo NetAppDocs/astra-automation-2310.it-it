@@ -18,6 +18,7 @@ Selezionare un server LDAP e configurare Astra per utilizzare il server come pro
 
 
 
+[[1-add-a-ca-certificate]]
 === 1. Aggiungere un certificato CA
 
 Eseguire la seguente chiamata API REST per aggiungere un certificato CA ad Astra.
@@ -112,6 +113,7 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 ----
 
 
+[[2-add-the-bind-credentials]]
 === 2. Aggiungere le credenziali di binding
 
 Eseguire la seguente chiamata API REST per aggiungere le credenziali BIND.
@@ -177,6 +179,7 @@ Osservare i seguenti parametri di risposta:
 
 
 
+[[3-retrieve-the-uuid-of-the-ldap-setting]]
 === 3. Recuperare l'UUID dell'impostazione LDAP
 
 Eseguire la seguente chiamata API REST per recuperare l'UUID di `astra.account.ldap` Impostazione inclusa in Astra Control Center.
@@ -216,6 +219,7 @@ curl --location -i --request GET 'https://astra.example.com/accounts/<ACCOUNT_ID
 ----
 
 
+[[4-update-the-ldap-setting]]
 === 4. Aggiornare l'impostazione LDAP
 
 Eseguire la seguente chiamata API REST per aggiornare l'impostazione LDAP e completare la configurazione. Utilizzare `id` Valore della chiamata API precedente per `<SETTING_ID>` Valore nel percorso URL riportato di seguito.
@@ -272,6 +276,7 @@ Se la chiamata ha esito positivo, viene restituita la risposta HTTP 204.
 
 
 
+[[5-retrieve-the-ldap-setting]]
 === 5. Recuperare l'impostazione LDAP
 
 È possibile eseguire la seguente chiamata API REST per recuperare le impostazioni LDAP e confermare l'aggiornamento.

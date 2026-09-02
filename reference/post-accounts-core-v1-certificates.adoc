@@ -7,6 +7,7 @@ summary: Crea un nuovo certificato
 ---
 = Crea un nuovo certificato
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/certificates`#
@@ -15,6 +16,7 @@ Indica i valori desiderati per la risorsa API del certificato da creare.
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -31,6 +33,7 @@ ID della risorsa account contenitore
 |===
 
 
+[[request-body]]
 == Corpo della richiesta
 
 Indica i valori desiderati per la risorsa API del certificato da creare.
@@ -117,6 +120,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -280,6 +284,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -330,6 +335,7 @@ Elenco dei campi non validi del corpo della richiesta
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -375,6 +381,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -420,6 +427,7 @@ Status: 500, Internal server error
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -465,6 +473,7 @@ Status: 503, Service unavailable
 ====
 
 
+[[error]]
 == Errore
 
 [source]
@@ -510,11 +519,13 @@ Status: 401, Unauthorized
 ====
 
 
+[[definitions]]
 == Definizioni
 
 .Vedi definizioni
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 etichetta tipo_astra
 
@@ -530,6 +541,7 @@ etichetta tipo_astra
 | valore | stringa | Vero  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 aggiornamento dei metadati di tipo Astra
 
@@ -562,6 +574,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[type_astra_stateTransition]]
 [role="api-collapsible-fifth-title"]
 tipo_transizione_stato_astra
 
@@ -577,9 +590,11 @@ tipo_transizione_stato_astra
 | a | array[string] | Vero  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -603,6 +618,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

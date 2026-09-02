@@ -7,6 +7,7 @@ summary: 'Endpoint di pianificazione dell"API Astra (ACC)'
 ---
 = Endpoint di pianificazione dell'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Schedule consente di definire diverse operazioni di protezione dei dati programmate.

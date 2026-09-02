@@ -18,6 +18,7 @@ Puoi elencare i cluster Kubernetes attualmente gestiti da Astra.
 
 
 
+[[1-list-the-managed-clusters]]
 === 1. Elencare i cluster gestiti
 
 Eseguire la seguente chiamata API REST.

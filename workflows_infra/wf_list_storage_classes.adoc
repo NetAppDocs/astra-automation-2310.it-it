@@ -18,18 +18,21 @@ summary: È possibile elencare le classi di storage disponibili.
 
 
 
+[[1-select-the-cloud]]
 === 1. Selezionare il cloud
 
 Eseguire il flusso di lavoro link:../workflows_infra/wf_list_clouds.html["Elencare i cloud"] e seleziona il cloud in cui lavorerai.
 
 
 
+[[2-select-the-cluster]]
 === 2. Selezionare il cluster
 
 Eseguire il flusso di lavoro link:../workflows_infra/wf_list_clusters.html["Elencare i cluster"] e selezionare il cluster.
 
 
 
+[[3-list-the-storage-classes-for-a-specific-cluster]]
 === 3. Elencare le classi di storage per un cluster specifico
 
 Eseguire la seguente chiamata API REST per elencare le classi di storage per un cluster e un cloud specifici.

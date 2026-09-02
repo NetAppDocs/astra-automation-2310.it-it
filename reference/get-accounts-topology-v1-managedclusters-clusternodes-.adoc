@@ -7,6 +7,7 @@ summary: Recuperare un nodo del cluster per un cluster gestito
 ---
 = Recuperare un nodo del cluster per un cluster gestito
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/clusterNodes/{clusterNode_id}`#
@@ -15,6 +16,7 @@ Restituisce la risorsa API del nodo del cluster memorizzata nel corpo della risp
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="5*"]
@@ -41,6 +43,7 @@ ID della collezione clusterNode da elencare
 |===
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -245,6 +248,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -290,6 +294,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -340,6 +345,7 @@ Elenco dei parametri di query non validi
 ====
 
 
+[[response]]
 == Risposta
 
 [source]
@@ -385,6 +391,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Errore
 
 [source]
@@ -430,11 +437,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definizioni
 
 .Vedi definizioni
 [%collapsible]
 ====
+[[labels]]
 [role="api-collapsible-fifth-title"]
 etichette
 
@@ -462,6 +471,7 @@ Stringa JSON contenente il valore dell'etichetta Definiti valori sono:
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 etichetta tipo_astra
 
@@ -477,6 +487,7 @@ etichetta tipo_astra
 | valore | stringa | Vero  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadati
 
@@ -509,6 +520,7 @@ Metadati specificati dal client e dal servizio associati alla risorsa. I valori 
 | modifiedBy | stringa | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

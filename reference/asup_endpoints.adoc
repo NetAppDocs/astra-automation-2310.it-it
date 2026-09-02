@@ -7,6 +7,7 @@ summary: 'Endpoint ASUP dell"API Astra (ACC)'
 ---
 = Endpoint ASUP dell'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API ASUP fornisce l'accesso alle risorse ASUP per creare e, facoltativamente, caricare i AutoSupport bundle.

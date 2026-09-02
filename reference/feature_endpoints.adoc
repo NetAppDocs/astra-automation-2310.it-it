@@ -7,6 +7,7 @@ summary: 'Endpoint delle funzionalità dell"API Astra (ACC)'
 ---
 = Endpoint delle funzionalità dell'API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 L'API Feature fornisce accesso in sola lettura alle risorse dei flag di funzionalità al fine di determinare quali funzionalità sono abilitate o disabilitate nel sistema.

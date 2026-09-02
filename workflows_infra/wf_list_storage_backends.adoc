@@ -18,6 +18,7 @@ summary: È possibile elencare i backend di storage disponibili.
 
 
 
+[[1-list-the-backends]]
 === 1. Elencare i backend
 
 Eseguire la seguente chiamata API REST.

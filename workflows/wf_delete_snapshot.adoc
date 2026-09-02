@@ -18,6 +18,7 @@ summary: 'È possibile eliminare uno snapshot associato a un"applicazione.'
 
 
 
+[[before-you-begin]]
 === Prima di iniziare
 
 È necessario disporre di quanto segue:
@@ -28,6 +29,7 @@ summary: 'È possibile eliminare uno snapshot associato a un"applicazione.'
 
 
 
+[[1-delete-the-snapshot]]
 === 1. Eliminare l'istantanea
 
 Eseguire la seguente chiamata API REST.
