@@ -127,7 +127,7 @@ Array JSON di stringhe JSON che specificano l'ambito dell'assegnazione del ruolo
 
 * 
 +
-= Consenti l'accesso a tutti i namespace etichettati "dev" in qualsiasi cluster in qualsiasi cloud e a tutto ciò che si trova al loro interno: "roleConstraints": [ "namespaces:kubernetesLabels='http://dev.example.com/appname=dev["dev.example.com/appname=dev'.*"]" ]
+= Consenti l'accesso a tutti i namespace etichettati "dev" in qualsiasi cluster in qualsiasi cloud e a tutto ciò che si trova al loro interno: "roleConstraints": [ "namespaces:kubernetesLabels='dev.example.com/appname=dev'.*" ]
 
 * 
 +
@@ -270,7 +270,7 @@ Array JSON di stringhe JSON che specificano l'ambito dell'assegnazione del ruolo
 
 * 
 +
-= Consenti l'accesso a tutti i namespace etichettati "dev" in qualsiasi cluster in qualsiasi cloud e a tutto ciò che si trova al loro interno: "roleConstraints": [ "namespaces:kubernetesLabels='http://dev.example.com/appname=dev["dev.example.com/appname=dev'.*"]" ]
+= Consenti l'accesso a tutti i namespace etichettati "dev" in qualsiasi cluster in qualsiasi cloud e a tutto ciò che si trova al loro interno: "roleConstraints": [ "namespaces:kubernetesLabels='dev.example.com/appname=dev'.*" ]
 
 * 
 +
