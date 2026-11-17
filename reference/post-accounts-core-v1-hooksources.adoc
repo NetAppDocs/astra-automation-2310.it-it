@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-hooksources.html 
+keywords: hook source,create resource,account id,core hook,hook values,source creation 
 summary: Crea una nuova sorgente di aggancio 
 ---
 = Crea una nuova sorgente di aggancio
@@ -10,7 +11,20 @@ summary: Crea una nuova sorgente di aggancio
 :imagesdir: ../media/
 
 
+[role="lead"]
+Crea una nuova origine hook, specificando i valori per la risorsa API Origine Hook per avviare il processo di creazione. Usa questo endpoint quando devi creare un'origine hook per attività di automazione o integrazione.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/hookSources`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Indica i valori desiderati per la risorsa API Hook Source da creare.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-k8s-v1-apps-schedules-.html 
+keywords: remove schedule,k8s schedule,app schedule delete,delete schedule resource,account schedule removal 
 summary: Elimina una pianificazione 
 ---
 = Elimina una pianificazione
@@ -10,7 +11,20 @@ summary: Elimina una pianificazione
 :imagesdir: ../media/
 
 
+[role="lead"]
+Elimina una pianificazione, rimuovendo da Astra la risorsa Schedule API specificata.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#ELIMINA# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules/{schedule_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Rimuove la risorsa API Schedule specificata.
 

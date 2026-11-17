@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/cloud_endpoints.html 
+keywords: cloud resources,cloud connections,cloud management,managed clusters,cloud configuration 
 summary: 'Endpoint cloud dell"API Astra (ACC)' 
 ---
 = Endpoint cloud dell'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gestisci le risorse cloud in modo da poterti connettere a cloud specifici e gestire i tuoi cluster e le tue applicazioni al loro interno.
 
 L'API Cloud fornisce l'accesso alle risorse cloud per consentire ai client di connettersi a cloud specifici per gestire cluster e applicazioni.

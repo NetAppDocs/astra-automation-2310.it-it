@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-k8s-v1-apps-executionhookoverrides-.html 
+keywords: execution hook override,override removal,delete execution hook,execution hook enable,hook type netapp 
 summary: 'Elimina una risorsa di override dell"hook di esecuzione' 
 ---
 = Elimina una risorsa di override dell'hook di esecuzione
@@ -10,7 +11,20 @@ summary: 'Elimina una risorsa di override dell"hook di esecuzione'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Elimina una risorsa di override dell'hook di esecuzione. Usa questa opzione per rimuovere le configurazioni personalizzate per gli hook di esecuzione all'interno della tua applicazione.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#ELIMINA# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHookOverrides/{executionHookOverride_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Rimuove la risorsa API Execution Hook Override specificata.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-users-rolebindings.html 
+keywords: role binding,create role,account role,user role,role management,assign role 
 summary: Crea un nuovo vincolo di ruolo per un utente 
 ---
 = Crea un nuovo vincolo di ruolo per un utente
@@ -10,7 +11,20 @@ summary: Crea un nuovo vincolo di ruolo per un utente
 :imagesdir: ../media/
 
 
+[role="lead"]
+Crea un role binding per un utente, specificando i valori desiderati per la risorsa API Role Binding. Usalo per assegnare ruoli e autorizzazioni specifici agli utenti all'interno della tua applicazione.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Indica i valori desiderati per la risorsa API Role Binding da creare.
 

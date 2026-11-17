@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/delete-accounts-core-v1-groups-users-tokens-.html 
+keywords: remove token,delete token,credential removal,token deletion,account token removal 
 summary: Elimina un token per un utente in un gruppo 
 ---
 = Elimina un token per un utente in un gruppo
@@ -10,7 +11,20 @@ summary: Elimina un token per un utente in un gruppo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Elimina un token per un utente in un gruppo. Questa azione rimuove la risorsa API del token specificato e le credenziali associate dal servizio.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#ELIMINA# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/tokens/{token_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Rimuove la risorsa API Token specificata.
 

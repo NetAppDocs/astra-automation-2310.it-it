@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-subscriptions-.html 
+keywords: subscription resource,subscription id,account resource,account id,subscription collection 
 summary: Recupera un abbonamento 
 ---
 = Recupera un abbonamento
@@ -10,7 +11,20 @@ summary: Recupera un abbonamento
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un abbonamento, restituendo la risorsa API Subscription memorizzata per scopi di monitoraggio o gestione.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions/{subscription_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API di sottoscrizione memorizzata nel corpo della risposta JSON.
 

@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/entitlement_endpoints.html 
+keywords: entitlements,licensed features,enabled capacities,active subscriptions,account entitlements 
 summary: 'Endpoint di autorizzazione API Astra (ACC)' 
 ---
 = Endpoint di autorizzazione API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Controlla quali funzionalità o capacità abilitano le licenze e gli abbonamenti attivi per il tuo account.
 
 L'API Entitlement indica quali funzionalità o capacità sono abilitate dalle licenze e dagli abbonamenti attivi per un account.

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-users-tokens-.html 
+keywords: remove token,credential removal,delete token,token resource,remove credential 
 summary: Elimina un token 
 ---
 = Elimina un token
@@ -10,7 +11,20 @@ summary: Elimina un token
 :imagesdir: ../media/
 
 
+[role="lead"]
+Elimina un token specificato, rimuovendo le credenziali associate dal servizio delle credenziali.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#ELIMINA# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/tokens/{token_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Rimuove la risorsa API Token specificata.
 

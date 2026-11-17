@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-storagebackends-.html 
+keywords: storage backend,account resource,topology storage,backend collection,storage resource 
 summary: Recuperare un backend di archiviazione 
 ---
 = Recuperare un backend di archiviazione
@@ -10,7 +11,20 @@ summary: Recuperare un backend di archiviazione
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un backend di storage, fornendo i dettagli della configurazione memorizzata per le risorse del backend.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/storageBackends/{storageBackend_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa Storage Backend API memorizzata nel corpo della risposta JSON.
 

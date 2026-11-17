@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-tasks-.html 
+keywords: tasks,task resource,account task,task collection,task details 
 summary: 'Recupera un"attività' 
 ---
 = Recupera un'attività
@@ -10,7 +11,20 @@ summary: 'Recupera un"attività'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un'attività, fornendo dettagli sulla risorsa Task API memorizzata a scopo di monitoraggio e gestione.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/tasks/{task_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API Task memorizzata nel corpo della risposta JSON.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-appassets-.html 
+keywords: application asset,stored asset,app resource,account resource,asset collection 
 summary: 'Recuperare una risorsa dell"applicazione per un"app' 
 ---
 = Recuperare una risorsa dell'applicazione per un'app
@@ -10,7 +11,20 @@ summary: 'Recuperare una risorsa dell"applicazione per un"app'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera una risorsa applicativa per un'app, fornendo i dettagli della risorsa memorizzata per ulteriori elaborazioni o analisi.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appAssets/{appAsset_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API Application Asset memorizzata nel corpo della risposta JSON.
 

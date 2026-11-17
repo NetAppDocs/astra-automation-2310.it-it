@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/app_endpoints.html 
+keywords: kubernetes applications,managed applications,unmanaged applications,application management,application discovery 
 summary: 'Endpoint API Astra (ACC) dell"app' 
 ---
 = Endpoint API Astra (ACC) dell'app
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Lavora con le applicazioni Kubernetes sui tuoi cluster, incluse le applicazioni che Astra Control non gestisce.
 
 L'API App rappresenta le applicazioni Kubernetes, incluse quelle non gestite da Astra.

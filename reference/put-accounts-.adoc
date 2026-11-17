@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-.html 
+keywords: replace resource,account collection,enabled timestamp,preserve key values,modify account 
 summary: Modifica un account 
 ---
 = Modifica un account
@@ -10,7 +11,20 @@ summary: Modifica un account
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica un account sostituendo la risorsa memorizzata con il corpo della richiesta JSON fornito, garantendo che i valori chiave non modificabili dall'utente rimangano intatti.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Sostituisce l'intera risorsa memorizzata con il corpo della richiesta JSON fornito, preservando i valori chiave non modificabili dall'utente.
 

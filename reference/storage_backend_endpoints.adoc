@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/storage_backend_endpoints.html 
+keywords: storage backends,storage providers,storage services,managed clusters,backend management 
 summary: 'Endpoint di backend di archiviazione dell"API Astra (ACC)' 
 ---
 = Endpoint di backend di archiviazione dell'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gestisci i backend di archiviazione, ovvero i provider di servizi di archiviazione che i cluster e le applicazioni gestiti possono utilizzare.
 
 L'API Storage Backend fornisce l'accesso alle rappresentazioni dei provider di servizi di archiviazione (backend di archiviazione) che possono essere utilizzati da cluster e applicazioni gestiti.

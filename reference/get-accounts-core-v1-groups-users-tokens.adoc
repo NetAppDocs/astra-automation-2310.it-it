@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-groups-users-tokens.html 
+keywords: account tokens,group users,user tokens,resource collection,field matching,sort order 
 summary: Elenca i token per un utente in un gruppo 
 ---
 = Elenca i token per un utente in un gruppo
@@ -10,7 +11,20 @@ summary: Elenca i token per un utente in un gruppo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera i token associati a un utente in un gruppo, fornendo i dettagli di accesso per l'autenticazione e l'autorizzazione.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/tokens`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

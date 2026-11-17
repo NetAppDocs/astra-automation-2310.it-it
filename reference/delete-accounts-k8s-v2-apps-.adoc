@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-k8s-v2-apps-.html 
+keywords: remove app,kubernetes app,delete application,app management,application state,deleting app 
 summary: 'Elimina un"app' 
 ---
 = Elimina un'app
@@ -10,7 +11,20 @@ summary: 'Elimina un"app'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Elimina un'app da Astra, rimuovendo la risorsa API dell'app specificata e dissociandola dalla gestione.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#ELIMINA# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v2/apps/{app_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Rimuove la risorsa API dell'app specificata.
 

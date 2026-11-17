@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-clusternodes.html 
+keywords: account topology,managed clusters,cluster nodes,resource collection,field selection,resource limit 
 summary: Elenca i nodi del cluster per un cluster gestito 
 ---
 = Elenca i nodi del cluster per un cluster gestito
@@ -10,7 +11,20 @@ summary: Elenca i nodi del cluster per un cluster gestito
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera i nodi del cluster per un cluster gestito, fornendo una visualizzazione dettagliata dei nodi all'interno del cluster.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/clusterNodes`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

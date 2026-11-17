@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-executionhooks-.html 
+keywords: execution hook,matching containers,matching images,kubernetes apps,execution criteria 
 summary: 'Recuperare un hook di esecuzione per un"app' 
 ---
 = Recuperare un hook di esecuzione per un'app
@@ -10,7 +11,20 @@ summary: 'Recuperare un hook di esecuzione per un"app'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un hook di esecuzione per un'app. Utilizzalo per esaminare la risorsa hook di esecuzione memorizzata e i relativi contenitori e immagini in base ai criteri correnti.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHooks/{executionHook_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API Execution Hook memorizzata nel corpo della risposta JSON. Popola inoltre matchingContainers e matchingImages in base all'attuale matchingCriteria e all'app definita.
 

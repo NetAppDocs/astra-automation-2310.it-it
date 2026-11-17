@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-features.html 
+keywords: account features,resource collection,field filtering,sort order,resource count,skip resources 
 summary: Elenca tutte le funzionalità 
 ---
 = Elenca tutte le funzionalità
@@ -10,7 +11,20 @@ summary: Elenca tutte le funzionalità
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera tutte le funzionalità disponibili nell'API di Astra, fornendo un elenco completo delle risorse nella raccolta. Utilizzalo per visualizzare i campi specifici di ciascuna funzionalità in base ai criteri della tua richiesta.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/features`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

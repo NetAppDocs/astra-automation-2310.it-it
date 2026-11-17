@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-groups-rolebindings.html 
+keywords: role bindings,group roles,account resources,collection filters,resource sorting 
 summary: Elenca i role binding per un gruppo 
 ---
 = Elenca i role binding per un gruppo
@@ -10,7 +11,20 @@ summary: Elenca i role binding per un gruppo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera le associazioni di ruoli per un gruppo, fornendo un elenco di risorse corrispondenti nella raccolta. Usa questa funzione per accedere a informazioni dettagliate sulle associazioni di ruoli specifiche associate al gruppo.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

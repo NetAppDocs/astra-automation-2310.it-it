@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-users-groups.html 
+keywords: account groups,users groups,user fields,resource collection,matching resources 
 summary: Elenca i gruppi per un utente 
 ---
 = Elenca i gruppi per un utente
@@ -10,7 +11,20 @@ summary: Elenca i gruppi per un utente
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un elenco di gruppi associati a un utente, fornendo accesso a informazioni dettagliate sui gruppi a fini di gestione o analisi.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

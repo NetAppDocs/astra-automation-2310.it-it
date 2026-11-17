@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/cluster_node_endpoints.html 
+keywords: cluster nodes,kubernetes nodes,node details,node information,cluster resources 
 summary: 'Endpoint dei nodi del cluster API Astra (ACC)' 
 ---
 = Endpoint dei nodi del cluster API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Visualizza i nodi che appartengono a un cluster.
 
 L'API Cluster Node fornisce l'accesso ai nodi associati a un cluster.

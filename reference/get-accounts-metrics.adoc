@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-metrics.html 
+keywords: account metrics,metrics retrieval,account performance,account data,performance metrics 
 summary: Recupera tutte le metriche per un account 
 ---
 = Recupera tutte le metriche per un account
@@ -10,7 +11,20 @@ summary: Recupera tutte le metriche per un account
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera tutte le metriche relative a un account, offrendo informazioni dettagliate su prestazioni e utilizzo.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/metrics`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce tutte le metriche per l'account
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-users-rolebindings-.html 
+keywords: update role,role binding,replace resource,user role,account resource,user management 
 summary: 'Modificare un"associazione di ruolo per un utente' 
 ---
 = Modificare un'associazione di ruolo per un utente
@@ -10,7 +11,20 @@ summary: 'Modificare un"associazione di ruolo per un utente'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica un'associazione di ruolo per un utente, aggiornando la risorsa memorizzata in base alle specifiche fornite. Usa questo endpoint per regolare le autorizzazioni utente all'interno dell'ambiente Astra API.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Sostituisce l'intera risorsa memorizzata con il corpo della richiesta JSON fornito, preservando i valori chiave non modificabili dall'utente.
 

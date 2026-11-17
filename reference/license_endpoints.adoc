@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/license_endpoints.html 
+keywords: licenses,license management,account licenses,load licenses,licensing 
 summary: 'Endpoint di licenza Astra API (ACC)' 
 ---
 = Endpoint di licenza Astra API (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gestisci le licenze caricate in un account Astra Control.
 
 L'API delle licenze rappresenta le licenze caricate nell'account.

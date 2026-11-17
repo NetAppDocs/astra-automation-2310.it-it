@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-executionhooks-.html 
+keywords: execution hook,execution hook resource,matching containers,matching images,matching criteria,execution hook collection 
 summary: Recupera un gancio di esecuzione 
 ---
 = Recupera un gancio di esecuzione
@@ -10,7 +11,20 @@ summary: Recupera un gancio di esecuzione
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un hook di esecuzione, fornendo i dettagli delle risorse memorizzate e le informazioni corrispondenti su container e immagini in base ai criteri correnti.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/executionHooks/{executionHook_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API Execution Hook memorizzata nel corpo della risposta JSON. Popola inoltre matchingContainers e matchingImages in base all'attuale matchingCriteria e all'app definita.
 

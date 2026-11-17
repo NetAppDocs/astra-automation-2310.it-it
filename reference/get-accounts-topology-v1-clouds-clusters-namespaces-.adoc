@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds-clusters-namespaces-.html 
+keywords: namespace resource,stored namespace,namespace collection,cloud resource,cluster resource 
 summary: Recuperare uno spazio dei nomi per un cloud 
 ---
 = Recuperare uno spazio dei nomi per un cloud
@@ -10,7 +11,20 @@ summary: Recuperare uno spazio dei nomi per un cloud
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un namespace per un cloud, fornendo la risorsa Namespace API archiviata per le operazioni cloud.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/namespaces/{namespace_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API Namespace memorizzata nel corpo della risposta JSON.
 

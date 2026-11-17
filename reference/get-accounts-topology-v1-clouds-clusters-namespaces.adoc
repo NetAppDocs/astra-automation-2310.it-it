@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds-clusters-namespaces.html 
+keywords: cloud topology,resource collection,namespace list,field filter,cluster resources 
 summary: Elenca gli spazi dei nomi per un cloud 
 ---
 = Elenca gli spazi dei nomi per un cloud
@@ -10,7 +11,20 @@ summary: Elenca gli spazi dei nomi per un cloud
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera i namespace per un cloud, fornendo un elenco di tutte le risorse corrispondenti disponibili nella raccolta.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/namespaces`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

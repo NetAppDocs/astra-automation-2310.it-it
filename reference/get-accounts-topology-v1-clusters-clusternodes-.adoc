@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clusters-clusternodes-.html 
+keywords: cluster node,cluster topology,account cluster,cluster details,node resource,cluster node list 
 summary: Recupera un nodo del cluster per un cluster 
 ---
 = Recupera un nodo del cluster per un cluster
@@ -10,7 +11,20 @@ summary: Recupera un nodo del cluster per un cluster
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un nodo del cluster, fornendo dettagli sulla configurazione e sullo stato del nodo all'interno del cluster specificato.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/clusterNodes/{clusterNode_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API del nodo del cluster memorizzata nel corpo della risposta JSON.
 

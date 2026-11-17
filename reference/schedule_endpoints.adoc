@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/schedule_endpoints.html 
+keywords: protection schedules,scheduled operations,backup schedules,snapshot schedules,schedule management 
 summary: 'Endpoint di pianificazione dell"API Astra (ACC)' 
 ---
 = Endpoint di pianificazione dell'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Definisci le pianificazioni per le operazioni di protezione dei dati sulle tue applicazioni.
 
 L'API Schedule consente di definire diverse operazioni di protezione dei dati programmate.

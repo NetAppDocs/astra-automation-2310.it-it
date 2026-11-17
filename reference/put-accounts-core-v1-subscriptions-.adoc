@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-subscriptions-.html 
+keywords: subscription management,account update,resource replacement,status inactive,zuora integration 
 summary: Modificare un abbonamento 
 ---
 = Modificare un abbonamento
@@ -10,7 +11,20 @@ summary: Modificare un abbonamento
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica una sottoscrizione sostituendo la risorsa memorizzata con il corpo della richiesta JSON fornito, mantenendo i valori chiave che gli utenti non possono modificare. Usa questo endpoint se devi aggiornare i dettagli della sottoscrizione assicurandoti che alcuni valori rimangano invariati.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions/{subscription_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Sostituisce l'intera risorsa memorizzata con il corpo della richiesta JSON fornito, preservando i valori chiave non modificabili dall'utente.
 

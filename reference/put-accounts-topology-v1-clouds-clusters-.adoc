@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-topology-v1-clouds-clusters-.html 
+keywords: replace resource,managed cluster,modify cluster,cloud topology,cluster update 
 summary: Modificare un cluster per un cloud 
 ---
 = Modificare un cluster per un cloud
@@ -10,7 +11,20 @@ summary: Modificare un cluster per un cloud
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica un cluster cloud sostituendo la risorsa memorizzata con il corpo della richiesta JSON fornito. Utilizzalo per aggiornare le configurazioni del cluster mantenendo i valori delle chiavi non modificabili.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Sostituisce l'intera risorsa memorizzata con il corpo della richiesta JSON fornito, preservando i valori chiave non modificabili dall'utente.
 

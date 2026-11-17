@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v2-managedclusters-apps.html 
+keywords: managed clusters,resource collection,fields requested,collection limit,resource filter 
 summary: Elenca le app per un cluster gestito 
 ---
 = Elenca le app per un cluster gestito
@@ -10,7 +11,20 @@ summary: Elenca le app per un cluster gestito
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un elenco di applicazioni per un cluster gestito. Usa questa funzione per visualizzare le applicazioni attualmente gestite all'interno dell'ambiente cluster.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v2/managedClusters/{managedCluster_id}/apps`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

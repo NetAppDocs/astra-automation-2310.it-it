@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-settings-.html 
+keywords: account settings,replace resource,modify settings,stored resource,setting collection 
 summary: 'Modifica un"impostazione' 
 ---
 = Modifica un'impostazione
@@ -10,7 +11,20 @@ summary: 'Modifica un"impostazione'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica un'impostazione sostituendo la risorsa memorizzata con il corpo della richiesta JSON fornito, preservando i valori chiave non modificabili dall'utente. Usa questo endpoint per aggiornare le impostazioni di configurazione in modo efficiente, mantenendo al contempo i parametri di sistema essenziali.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/settings/{setting_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Sostituisce l'intera risorsa memorizzata con il corpo della richiesta JSON fornito, preservando i valori chiave non modificabili dall'utente.
 

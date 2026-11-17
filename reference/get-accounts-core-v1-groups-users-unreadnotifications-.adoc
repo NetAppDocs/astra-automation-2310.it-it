@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-groups-users-unreadnotifications-.html 
+keywords: account notifications,unread notifications,user notifications,notification resource,group notifications 
 summary: Recuperare una notifica non letta per un utente in un gruppo 
 ---
 = Recuperare una notifica non letta per un utente in un gruppo
@@ -10,7 +11,20 @@ summary: Recuperare una notifica non letta per un utente in un gruppo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera una notifica non letta per un utente in un gruppo, fornendo i dettagli delle notifiche che non sono ancora state confermate.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/unreadNotifications/{unreadNotification_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API di notifica non letta memorizzata nel corpo della risposta JSON.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-users-.html 
+keywords: remove user,delete user,delete account user,remove account user,user role bindings,user notification marks 
 summary: Elimina un utente 
 ---
 = Elimina un utente
@@ -10,7 +11,20 @@ summary: Elimina un utente
 :imagesdir: ../media/
 
 
+[role="lead"]
+Elimina un utente da Astra API, rimuovendo le risorse associate come i contrassegni di notifica, i token e le associazioni di ruolo.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#ELIMINA# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Rimuove la risorsa API utente specificata.
 

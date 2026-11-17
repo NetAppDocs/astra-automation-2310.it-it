@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-topology-v2-managedclusters-apps-.html 
+keywords: remove app,delete application,cluster management,app resource removal,application state deletion,snapshot deletion 
 summary: 'Eliminare un"app per un cluster gestito' 
 ---
 = Eliminare un'app per un cluster gestito
@@ -10,7 +11,20 @@ summary: 'Eliminare un"app per un cluster gestito'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Elimina un'app da un cluster gestito, rimuovendo l'applicazione dalla gestione e le risorse associate, come pianificazioni e backup.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#ELIMINA# [.api-doc-code-block]#`/accounts/{account_id}/topology/v2/managedClusters/{managedCluster_id}/apps/{app_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Rimuove la risorsa API dell'app specificata.
 

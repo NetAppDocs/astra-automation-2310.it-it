@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/event_endpoints.html 
+keywords: events,system events,event monitoring,activity tracking,event retrieval 
 summary: 'Endpoint degli eventi dell"API Astra (ACC)' 
 ---
 = Endpoint degli eventi dell'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Visualizza gli eventi che si verificano in Astra Control per monitorare l'attività del sistema.
 
 L'API Event fornisce l'accesso agli eventi che si verificano nel sistema.

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-subscriptions.html 
+keywords: subscriptions,matching resources,collection fields,account id,resource listing,sort order 
 summary: Elenca tutti gli abbonamenti 
 ---
 = Elenca tutti gli abbonamenti
@@ -10,7 +11,20 @@ summary: Elenca tutti gli abbonamenti
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un elenco degli abbonamenti, fornendo i dettagli per ciascun abbonamento presente nella raccolta. Utilizzalo per visualizzare e gestire i tuoi abbonamenti in modo efficiente.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

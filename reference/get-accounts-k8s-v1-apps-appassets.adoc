@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-appassets.html 
+keywords: account resources,k8s apps,app assets,resource collection,matching resources,field specification 
 summary: 'Elenca le risorse dell"applicazione per un"app' 
 ---
 = Elenca le risorse dell'applicazione per un'app
@@ -10,7 +11,20 @@ summary: 'Elenca le risorse dell"applicazione per un"app'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera gli asset dell'applicazione per un'app, fornendo informazioni sulle risorse disponibili all'interno della raccolta. Usa questo endpoint per visualizzare campi specifici per ciascun asset, in base alle tue esigenze.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appAssets`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

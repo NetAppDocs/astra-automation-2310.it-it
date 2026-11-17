@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-apps-appassets.html 
+keywords: managed clusters,app assets,resource collection,account resources,field inclusion,resource limit 
 summary: 'Elenca le risorse dell"applicazione per un cluster gestito' 
 ---
 = Elenca le risorse dell'applicazione per un cluster gestito
@@ -10,7 +11,20 @@ summary: 'Elenca le risorse dell"applicazione per un cluster gestito'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera le risorse applicative per un cluster gestito, fornendo un elenco di risorse relative alle applicazioni del cluster. Usa questa funzione per identificare e accedere a risorse applicative specifiche all'interno del cluster gestito.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/apps/{app_id}/appAssets`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

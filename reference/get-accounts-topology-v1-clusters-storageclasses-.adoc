@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clusters-storageclasses-.html 
+keywords: cluster storage,class resource,storage collection,account resource,storage class 
 summary: Recuperare una classe di archiviazione per un cluster 
 ---
 = Recuperare una classe di archiviazione per un cluster
@@ -10,7 +11,20 @@ summary: Recuperare una classe di archiviazione per un cluster
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera una classe di storage per un cluster, fornendo i dettagli della configurazione memorizzata per la gestione delle risorse di storage all'interno del cluster.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/storageClasses/{storageClass_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API della classe di archiviazione memorizzata nel corpo della risposta JSON.
 

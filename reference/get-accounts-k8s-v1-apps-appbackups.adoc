@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-appbackups.html 
+keywords: account backups,kubernetes apps,resource collection,app id,account id 
 summary: 'Elenca i backup dell"app per un"app' 
 ---
 = Elenca i backup dell'app per un'app
@@ -10,7 +11,20 @@ summary: 'Elenca i backup dell"app per un"app'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera i backup di un'applicazione. Usa questa funzione per esaminare le configurazioni e lo stato dei backup associati all'applicazione.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-upgrades-.html 
+keywords: upgrade resource,replacing resource,schedule upgrade,run upgrade,desired state 
 summary: Modificare un aggiornamento 
 ---
 = Modificare un aggiornamento
@@ -10,7 +11,20 @@ summary: Modificare un aggiornamento
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica un aggiornamento sostituendo l'intera risorsa memorizzata con il corpo della richiesta JSON fornito. Usa questo endpoint per pianificare o eseguire aggiornamenti in base allo stato desiderato.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/upgrades/{upgrade_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Sostituisce l'intera risorsa memorizzata con il corpo della richiesta JSON fornito, preservando i valori chiave non modificabili dall'utente.
 

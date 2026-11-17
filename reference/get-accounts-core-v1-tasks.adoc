@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-tasks.html 
+keywords: account tasks,field selection,resource collection,field filter,maximum resources,task list 
 summary: Elenca tutte le attività 
 ---
 = Elenca tutte le attività
@@ -10,7 +11,20 @@ summary: Elenca tutte le attività
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera tutte le attività all'interno della raccolta, fornendo una visione completa delle risorse disponibili per le attività. Utilizzalo per identificare e gestire le attività in modo efficiente nel tuo flusso di lavoro.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/tasks`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

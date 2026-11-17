@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/delete-accounts-core-v1-users-groups-rolebindings-.html 
+keywords: role binding removal,user deletion,group role bindings,account management,local auth provider,cloud central provider 
 summary: 'Eliminare un"associazione di ruolo per un gruppo associato a un utente' 
 ---
 = Eliminare un'associazione di ruolo per un gruppo associato a un utente
@@ -10,7 +11,20 @@ summary: 'Eliminare un"associazione di ruolo per un gruppo associato a un utente
 :imagesdir: ../media/
 
 
+[role="lead"]
+Elimina un'associazione di ruolo per un gruppo associato a un utente. Usa questa funzione per gestire in modo efficace l'accesso e le autorizzazioni all'interno del sistema.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#ELIMINA# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups/{group_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Rimuove la risorsa API Role Binding specificata.
 

@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/upgrade_endpoints.html 
+keywords: software upgrades,upgrade eligibility,component upgrades,upgrade initiation,upgrade packages 
 summary: 'Endpoint di aggiornamento dell"API Astra (ACC)' 
 ---
 = Endpoint di aggiornamento dell'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Individua i componenti software idonei all'aggiornamento e avvia gli aggiornamenti. I pacchetti registrati determinano quali aggiornamenti sono disponibili.
 
 L'API Upgrade App consente di accedere ai componenti software idonei all'aggiornamento e di avviare gli aggiornamenti. La disponibilità degli aggiornamenti è determinata in base ai pacchetti registrati tramite l'API Packages.

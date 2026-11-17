@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/certificate_endpoints.html 
+keywords: trusted certificates,certificate management,outgoing connections,admin-trusted certificates,secure connections 
 summary: 'Endpoint del certificato Astra API (ACC)' 
 ---
 = Endpoint del certificato Astra API (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gestisci i certificati attendibili dall'amministratore che Astra Control utilizza per stabilire le connessioni in uscita.
 
 L'API Certificate App rappresenta i certificati considerati attendibili dall'amministratore, utilizzati per stabilire connessioni in uscita.

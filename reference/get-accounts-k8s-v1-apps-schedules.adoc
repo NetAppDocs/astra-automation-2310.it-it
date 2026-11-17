@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-schedules.html 
+keywords: accounts schedules,k8s schedules,app schedules,resource collection,listing collection 
 summary: 'Elenca le pianificazioni per un"app' 
 ---
 = Elenca le pianificazioni per un'app
@@ -10,7 +11,20 @@ summary: 'Elenca le pianificazioni per un"app'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un elenco di pianificazioni per un'app. Utilizzalo per visualizzare le configurazioni di pianificazione associate all'applicazione.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/namespace_endpoints.html 
+keywords: namespaces,kubernetes namespaces,cluster namespaces,namespace details,read-only access 
 summary: 'Endpoint dello spazio dei nomi dell"API Astra (ACC)' 
 ---
 = Endpoint dello spazio dei nomi dell'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Visualizza gli spazi dei nomi appartenenti a un cluster. Questi endpoint sono di sola lettura.
 
 L'API Namespace fornisce accesso in sola lettura alle risorse namespace al fine di descrivere i namespace associati a un determinato cluster.

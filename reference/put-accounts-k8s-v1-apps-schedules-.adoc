@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-k8s-v1-apps-schedules-.html 
+keywords: replace resource,schedule update,account management,app scheduling,modify schedule 
 summary: Modificare una pianificazione 
 ---
 = Modificare una pianificazione
@@ -10,7 +11,20 @@ summary: Modificare una pianificazione
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica una pianificazione sostituendo la risorsa memorizzata con il corpo della richiesta JSON fornito, mantenendo al contempo i valori chiave che l'utente non può modificare.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules/{schedule_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Sostituisce l'intera risorsa memorizzata con il corpo della richiesta JSON fornito, preservando i valori chiave non modificabili dall'utente.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-groups-rolebindings-.html 
+keywords: role binding,group role,account role,role permissions,stored role bindings 
 summary: 'Recuperare un"associazione di ruoli per un gruppo' 
 ---
 = Recuperare un'associazione di ruoli per un gruppo
@@ -10,7 +11,20 @@ summary: 'Recuperare un"associazione di ruoli per un gruppo'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un'associazione di ruolo per un gruppo, fornendo i dettagli dell'associazione di ruolo associata all'ID del gruppo specificato. Usa questa funzione per esaminare le autorizzazioni e le associazioni configurate per il gruppo all'interno dell'API Astra.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API di Role Binding memorizzata nel corpo della risposta JSON. Se la richiesta è diretta all'endpoint /accounts/{account_id}/core/v1/users/{user_id}/roleBindings, sarà consentita la lettura solo delle risorse roleBinding in cui l'ID utente corrisponde all'ID utente nell'URL della richiesta. Se la richiesta è diretta all'endpoint /accounts/{account_id}/core/v1/groups/{group_id}/roleBindings, sarà consentita la lettura solo delle risorse roleBinding in cui l'ID gruppo corrisponde all'ID gruppo nell'URL della richiesta.
 

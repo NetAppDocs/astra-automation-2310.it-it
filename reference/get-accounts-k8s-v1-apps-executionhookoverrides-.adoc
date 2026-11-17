@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-executionhookoverrides-.html 
+keywords: execution hook,execution override,execution hook override,k8s apps,account resource,app resource 
 summary: 'Recupera una risorsa di override dell"hook di esecuzione' 
 ---
 = Recupera una risorsa di override dell'hook di esecuzione
@@ -10,7 +11,20 @@ summary: 'Recupera una risorsa di override dell"hook di esecuzione'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera una risorsa di override dell'hook di esecuzione, fornendo i dettagli di configurazione memorizzati per i flussi di lavoro di integrazione e automazione.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHookOverrides/{executionHookOverride_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API Execution Hook Override memorizzata nel corpo della risposta JSON.
 

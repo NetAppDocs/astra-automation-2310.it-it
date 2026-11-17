@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/feature_endpoints.html 
+keywords: feature flags,enabled features,disabled features,feature status,feature check 
 summary: 'Endpoint delle funzionalità dell"API Astra (ACC)' 
 ---
 = Endpoint delle funzionalità dell'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Verifica quali funzionalità di Astra Control sono abilitate o disabilitate leggendo i flag delle funzionalità.
 
 L'API Feature fornisce accesso in sola lettura alle risorse dei flag di funzionalità al fine di determinare quali funzionalità sono abilitate o disabilitate nel sistema.

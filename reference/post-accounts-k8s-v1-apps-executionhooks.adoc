@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-k8s-v1-apps-executionhooks.html 
+keywords: execution hooks,k8s apps,create execution hook,account resource,app resource 
 summary: 'Crea un nuovo hook di esecuzione per un"app' 
 ---
 = Crea un nuovo hook di esecuzione per un'app
@@ -10,7 +11,20 @@ summary: 'Crea un nuovo hook di esecuzione per un"app'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Crea un nuovo hook di esecuzione per un'app per specificare i valori desiderati per i processi automatizzati o le integrazioni.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHooks`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Indica i valori desiderati per la risorsa API Execution Hook da creare.
 

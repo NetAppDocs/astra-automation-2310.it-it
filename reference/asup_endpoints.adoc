@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/asup_endpoints.html 
+keywords: autosupport,asup bundles,support bundles,bundle upload,troubleshooting 
 summary: 'Endpoint ASUP dell"API Astra (ACC)' 
 ---
 = Endpoint ASUP dell'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Crea pacchetti AutoSupport (ASUP) e, facoltativamente, caricali su NetApp per facilitare la risoluzione dei problemi.
 
 L'API ASUP fornisce l'accesso alle risorse ASUP per creare e, facoltativamente, caricare i AutoSupport bundle.

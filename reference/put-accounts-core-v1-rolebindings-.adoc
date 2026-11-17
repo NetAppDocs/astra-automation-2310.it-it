@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-rolebindings-.html 
+keywords: replace resource,role binding,resource modification,account role,role management 
 summary: 'Modificare un"associazione di ruolo' 
 ---
 = Modificare un'associazione di ruolo
@@ -10,7 +11,20 @@ summary: 'Modificare un"associazione di ruolo'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica un'associazione di ruolo per aggiornarne la configurazione in base al corpo della richiesta JSON fornito.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Sostituisce l'intera risorsa memorizzata con il corpo della richiesta JSON fornito, preservando i valori chiave non modificabili dall'utente.
 

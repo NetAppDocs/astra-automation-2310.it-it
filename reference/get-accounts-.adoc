@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-.html 
+keywords: account id,account resource,stored account,account collection,json response 
 summary: Recupera un account 
 ---
 = Recupera un account
@@ -10,7 +11,20 @@ summary: Recupera un account
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un account, restituendo nella risposta i dettagli della risorsa dell'account memorizzata. Usa questa funzione per accedere alle informazioni dell'account a scopo di gestione o revisione.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API Account memorizzata nel corpo della risposta JSON.
 

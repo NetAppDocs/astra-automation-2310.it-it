@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-storagebackends-volumes.html 
+keywords: storage backends,volume collection,resource fields,account storage,volume topology 
 summary: Elenca i volumi per un backend di archiviazione 
 ---
 = Elenca i volumi per un backend di archiviazione
@@ -10,7 +11,20 @@ summary: Elenca i volumi per un backend di archiviazione
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un elenco di volumi per un backend di storage, fornendo l'accesso alle configurazioni dei volumi per la gestione o l'analisi.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/storageBackends/{storageBackend_id}/volumes`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

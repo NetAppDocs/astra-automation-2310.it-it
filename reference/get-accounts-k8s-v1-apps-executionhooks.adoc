@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-executionhooks.html 
+keywords: execution hooks,k8s apps,collection resources,app resource,account resource 
 summary: 'Elenca gli hook di esecuzione per un"app' 
 ---
 = Elenca gli hook di esecuzione per un'app
@@ -10,7 +11,20 @@ summary: 'Elenca gli hook di esecuzione per un"app'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera gli hook di esecuzione per un'app, fornendo un array JSON di tutte le risorse corrispondenti nella raccolta. Utilizzalo per visualizzare campi specifici per ciascuna risorsa corrispondente, a seconda delle necessità.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHooks`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

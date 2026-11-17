@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-subscriptions-.html 
+keywords: subscription removal,delete subscription,subscription charges,account subscription,subscription deletion 
 summary: Elimina un abbonamento 
 ---
 = Elimina un abbonamento
@@ -10,7 +11,20 @@ summary: Elimina un abbonamento
 :imagesdir: ../media/
 
 
+[role="lead"]
+Elimina un abbonamento, rimuovendo la risorsa Subscription API specificata insieme a tutti gli addebiti associati.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#ELIMINA# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions/{subscription_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Rimuove la risorsa API Subscription specificata.
 

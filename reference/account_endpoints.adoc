@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/account_endpoints.html 
+keywords: astra accounts,tenant accounts,multitenant,account management,account creation 
 summary: 'Endpoint dell"account Astra API (ACC)' 
 ---
 = Endpoint dell'account Astra API (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gestisci gli account che isolano i tenant in un ambiente Astra Control multi-tenant.
 
 L'API Account rappresenta tenant isolati in un sistema multitenant.

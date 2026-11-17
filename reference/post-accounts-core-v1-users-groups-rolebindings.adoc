@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/post-accounts-core-v1-users-groups-rolebindings.html 
+keywords: role binding,account role,user role,group role,core role binding,role creation 
 summary: Crea un nuovo vincolo di ruolo per un gruppo associato a un utente 
 ---
 = Crea un nuovo vincolo di ruolo per un gruppo associato a un utente
@@ -10,7 +11,20 @@ summary: Crea un nuovo vincolo di ruolo per un gruppo associato a un utente
 :imagesdir: ../media/
 
 
+[role="lead"]
+Crea un'associazione di ruoli per un gruppo associato a un utente. Utilizzala per assegnare autorizzazioni specifiche a un gruppo all'interno dell'ambiente API di Astra.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups/{group_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Indica i valori desiderati per la risorsa API Role Binding da creare.
 

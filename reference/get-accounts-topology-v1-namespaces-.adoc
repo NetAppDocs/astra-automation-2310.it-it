@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-namespaces-.html 
+keywords: namespace resource,namespace collection,stored namespace,account id,namespace id 
 summary: Recuperare uno spazio dei nomi 
 ---
 = Recuperare uno spazio dei nomi
@@ -10,7 +11,20 @@ summary: Recuperare uno spazio dei nomi
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un namespace, fornendo accesso alla risorsa API Namespace memorizzata per gestire i dati dell'applicazione.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/namespaces/{namespace_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API Namespace memorizzata nel corpo della risposta JSON.
 

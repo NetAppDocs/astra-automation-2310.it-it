@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-topology-v1-appbackups-appassets.html 
+keywords: topology resources,account resources,app assets,app backup,id fields,collection limit 
 summary: 'Elenca le risorse dell"applicazione per un backup dell"applicazione' 
 ---
 = Elenca le risorse dell'applicazione per un backup dell'applicazione
@@ -10,7 +11,20 @@ summary: 'Elenca le risorse dell"applicazione per un backup dell"applicazione'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera le risorse dell'applicazione per un backup dell'applicazione, fornendo un array JSON di tutte le risorse corrispondenti nella raccolta. Usalo per visualizzare campi specifici per ciascuna risorsa nell'ordine specificato.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups/{appBackup_id}/appAssets`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

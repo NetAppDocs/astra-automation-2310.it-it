@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-buckets-.html 
+keywords: bucket resource,stored bucket,account bucket,topology bucket,bucket collection 
 summary: Recupera un bucket 
 ---
 = Recupera un bucket
@@ -10,7 +11,20 @@ summary: Recupera un bucket
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un bucket, fornendo nella risposta i dettagli della configurazione del bucket memorizzata.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/buckets/{bucket_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API Bucket memorizzata nel corpo della risposta JSON.
 

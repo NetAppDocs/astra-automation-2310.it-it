@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-apiresources-.html 
+keywords: account resource,managed cluster,api resource,resource collection,resource id 
 summary: Recuperare una risorsa API di Kubernetes 
 ---
 = Recuperare una risorsa API di Kubernetes
@@ -10,7 +11,20 @@ summary: Recuperare una risorsa API di Kubernetes
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera una risorsa API K8s, fornendo la risorsa specifica nel corpo della risposta JSON per ulteriori analisi o integrazioni.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/apiResources/{apiResource_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API specifica nel corpo della risposta JSON.
 

@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/role_binding_endpoints.html 
+keywords: role bindings,roles,permissions,access control,user permissions,group permissions 
 summary: 'Endpoint di associazione dei ruoli dell"API Astra (ACC)' 
 ---
 = Endpoint di associazione dei ruoli dell'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gestisci le associazioni di ruoli che concedono autorizzazioni a utenti o gruppi in un account. Un'associazione di ruoli collega un utente o un gruppo a un ruolo.
 
 L'API Role Binding descrive le relazioni tra le coppie utente-account o gruppo-account, insieme ai set di autorizzazioni loro concesse (ruoli).

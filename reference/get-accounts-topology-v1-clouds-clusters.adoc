@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds-clusters.html 
+keywords: account topology,cloud clusters,resource collection,field filtering,limit resources 
 summary: Elenca i cluster per un cloud 
 ---
 = Elenca i cluster per un cloud
@@ -10,7 +11,20 @@ summary: Elenca i cluster per un cloud
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un elenco di cluster per un cloud. Usa questa funzione per visualizzare i cluster disponibili nell'ambiente cloud specificato.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

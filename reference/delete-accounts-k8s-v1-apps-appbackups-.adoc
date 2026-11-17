@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-k8s-v1-apps-appbackups-.html 
+keywords: application backup,delete backup,container app,app backup removal,kubernetes app,backup data delete 
 summary: 'Eliminare il backup di un"applicazione per un"app' 
 ---
 = Eliminare il backup di un'applicazione per un'app
@@ -10,7 +11,20 @@ summary: 'Eliminare il backup di un"applicazione per un"app'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Elimina un backup dell'app. Usa questo endpoint per gestire lo spazio di storage rimuovendo i backup non necessari o obsoleti.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#ELIMINA# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups/{appBackup_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Rimuove la risorsa API di backup dell'applicazione specificata. I backup in corso verranno annullati e quindi eliminati.
 

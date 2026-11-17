@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clusters-clusternodes.html 
+keywords: cluster nodes,cluster topology,account id,cluster id,resource collection,fields requested 
 summary: Elenca i nodi del cluster per un cluster 
 ---
 = Elenca i nodi del cluster per un cluster
@@ -10,7 +11,20 @@ summary: Elenca i nodi del cluster per un cluster
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera i nodi del cluster per un cluster. Usa questa funzione per visualizzare tutti i nodi all'interno del cluster specificato e i relativi dettagli.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/clusterNodes`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

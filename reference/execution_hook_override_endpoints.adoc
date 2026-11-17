@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/execution_hook_override_endpoints.html 
+keywords: execution hook override,preloaded hooks,netapp hooks,hook disabling,application hooks,deprecation 
 summary: 'Endpoint di override dell"hook di esecuzione dell"API Astra (ACC)' 
 ---
 = Endpoint di override dell'hook di esecuzione dell'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Disabilita gli NetApp hook di esecuzione precaricati per un'applicazione specifica. Verifica le informazioni sulla deprecazione nella pagina prima di usare questi endpoint.
 
 L'API Execution Hook Override consente a un utente di disabilitare gli hook di esecuzione "netapp" precaricati per una specifica applicazione. (*NOTA SULLE DEPRECATIONS DELLE API SOTTOSTANTI*)

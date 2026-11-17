@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-ldapgroups-.html 
+keywords: ldap resource,ldap groups,account resource,ldap collection,ldap group id 
 summary: Recuperare un gruppo LDAP 
 ---
 = Recuperare un gruppo LDAP
@@ -10,7 +11,20 @@ summary: Recuperare un gruppo LDAP
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un gruppo LDAP, fornendo i dettagli della configurazione della risorsa LDAP memorizzata.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/ldapGroups/{ldapGroup_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un oggetto JSON che rappresenta la risorsa LDAP memorizzata.
 

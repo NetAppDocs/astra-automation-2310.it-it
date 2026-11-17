@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-topology-v2-managedclusters-apps-.html 
+keywords: account topology,managed cluster,app resource,replace resource,force update 
 summary: 'Modificare un"app per un cluster gestito' 
 ---
 = Modificare un'app per un cluster gestito
@@ -10,7 +11,20 @@ summary: 'Modificare un"app per un cluster gestito'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica un'app per un cluster gestito, sostituendo l'intera risorsa memorizzata con il corpo della richiesta JSON fornito. Usa questa opzione per aggiornare la configurazione dell'app preservando i valori chiave che l'utente non può modificare.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/topology/v2/managedClusters/{managedCluster_id}/apps/{app_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Sostituisce l'intera risorsa memorizzata con il corpo della richiesta JSON fornito, preservando i valori chiave non modificabili dall'utente.
 

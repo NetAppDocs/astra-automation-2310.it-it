@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clusters-.html 
+keywords: cluster resource,stored cluster,response body,cluster collection,account resource 
 summary: Recupera un cluster 
 ---
 = Recupera un cluster
@@ -10,7 +11,20 @@ summary: Recupera un cluster
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera una risorsa del cluster memorizzata, fornendo i dettagli del cluster per le attività di gestione e operative.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa Cluster API memorizzata nel corpo della risposta JSON.
 

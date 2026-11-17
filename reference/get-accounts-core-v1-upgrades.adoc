@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-upgrades.html 
+keywords: account upgrades,collection resources,matching resources,resource fields,field order 
 summary: Elenca tutti gli aggiornamenti 
 ---
 = Elenca tutti gli aggiornamenti
@@ -10,7 +11,20 @@ summary: Elenca tutti gli aggiornamenti
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un elenco di aggiornamenti, fornendo i dettagli di tutte le risorse corrispondenti nella raccolta. Usa questa funzione per accedere a campi specifici per ciascuna risorsa nell'ordine specificato.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/upgrades`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

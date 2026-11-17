@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-upgrades-.html 
+keywords: upgrade resource,upgrade details,upgrade collection,account upgrade,upgrade json 
 summary: Recupera un aggiornamento 
 ---
 = Recupera un aggiornamento
@@ -10,7 +11,20 @@ summary: Recupera un aggiornamento
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera una risorsa di aggiornamento, fornendo la configurazione di aggiornamento memorizzata per la revisione o la gestione.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/upgrades/{upgrade_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API di upgrade memorizzata nel corpo della risposta JSON.
 

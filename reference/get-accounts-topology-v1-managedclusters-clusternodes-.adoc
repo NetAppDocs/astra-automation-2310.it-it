@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-clusternodes-.html 
+keywords: cluster node,managed cluster,cluster topology,account resource,stored resource 
 summary: Recuperare un nodo del cluster per un cluster gestito 
 ---
 = Recuperare un nodo del cluster per un cluster gestito
@@ -10,7 +11,20 @@ summary: Recuperare un nodo del cluster per un cluster gestito
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un nodo del cluster per un cluster gestito, fornendo dettagli sulla configurazione e sullo stato del nodo all'interno del cluster.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/clusterNodes/{clusterNode_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API del nodo del cluster memorizzata nel corpo della risposta JSON.
 

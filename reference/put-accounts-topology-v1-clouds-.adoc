@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-topology-v1-clouds-.html 
+keywords: replace resource,cloud topology,update rediscovery,sa cluster,stored resource 
 summary: Modificare un cloud 
 ---
 = Modificare un cloud
@@ -10,7 +11,20 @@ summary: Modificare un cloud
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica una risorsa cloud sostituendo la configurazione esistente con il corpo della richiesta JSON fornito, mantenendo i valori delle chiavi non modificabili. Usa questo per avviare una nuova individuazione di array e cluster di storage.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Sostituisce l'intera risorsa memorizzata con il corpo della richiesta JSON fornito, preservando i valori chiave non modificabili dall'utente.
 

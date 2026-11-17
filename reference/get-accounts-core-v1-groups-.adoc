@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-groups-.html 
+keywords: account resource,group collection,stored group,group resource,json response,account id 
 summary: Recupera un gruppo 
 ---
 = Recupera un gruppo
@@ -10,7 +11,20 @@ summary: Recupera un gruppo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un gruppo, fornendo i dettagli della risorsa di gruppo memorizzata a scopo di revisione o integrazione.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API Group memorizzata nel corpo della risposta JSON.
 

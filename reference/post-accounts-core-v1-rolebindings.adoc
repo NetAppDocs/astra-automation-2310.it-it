@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-rolebindings.html 
+keywords: role binding,create role,account role,core role binding,role management 
 summary: Crea un nuovo role binding 
 ---
 = Crea un nuovo role binding
@@ -10,7 +11,20 @@ summary: Crea un nuovo role binding
 :imagesdir: ../media/
 
 
+[role="lead"]
+Crea un'associazione di ruoli nell'Astra API, specificando i valori desiderati per la risorsa Role Binding. Utilizzala per definire autorizzazioni e controllo degli accessi per gli utenti all'interno del tuo ambiente.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/roleBindings`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Indica i valori desiderati per la risorsa API Role Binding da creare.
 

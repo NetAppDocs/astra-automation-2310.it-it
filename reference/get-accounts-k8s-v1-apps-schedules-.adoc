@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-schedules-.html 
+keywords: account schedule,k8s schedule,app schedule,stored schedule,schedule listing 
 summary: Recupera una pianificazione 
 ---
 = Recupera una pianificazione
@@ -10,7 +11,20 @@ summary: Recupera una pianificazione
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera una pianificazione salvata. Usa questa funzione per accedere ai dettagli di configurazione della pianificazione ed esaminarli.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules/{schedule_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API Schedule memorizzata nel corpo della risposta JSON.
 

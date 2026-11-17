@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-hooksources.html 
+keywords: hook sources,resource collection,field filter,field limit,account resource 
 summary: Elenca tutte le fonti di aggancio 
 ---
 = Elenca tutte le fonti di aggancio
@@ -10,7 +11,20 @@ summary: Elenca tutte le fonti di aggancio
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera tutte le sorgenti hook nella raccolta. Utilizza questa funzione per visualizzare i campi disponibili per ciascuna risorsa, come specificato nella tua richiesta.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/hookSources`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

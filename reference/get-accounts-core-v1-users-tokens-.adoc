@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-users-tokens-.html 
+keywords: account resource,token collection,user resource,stored token,json response 
 summary: Recupera un token 
 ---
 = Recupera un token
@@ -10,7 +11,20 @@ summary: Recupera un token
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un token, fornendo la risorsa Token API memorizzata nella risposta.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/tokens/{token_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa Token API memorizzata nel corpo della risposta JSON.
 

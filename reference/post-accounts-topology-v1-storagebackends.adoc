@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-topology-v1-storagebackends.html 
+keywords: storage backend,account storage,create storage,backend creation,topology storage 
 summary: Crea un nuovo backend di archiviazione 
 ---
 = Crea un nuovo backend di archiviazione
@@ -10,7 +11,20 @@ summary: Crea un nuovo backend di archiviazione
 :imagesdir: ../media/
 
 
+[role="lead"]
+Crea un nuovo backend di storage, specificando i valori di configurazione desiderati per la risorsa. Usa questo endpoint per configurare un backend di storage su misura per le tue esigenze.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/storageBackends`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Indica i valori desiderati per la risorsa Storage Backend API da creare.
 

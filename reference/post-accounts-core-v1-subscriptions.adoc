@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-subscriptions.html 
+keywords: subscription,create subscription,account subscription,account id,subscription resource 
 summary: Crea un nuovo abbonamento 
 ---
 = Crea un nuovo abbonamento
@@ -10,7 +11,20 @@ summary: Crea un nuovo abbonamento
 :imagesdir: ../media/
 
 
+[role="lead"]
+Crea un nuovo abbonamento, specificando i valori desiderati per la risorsa Subscription API. Utilizzalo per avviare un abbonamento con impostazioni personalizzate in base alle tue esigenze.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Indica i valori desiderati per la risorsa API di Subscription da creare.
 

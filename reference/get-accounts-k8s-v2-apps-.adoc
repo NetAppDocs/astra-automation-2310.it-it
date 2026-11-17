@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v2-apps-.html 
+keywords: account resource,app collection,stored app,k8s resource,json response 
 summary: 'Recupera un"app' 
 ---
 = Recupera un'app
@@ -10,7 +11,20 @@ summary: 'Recupera un"app'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un'app dall'API di Astra, fornendo i dettagli dell'applicazione memorizzati per ulteriori analisi o per la gestione.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v2/apps/{app_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API dell'app memorizzata nel corpo della risposta JSON.
 

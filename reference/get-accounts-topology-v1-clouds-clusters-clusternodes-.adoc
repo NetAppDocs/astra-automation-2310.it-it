@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds-clusters-clusternodes-.html 
+keywords: cluster node,cloud cluster,account resource,cloud resource,cluster resource,stored resource 
 summary: Recuperare un nodo del cluster per un cloud 
 ---
 = Recuperare un nodo del cluster per un cloud
@@ -10,7 +11,20 @@ summary: Recuperare un nodo del cluster per un cloud
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un nodo del cluster per un cloud, fornendo accesso alla configurazione del nodo memorizzata per la gestione delle risorse cloud.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/clusterNodes/{clusterNode_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API del nodo del cluster memorizzata nel corpo della risposta JSON.
 

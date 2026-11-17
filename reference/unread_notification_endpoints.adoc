@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/unread_notification_endpoints.html 
+keywords: unread notifications,notification status,mark as read,user notifications,notification tracking 
 summary: 'Endpoint di notifica non letta dell"API Astra (ACC)' 
 ---
 = Endpoint di notifica non letta dell'API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Individua le notifiche che un utente non ha ancora letto e contrassegnale come lette.
 
 L'API Notifiche non lette fornisce informazioni sulle notifiche che non sono state lette da un determinato utente e consente di contrassegnarle come lette.

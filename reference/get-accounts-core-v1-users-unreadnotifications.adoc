@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-users-unreadnotifications.html 
+keywords: unread notifications,account notifications,user notifications,notification list,resource collection,notification fields 
 summary: Elenca le notifiche non lette per un utente 
 ---
 = Elenca le notifiche non lette per un utente
@@ -10,7 +11,20 @@ summary: Elenca le notifiche non lette per un utente
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera le notifiche non lette di un utente, fornendoti gli avvisi e gli aggiornamenti più recenti che richiedono la tua attenzione.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/unreadNotifications`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

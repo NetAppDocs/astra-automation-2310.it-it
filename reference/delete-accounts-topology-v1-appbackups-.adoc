@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-topology-v1-appbackups-.html 
+keywords: application backup,delete backup,backup removal,backup data delete,delete app backup 
 summary: 'Eliminare il backup di un"applicazione' 
 ---
 = Eliminare il backup di un'applicazione
@@ -10,7 +11,20 @@ summary: 'Eliminare il backup di un"applicazione'
 :imagesdir: ../media/
 
 
+[role="lead"]
+Elimina un backup dell'applicazione, rimuovendo la risorsa di backup specificata e i relativi dati. Usa questa opzione per gestire lo spazio di storage o rimuovere i backup obsoleti dalle risorse dell'applicazione.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#ELIMINA# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups/{appBackup_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Rimuove la risorsa API di backup dell'applicazione specificata. I backup in corso verranno annullati e quindi eliminati.
 

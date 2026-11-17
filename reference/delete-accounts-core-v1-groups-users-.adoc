@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/delete-accounts-core-v1-groups-users-.html 
+keywords: remove user,delete user,role bindings,user credentials,notification marks,password hash 
 summary: Eliminare un utente da un gruppo 
 ---
 = Eliminare un utente da un gruppo
@@ -10,7 +11,20 @@ summary: Eliminare un utente da un gruppo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Elimina un utente da un gruppo, rimuovendo la risorsa API utente specificata e le risorse associate, come i contrassegni di notifica, i token e i binding di ruolo.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#ELIMINA# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Rimuove la risorsa API utente specificata.
 

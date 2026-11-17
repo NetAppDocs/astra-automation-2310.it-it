@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-topology-v1-managedclusters-.html 
+keywords: managed clusters,replace resource,kubernetes storage class,default storage class,account management,cluster management 
 summary: Modificare un cluster gestito 
 ---
 = Modificare un cluster gestito
@@ -10,7 +11,20 @@ summary: Modificare un cluster gestito
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica un cluster gestito sostituendo l'intera risorsa memorizzata con il corpo della richiesta JSON fornito. Questa operazione preserva i valori chiave non modificabili dall'utente, garantendo che le configurazioni essenziali rimangano intatte durante l'aggiornamento di altri aspetti del cluster.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Sostituisce l'intera risorsa memorizzata con il corpo della richiesta JSON fornito, preservando i valori chiave non modificabili dall'utente.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-entitlements.html 
+keywords: entitlements,account resources,field selection,resource collection,collection filtering,resource sorting 
 summary: Elenca tutte le autorizzazioni 
 ---
 = Elenca tutte le autorizzazioni
@@ -10,7 +11,20 @@ summary: Elenca tutte le autorizzazioni
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera un elenco dei diritti di accesso, fornendo informazioni su tutte le risorse corrispondenti nella raccolta. Utilizzalo per accedere ai dettagli di risorse specifiche in base ai criteri della tua richiesta.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/entitlements`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

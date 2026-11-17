@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-k8s-v1-apps-appbackups-appassets.html 
+keywords: account resources,k8s apps,app backups,collection fields,resource limit 
 summary: 'Elenca le risorse dell"applicazione da un backup dell"applicazione per un"app' 
 ---
 = Elenca le risorse dell'applicazione da un backup dell'applicazione per un'app
@@ -10,7 +11,20 @@ summary: 'Elenca le risorse dell"applicazione da un backup dell"applicazione per
 :imagesdir: ../media/
 
 
+[role="lead"]
+Consente di recuperare le risorse dell'applicazione da un backup. Usalo per accedere ai dettagli delle risorse incluse nel backup.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups/{appBackup_id}/appAssets`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce un array JSON di tutte le risorse corrispondenti nella raccolta. Se nella richiesta vengono specificati singoli campi, l'array JSON degli elementi conterrà i campi richiesti per ciascuna risorsa corrispondente nell'ordine specificato.
 

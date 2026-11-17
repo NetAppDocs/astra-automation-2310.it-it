@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-licenses-.html 
+keywords: license resource,license collection,account resource,license id,account id 
 summary: Recuperare una licenza 
 ---
 = Recuperare una licenza
@@ -10,7 +11,20 @@ summary: Recuperare una licenza
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera una licenza, fornendo i dettagli della risorsa API License memorizzata. Usa questa funzione per esaminare la configurazione corrente della licenza e garantire la conformità ai requisiti di licenza.
+
+
+
+[[http-method-and-endpoint]]
+== Metodo e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/licenses/{license_id}`#
+
+
+
+[[usage-notes]]
+== Note sull'utilizzo
 
 Restituisce la risorsa API di licenza memorizzata nel corpo della risposta JSON.
 
